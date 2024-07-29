@@ -12,6 +12,7 @@ const MIN_SUFFIXES = 1
 const MAX_SUFFIXES = 3
 
 # Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	var generated_card = generate_card()
 	print("Generated Card Name: ", generated_card.nameItem)
@@ -35,7 +36,7 @@ func _ready():
 func generate_card() -> Card:
 	# Create a new card instance
 	var card = Card.new()
-
+	
 	# Randomly choose card type
 	card.type = Card.CardType.values()[randi() % Card.CardType.values().size()]
 
@@ -43,21 +44,33 @@ func generate_card() -> Card:
 	var num_prefixes = randi_range(MIN_PREFIXES, MAX_PREFIXES)
 	var num_suffixes = randi_range(MIN_SUFFIXES, MAX_SUFFIXES)
 
-	# Create random prefixes
-	card.prefixes.clear()
-	for i in range(num_prefixes):
-		var prefix_type = Prefix.PrefixType.values()[randi() % Prefix.PrefixType.values().size()]
-		var tier = randi_range(1, 5)
-		var prefix = Prefix.new(prefix_type, tier)
-		card.prefixes.append(prefix)
+	# Ensure the number of prefixes and suffixes do not exceed the card's maximum allowed types
+	num_prefixes = min(num_prefixes, Prefix.PrefixType.values().size())
+	num_suffixes = min(num_suffixes, Suffix.SuffixesType.values().size())
 	
-	# Create random suffixes
+	# Track used prefix and suffix types to avoid duplicates
+	var used_prefix_types = Set.new()
+	var used_suffix_types = Set.new()
+
+	# Create unique prefixes
+	card.prefixes.clear()
+	while card.prefixes.size() < num_prefixes:
+		var prefix_type = Prefix.PrefixType.values()[randi() % Prefix.PrefixType.values().size()]
+		if not used_prefix_types.has(prefix_type):
+			var tier = randi_range(1, 5)
+			var prefix = Prefix.new(prefix_type, tier)
+			card.prefixes.append(prefix)
+			used_prefix_types.add(prefix_type)
+
+	# Create unique suffixes
 	card.suffixes.clear()
-	for i in range(num_suffixes):
+	while card.suffixes.size() < num_suffixes:
 		var suffix_type = Suffix.SuffixesType.values()[randi() % Suffix.SuffixesType.values().size()]
-		var tier = randi_range(1, 5)
-		var suffix = Suffix.new(suffix_type, tier)
-		card.suffixes.append(suffix)
+		if not used_suffix_types.has(suffix_type):
+			var tier = randi_range(1, 5)
+			var suffix = Suffix.new(suffix_type, tier)
+			card.suffixes.append(suffix)
+			used_suffix_types.add(suffix_type)
 
 	# Determine card rarity
 	if num_prefixes + num_suffixes <= 3:
