@@ -12,7 +12,6 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var suffixes: Array = [] # Added property
 @export var modifiers: Array[Modifier] = []
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -25,3 +24,35 @@ func createCard(card_type: CardType, card_rarity: CardRarity) -> void:
 	type = card_type
 	rarity = card_rarity
 	# Add logic to initialize the card with the given type
+
+func get_type_name() -> String:
+	match type:
+		CardType.HELMET:
+			return "Helmet"
+		CardType.BODY:
+			return "Body Armor"
+		CardType.GLOVES:
+			return "Gloves"
+		CardType.BOOTS:
+			return "Boots"
+		CardType.BELT:
+			return "Belt"
+		CardType.WEAPON:
+			return "Weapon"
+		CardType.POTION:
+			return "Potion"
+		_:
+			return "Unknown Item"
+			
+func get_rarity_name() -> String:
+	match rarity:
+		CardRarity.BASIC:
+			return "Basic"
+		CardRarity.MAGIC:
+			return "Magic"
+		CardRarity.RARE:
+			return "Rare"
+		CardRarity.UNIQUE:
+			return "Unique"
+		_:
+			return "Unknown Item"

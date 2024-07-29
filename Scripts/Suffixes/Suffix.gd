@@ -57,7 +57,7 @@ func get_description() -> String:
 			type_name = "Chance to Bleed Hit"
 		SuffixesType.CHANCE_CHILL_HIT:
 			type_name = "Chance to Chill Hit"
-	return type_name + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"
+	return type_name + " Tier " + str(tier) + " (Bonus: " + str(snapped(bonus,0.01)) + ")"
 
 # Static method to get suffix names based on type
 static func get_suffix_names(type: SuffixesType) -> Array:

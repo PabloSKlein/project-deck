@@ -15,8 +15,8 @@ const MAX_SUFFIXES = 2
 func _ready():
 	var generated_card = generate_card()
 	print("Generated Card Name: ", generated_card.nameItem)
-	print("Card Type: ", generated_card.type)
-	print("Card Rarity: ", generated_card.rarity)
+	print("Card Type: ", generated_card.get_type_name())  # Updated to use get_type_name()
+	print("Card Rarity: ", generated_card.get_rarity_name())  # Updated to use get_rarity_name()
 	
 	# Print card prefixes
 	var prefix_descriptions = []

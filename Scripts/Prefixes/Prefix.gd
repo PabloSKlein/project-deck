@@ -57,7 +57,7 @@ func get_description() -> String:
 			type_name = "Fire Damage"
 		PrefixType.LIGHTNING_DAMAGE:
 			type_name = "Lightning Damage"
-	return type_name + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"
+	return type_name + " Tier " + str(tier) + " (Bonus: " + str(snapped(bonus,0.01)) + ")"
 
 # Static method to get prefix names based on type
 static func get_prefix_names(type: PrefixType) -> Array:
