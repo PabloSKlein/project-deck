@@ -29,6 +29,10 @@ func draw(howManyCards: int) -> void:
 		drawFromTop()
 	pass
 	
+func equipFromHand(cardIndex: int, slot: int) -> void:
+	hero.equip(cards[cardIndex], slot)
+pass
+	
 func drawFromTop() -> void:
 	randomize()  # Seed the random number generator
 	var random_card = getRandomElement(inventory)

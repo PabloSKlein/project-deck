@@ -1,3 +1,5 @@
+class_name GenerateCard
+
 extends Node
 
 # Preload the Prefix and Suffix classes
@@ -13,10 +15,10 @@ const MAX_SUFFIXES = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var generated_card = generate_card()
+	var generated_card = generate_card(null)
 	print("Generated Card Name: ", generated_card.nameItem)
-	print("Card Type: ", generated_card.get_type_name())  # Updated to use get_type_name()
-	print("Card Rarity: ", generated_card.get_rarity_name())  # Updated to use get_rarity_name()
+	print("Card Type: ", generated_card.get_type_name())
+	print("Card Rarity: ", generated_card.get_rarity_name())
 	
 	# Print card prefixes
 	var prefix_descriptions = []
@@ -32,12 +34,12 @@ func _ready():
 	
 	print("Card Modifiers: ", generated_card.modifiers)
 
-func generate_card() -> Card:
+func generate_card(cardType) -> Card:
 	# Create a new card instance
 	var card = Card.new()
 	
 	# Randomly choose card type
-	card.type = Card.CardType.values()[randi() % Card.CardType.values().size()]
+	card.type = cardType if cardType != null else Card.CardType.values()[randi() % Card.CardType.values().size()]
 
 	# Generate a random number of prefixes and suffixes
 	var num_prefixes = randi_range(MIN_PREFIXES, MAX_PREFIXES)
