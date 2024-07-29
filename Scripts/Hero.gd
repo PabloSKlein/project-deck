@@ -2,7 +2,7 @@ class_name Hero
 
 extends Node
 
-var card = preload("res://Scripts/Card.gd")
+var card = preload("res://Scripts/Cards/Card.gd")
 
 class Slot:
 	var card: Card
