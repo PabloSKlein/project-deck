@@ -1,15 +1,13 @@
 extends Node
 
-class_name Suffixes
+class_name Suffix
 
 enum SuffixesType {HEALTH_ON_KILL, CHANCE_BLEED_HIT, CHANCE_CHILL_HIT}
 
-# Define the type of prefix and its tiers
 @export var type: SuffixesType
 @export var tier: int
 @export var bonus: float
 
-# Define tiers and their ranges
 var tier_ranges = {
 	SuffixesType.HEALTH_ON_KILL: {
 		1: { "min": 10, "max": 21 },
@@ -44,4 +42,12 @@ func _generate_random_bonus(type: SuffixesType, tier: int) -> float:
 	return randf_range(range["min"], range["max"])
 
 func get_description() -> String:
-	return str(type) + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"
+	var type_name = ""
+	match type:
+		SuffixesType.HEALTH_ON_KILL:
+			type_name = "Health on Kill"
+		SuffixesType.CHANCE_BLEED_HIT:
+			type_name = "Chance to Bleed Hit"
+		SuffixesType.CHANCE_CHILL_HIT:
+			type_name = "Chance to Chill Hit"
+	return type_name + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"

@@ -4,12 +4,10 @@ class_name Prefix
 
 enum PrefixType {COLD_DAMAGE, CRITICAL_STRIKE_CHANCE, CRITICAL_STRIKE_MULTIPLIER}
 
-# Define the type of prefix and its tiers
 @export var type: PrefixType
 @export var tier: int
 @export var bonus: float
 
-# Define tiers and their ranges
 var tier_ranges = {
 	PrefixType.COLD_DAMAGE: {
 		1: { "min": 10, "max": 21 },
@@ -44,4 +42,12 @@ func _generate_random_bonus(type: PrefixType, tier: int) -> float:
 	return randf_range(range["min"], range["max"])
 
 func get_description() -> String:
-	return str(type) + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"
+	var type_name = ""
+	match type:
+		PrefixType.COLD_DAMAGE:
+			type_name = "Cold Damage"
+		PrefixType.CRITICAL_STRIKE_CHANCE:
+			type_name = "Critical Strike Chance"
+		PrefixType.CRITICAL_STRIKE_MULTIPLIER:
+			type_name = "Critical Strike Multiplier"
+	return type_name + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"

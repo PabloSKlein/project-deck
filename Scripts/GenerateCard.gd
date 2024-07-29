@@ -7,9 +7,9 @@ const Card = preload("res://Scripts/Cards/Card.gd")
 
 # Define the number of prefixes and suffixes to be used
 const MIN_PREFIXES = 1
-const MAX_PREFIXES = 2
+const MAX_PREFIXES = 3
 const MIN_SUFFIXES = 1
-const MAX_SUFFIXES = 2
+const MAX_SUFFIXES = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
