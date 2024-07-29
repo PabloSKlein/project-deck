@@ -1,0 +1,76 @@
+{
+  "cards": [
+	{
+	  "id": 1,
+	  "name": "Sword",
+	  "type": "weapon"
+	},
+	{
+	  "id": 2,
+	  "name": "Axe",
+	  "type": "weapon"
+	},
+	{
+	  "id": 3,
+	  "name": "Bow",
+	  "type": "weapon"
+	},
+	{
+	  "id": 4,
+	  "name": "Body Armor",
+	  "type": "armor"
+	}
+  ],
+  "affixes": [
+	{
+	  "id": 1,
+	  "name": "Flaming",
+	  "modifiers": {
+		"damage": "+10 fire"
+	  },
+	  "applicable_to": ["weapon"]
+	},
+	{
+	  "id": 2,
+	  "name": "Frozen",
+	  "modifiers": {
+		"damage": "+10 ice"
+	  },
+	  "applicable_to": ["weapon"]
+	},
+	{
+	  "id": 3,
+	  "name": "Fortified",
+	  "modifiers": {
+		"armor": "+5"
+	  },
+	  "applicable_to": ["armor"]
+	}
+  ],
+  "suffixes": [
+	{
+	  "id": 1,
+	  "name": "of Power",
+	  "modifiers": {
+		"strength": "+5"
+	  },
+	  "applicable_to": ["weapon"]
+	},
+	{
+	  "id": 2,
+	  "name": "of the Bear",
+	  "modifiers": {
+		"defense": "+5"
+	  },
+	  "applicable_to": ["armor"]
+	},
+	{
+	  "id": 3,
+	  "name": "of Vitality",
+	  "modifiers": {
+		"life": "+20"
+	  },
+	  "applicable_to": ["armor"]
+	}
+  ]
+}
