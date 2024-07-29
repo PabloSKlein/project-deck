@@ -8,6 +8,13 @@ enum SuffixesType {HEALTH_ON_KILL, CHANCE_BLEED_HIT, CHANCE_CHILL_HIT}
 @export var tier: int
 @export var bonus: float
 
+# Class variable to store suffix names
+static var suffix_names = {
+	SuffixesType.HEALTH_ON_KILL: ["Phoenix", "Dragon", "Titan", "Mystic", "Eternal"],
+	SuffixesType.CHANCE_BLEED_HIT: ["Bleed", "Tear", "Pierce", "Wound", "Rupture"],
+	SuffixesType.CHANCE_CHILL_HIT: ["Frost", "Freeze", "Chill", "Ice", "Glacier"]
+}
+
 var tier_ranges = {
 	SuffixesType.HEALTH_ON_KILL: {
 		1: { "min": 10, "max": 21 },
@@ -51,3 +58,7 @@ func get_description() -> String:
 		SuffixesType.CHANCE_CHILL_HIT:
 			type_name = "Chance to Chill Hit"
 	return type_name + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"
+
+# Static method to get suffix names based on type
+static func get_suffix_names(type: SuffixesType) -> Array:
+	return suffix_names.get(type, [])

@@ -2,33 +2,40 @@ extends Node
 
 class_name Prefix
 
-enum PrefixType {COLD_DAMAGE, CRITICAL_STRIKE_CHANCE, CRITICAL_STRIKE_MULTIPLIER}
+enum PrefixType {COLD_DAMAGE, FIRE_DAMAGE, LIGHTNING_DAMAGE}
 
 @export var type: PrefixType
 @export var tier: int
 @export var bonus: float
 
+# Class variable to store prefix names
+static var prefix_names = {
+	PrefixType.COLD_DAMAGE: ["Frostbite", "Ice", "Glacial", "Chill", "Snow"],
+	PrefixType.FIRE_DAMAGE: ["Inferno", "Blaze", "Flame", "Scorch", "Ember"],
+	PrefixType.LIGHTNING_DAMAGE: ["Shock", "Thunder", "Bolt", "Storm", "Flash"]
+}
+
 var tier_ranges = {
 	PrefixType.COLD_DAMAGE: {
-		1: { "min": 10, "max": 21 },
-		2: { "min": 23, "max": 37 },
-		3: { "min": 38, "max": 52 },
-		4: { "min": 54, "max": 68 },
-		5: { "min": 70, "max": 105 }
-	},
-	PrefixType.CRITICAL_STRIKE_CHANCE: {
 		1: { "min": 5, "max": 10 },
 		2: { "min": 11, "max": 20 },
 		3: { "min": 21, "max": 30 },
 		4: { "min": 31, "max": 40 },
 		5: { "min": 41, "max": 60 }
 	},
-	PrefixType.CRITICAL_STRIKE_MULTIPLIER: {
-		1: { "min": 1.1, "max": 1.2 },
-		2: { "min": 1.3, "max": 1.4 },
-		3: { "min": 1.5, "max": 1.6 },
-		4: { "min": 1.7, "max": 1.8 },
-		5: { "min": 1.9, "max": 2.0 }
+	PrefixType.FIRE_DAMAGE: {
+		1: { "min": 8, "max": 15 },
+		2: { "min": 16, "max": 25 },
+		3: { "min": 26, "max": 35 },
+		4: { "min": 36, "max": 45 },
+		5: { "min": 46, "max": 70 }
+	},
+	PrefixType.LIGHTNING_DAMAGE: {
+		1: { "min": 6, "max": 12 },
+		2: { "min": 13, "max": 22 },
+		3: { "min": 23, "max": 32 },
+		4: { "min": 33, "max": 42 },
+		5: { "min": 43, "max": 65 }
 	}
 }
 
@@ -46,8 +53,12 @@ func get_description() -> String:
 	match type:
 		PrefixType.COLD_DAMAGE:
 			type_name = "Cold Damage"
-		PrefixType.CRITICAL_STRIKE_CHANCE:
-			type_name = "Critical Strike Chance"
-		PrefixType.CRITICAL_STRIKE_MULTIPLIER:
-			type_name = "Critical Strike Multiplier"
+		PrefixType.FIRE_DAMAGE:
+			type_name = "Fire Damage"
+		PrefixType.LIGHTNING_DAMAGE:
+			type_name = "Lightning Damage"
 	return type_name + " Tier " + str(tier) + " (Bonus: " + str(bonus) + ")"
+
+# Static method to get prefix names based on type
+static func get_prefix_names(type: PrefixType) -> Array:
+	return prefix_names.get(type, [])
