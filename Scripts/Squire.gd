@@ -10,14 +10,16 @@ var cards: Array[Card] = []
 func _ready():
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
-func createHero(hero:Hero, inventory: Array[Card]) -> void:
-	hero = hero
-	inventory = inventory
+func _init(_hero: Hero, _inventory: Array[Card]) -> void:
+	hero = _hero
+	inventory = _inventory
+
+func addToInventory(card: Card) -> void:
+	inventory.push_back(card)
 
 func discardHand() -> void:
 	cards = []
@@ -31,6 +33,11 @@ func drawFromTop() -> void:
 	randomize()  # Seed the random number generator
 	var random_card = getRandomElement(inventory)
 	cards.push_back(random_card)
+	pass 
+
+func showHand() -> void:
+	for card in cards:
+		print(card.nameItem)
 	pass 
 	
 func getRandomElement(arr):

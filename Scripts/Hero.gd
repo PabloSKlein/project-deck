@@ -2,20 +2,17 @@ class_name Hero
 
 extends Node
 
-var card = preload("res://Scripts/Cards/Card.gd")
-
 class Slot:
 	var card: Card
 	var slotType: Card.CardType
-
+	func _init(_slotType : Card.CardType ) -> void:
+		slotType = _slotType
 
 @export var maxHealth: int = 0
-
-var slots: Array[Slot] = []
-
 @export var health: int = 0
-@export var damage: int = 0
-@export var defense: int = 0
+	
+var attributes: Dictionary
+var slots: Array[Slot] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,24 +22,33 @@ func _ready():
 func _process(delta):
 	pass
 	
-func createHero(maxHealth: int, damage:int, defense:int, slots: Array[Slot]) -> void:
-	health = maxHealth
-	damage = damage
-	defense = defense
-	slots = slots
-	# Add logic to initialize the card with the given type
+func _init(_maxHealth: int, _slots: Array[Slot]) -> void:
+	maxHealth = _maxHealth
+	health = _maxHealth
+	slots = _slots
 	
 func equip(card: Card, targetSlot: int):
-	# Example of using the equip function
 	if(slots[targetSlot].slotType == card.type):
 		slots[targetSlot].card = card
+		for attribute in card.modifiers:
+			addAttribute(attribute)
 		return true
 	return false
-
-func listStatus():
-	print("base:")
-	print("healt:" + str(health))
-	print("damage:" + str(damage))
-	print("defense:" + str(defense))
 	
+func addAttribute(modifier: Modifier):
+	if modifier.type in attributes:
+		attributes[modifier.type] += modifier.amount
+	else:
+		attributes[modifier.type] = modifier.amount
+	pass
+
+func showStatus():
+	print("Hero Status:")
+	print("healt:" + str(health))
+	
+	for attribute in attributes:
+		print(attribute + " : " + attributes[attribute])
+	for slot in slots:
+		var name = "Empty" if slot.card == null else slot.card.nameItem 
+		print("type: " + str(slot.slotType) + " / card: " + name)
 	pass
