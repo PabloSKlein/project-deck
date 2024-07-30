@@ -2,11 +2,6 @@ extends Node
 
 class_name GenerateCard
 
-# Preload the Prefix, Suffix, and Card classes
-const Prefix = preload("res://Scripts/Prefixes/Prefix.gd")
-const Suffix = preload("res://Scripts/Suffixes/Suffix.gd")
-const Card = preload("res://Scripts/Cards/Card.gd")
-
 # Define the number of prefixes and suffixes to be used
 const MIN_PREFIXES = 1
 const MAX_PREFIXES = 2

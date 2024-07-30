@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cflc3qkxbtyid"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/Card.gd" id="1_amb18"]
-[ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://Resource/main_theme.tres" id="2_rg1i5"]
+[ext_resource type="Script" path="res://scripts/cards/Card.gd" id="1_amb18"]
+[ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/main_theme.tres" id="2_rg1i5"]
 
 [node name="Card" type="Control"]
 custom_minimum_size = Vector2(155, 180)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cl564dw5xgfgc"]
 
-[ext_resource type="Script" path="res://Scripts/Battle.gd" id="1_46kcw"]
+[ext_resource type="Script" path="res://scripts/Battle.gd" id="1_ko1su"]
 
 [node name="Battle" type="Node2D"]
-script = ExtResource("1_46kcw")
+script = ExtResource("1_ko1su")
 
 [node name="BattleBackgound" type="ColorRect" parent="."]
 offset_right = 1151.0
