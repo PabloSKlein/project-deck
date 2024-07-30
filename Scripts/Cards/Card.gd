@@ -61,14 +61,14 @@ func get_card_details() -> String:
 	
 	details += "Prefixes:\n"
 	for prefix in prefixes:
-		details += "- " + str(prefix.getId()) + " (Tier: " + str(prefix.tier) + ")\n"  # Assuming Prefix has getId() and tier properties
+		details += "- " + str(prefix.getId()) + " (Tier: " + str(prefix.tier) + ", Bonus: " + str(snapped(prefix.bonus,0.01)) + ")\n"
 
 	details += "Suffixes:\n"
 	for suffix in suffixes:
-		details += "- " + str(suffix.getId()) + " (Tier: " + str(suffix.tier) + ")\n"  # Assuming Suffix has getId() and tier properties
+		details += "- " + str(suffix.getId()) + " (Tier: " + str(suffix.tier) + ", Bonus: " + str(snapped(suffix.bonus,0.01)) + ")\n"
 	
 	#details += "Modifiers:\n"
 	#for modifier in modifiers:
-		#details += "- " + str(modifier.getId()) + ": " + str(modifier.bonus) + "\n"  # Assuming Modifier has getId() and bonus properties
+		#details += "- " + str(modifier.getId()) + ": " + str(modifier.bonus) + "\n"
 	
 	return details
