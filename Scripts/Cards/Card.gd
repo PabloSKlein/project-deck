@@ -11,11 +11,13 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var prefixes: Array[Prefix] = [] # Added property
 @export var suffixes: Array[Suffix] = [] # Added property
 @export var modifiers: Array[Modifier] = []
+@onready var targets: Array[Node] = []
 
 @onready var modifiersStack : VBoxContainer = $VBoxContainer/Modifiers
 @onready var color : ColorRect = $Color
-@onready var state : Label = $State
+@onready var CardNameLabel : Label = $State
 @onready var card_state_machine : CardStateMachine = $CardStateMachine as CardStateMachine
+@onready var drop_point_detector: Area2D = $DropPointDetector
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +35,13 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	card_state_machine.on_mouse_exited()
+	
+func _on_drop_point_detector_area_entered(area: Area2D) -> void:
+	if not targets.has(area):
+		targets.append(area)
+
+func _on_drop_point_detector_area_exited(area: Area2D) -> void:
+	targets.erase(area)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
