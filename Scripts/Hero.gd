@@ -47,7 +47,7 @@ func showStatus():
 	print("healt:" + str(health))
 	
 	for attribute in attributes:
-		print(attribute + " : " + str(attributes[attribute]))
+		print(attribute + " : " + str(snapped(attributes[attribute], 0.01)))
 	for slot in slots:
 		var name = "Empty" if slot.card == null else slot.card.nameItem 
 		print("type: " + str(slot.slotType) + " / card: " + name)
