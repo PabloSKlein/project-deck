@@ -1,6 +1,4 @@
-class_name Hero
-
-extends Node
+class_name Hero extends Node
 
 class Slot:
 	var card: Card

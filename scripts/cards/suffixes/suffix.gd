@@ -1,6 +1,4 @@
-extends Node
-
-class_name Suffix
+class_name Suffix extends Node
 
 enum SuffixesType {HEALTH_ON_KILL, CHANCE_BLEED_HIT, CHANCE_CHILL_HIT}
 

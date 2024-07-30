@@ -1,6 +1,4 @@
-class_name Squire
-
-extends Node
+class_name Squire extends Node
 
 var hero: Hero
 var inventory: Array[Card] = []

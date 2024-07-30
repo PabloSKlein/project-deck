@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var cardScene: PackedScene = preload("res://Scenes/Card.tscn")
+@onready var cardScene: PackedScene = preload("res://scenes/card.tscn")
 
 @onready var handStack : HBoxContainer = $BattleUI/HandHStack
 @onready var drawButton : Button = $BattleUI/DrawButton

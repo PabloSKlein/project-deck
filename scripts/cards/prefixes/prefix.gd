@@ -1,6 +1,4 @@
-extends Node
-
-class_name Prefix
+class_name Prefix extends Node
 
 enum PrefixType {COLD_DAMAGE, FIRE_DAMAGE, LIGHTNING_DAMAGE}
 
