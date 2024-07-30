@@ -1,5 +1,4 @@
-class_name Card
-extends Node
+class_name Card extends Node
 
 signal reparent_requested(which_card_ui: Card)
 enum CardType {HELMET,BODY,GLOVES,BOOTS,BELT,WEAPON,POTION}

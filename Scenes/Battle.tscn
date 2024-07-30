@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cl564dw5xgfgc"]
 
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_mm6yq"]
-[ext_resource type="PackedScene" uid="uid://cflc3qkxbtyid" path="res://scenes/card.tscn" id="2_x1twx"]
+[ext_resource type="PackedScene" uid="uid://cflc3qkxbtyid" path="res://scenes/Card.tscn" id="2_x1twx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6yv22"]
 size = Vector2(1153, 432)
@@ -32,9 +32,7 @@ grow_vertical = 0
 alignment = 1
 
 [node name="Card" parent="BattleUI/HandHStack" instance=ExtResource("2_x1twx")]
-layout_mode = 2
-
-[node name="Card2" parent="BattleUI/HandHStack" instance=ExtResource("2_x1twx")]
+visible = false
 layout_mode = 2
 
 [node name="DrawButton" type="Button" parent="BattleUI"]
