@@ -10,13 +10,14 @@ func _ready():
 	setUpSquire()
 	generator = GenerateCard.new()
 	for i in 3:
-		squire.addToInventory(generator.generate_card())
+		squire.addToInventory(generator.generate_card(Card.CardType.HELMET))
 		
 	squire.draw(3)
 	squire.showHand()
 	squire.hero.showStatus()
+	squire.equipFromHand(0, 0)
+	squire.hero.showStatus()
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

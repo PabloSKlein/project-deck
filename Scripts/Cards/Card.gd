@@ -8,8 +8,8 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var nameItem: String
 @export var type: CardType
 @export var rarity: CardRarity
-@export var prefixes: Array = [] # Added property
-@export var suffixes: Array = [] # Added property
+@export var prefixes: Array[Prefix] = [] # Added property
+@export var suffixes: Array[Suffix] = [] # Added property
 @export var modifiers: Array[Modifier] = []
 
 # Called when the node enters the scene tree for the first time.
@@ -20,10 +20,8 @@ func _ready():
 func _process(delta):
 	pass
 
-func createCard(card_type: CardType, card_rarity: CardRarity) -> void:
-	type = card_type
-	rarity = card_rarity
-	# Add logic to initialize the card with the given type
+func _init() -> void:
+	pass
 
 func get_type_name() -> String:
 	match type:

@@ -81,6 +81,13 @@ func generate_card(cardType) -> Card:
 
 	# Assign a name for demonstration
 	card.nameItem = _generate_random_name(card.type)
+	
+	for suff in card.suffixes:
+		var mod = Modifier.new(str(suff.getId()), suff.bonus)
+		card.modifiers.push_front(mod)
+	for pref in card.prefixes:
+		var mod = Modifier.new(str(pref.getId()), pref.bonus)
+		card.modifiers.push_front(mod)
 
 	# Apply modifiers
 	_apply_modifiers(card)
