@@ -88,9 +88,9 @@ func generate_card(cardType) -> Card:
 	# Create and apply modifiers
 	card.modifiers.clear()
 	for suff in card.suffixes:
-		card.modifiers.push_front(Modifier.new(str(suff.getId()), suff.bonus))
+		card.modifiers.push_front(Modifier.new(str(suff.getId()), snapped(suff.bonus, 0.01)))
 	for pref in card.prefixes:
-		card.modifiers.push_front(Modifier.new(str(pref.getId()), pref.bonus))
+		card.modifiers.push_front(Modifier.new(str(pref.getId()), snapped(pref.bonus, 0.01)))
 
 	# Apply modifiers to the card
 	_apply_modifiers(card)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://cflc3qkxbtyid"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/Card.gd" id="1_amb18"]
+[ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://Resource/main_theme.tres" id="2_rg1i5"]
+
+[node name="Card" type="Control"]
+custom_minimum_size = Vector2(155, 180)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1002.0
+offset_bottom = -478.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_amb18")
+
+[node name="CardBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.466043, 0.269879, 0.130823, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_rg1i5")
+
+[node name="CardNameLabel" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 2
+text = "name"
+autowrap_mode = 1
+
+[node name="Modifiers" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2

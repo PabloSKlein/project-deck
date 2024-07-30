@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl564dw5xgfgc"]
+
+[ext_resource type="Script" path="res://Scripts/Battle.gd" id="1_46kcw"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_46kcw")
+
+[node name="BattleBackgound" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 647.0
+size_flags_horizontal = 3
+color = Color(0.971135, 0.566303, 0.377868, 1)
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="HandHStack" type="HBoxContainer" parent="BattleUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -356.5
+offset_top = -156.0
+offset_right = 363.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="DrawButton" type="Button" parent="BattleUI"]
+offset_left = 985.0
+offset_top = 530.0
+offset_right = 1106.0
+offset_bottom = 596.0
+text = "Draw"
+
+[connection signal="pressed" from="BattleUI/DrawButton" to="." method="_on_draw_button_pressed"]
