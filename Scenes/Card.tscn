@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://cflc3qkxbtyid"]
 
-[ext_resource type="Script" path="res://scripts/cards/card.gd" id="1_l0tby"]
-[ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/main_theme.tres" id="2_8xg8a"]
-[ext_resource type="Script" path="res://scripts/battle/hand.gd" id="3_axrkr"]
-[ext_resource type="Script" path="res://scripts/cards/card_states/card_state_machine.gd" id="4_20fbl"]
-[ext_resource type="Script" path="res://scripts/cards/card_states/card_base_state.gd" id="5_h7lph"]
-[ext_resource type="Script" path="res://scripts/cards/card_states/card_clicked_state.gd" id="6_caox6"]
-[ext_resource type="Script" path="res://scripts/cards/card_states/card_dragging_state.gd" id="7_t8dci"]
-[ext_resource type="Script" path="res://scripts/cards/card_states/card_released_state.gd" id="8_a3bmu"]
+[ext_resource type="Script" path="res://scripts/cards/card.gd" id="1_krukf"]
+[ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/main_theme.tres" id="2_0h28o"]
+[ext_resource type="Script" path="res://scripts/battle/hand.gd" id="3_hivit"]
+[ext_resource type="Script" path="res://scripts/cards/card_states/card_state_machine.gd" id="4_2354f"]
+[ext_resource type="Script" path="res://scripts/cards/card_states/card_base_state.gd" id="5_pk72b"]
+[ext_resource type="Script" path="res://scripts/cards/card_states/card_clicked_state.gd" id="6_r4hs0"]
+[ext_resource type="Script" path="res://scripts/cards/card_states/card_dragging_state.gd" id="7_5f1d0"]
+[ext_resource type="Script" path="res://scripts/cards/card_states/card_released_state.gd" id="8_m5v2u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2m5h"]
 size = Vector2(156, 181)
@@ -22,7 +22,7 @@ offset_right = -1002.0
 offset_bottom = -478.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_l0tby")
+script = ExtResource("1_krukf")
 
 [node name="Color" type="ColorRect" parent="."]
 layout_mode = 1
@@ -42,8 +42,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("2_8xg8a")
-script = ExtResource("3_axrkr")
+theme = ExtResource("2_0h28o")
+script = ExtResource("3_hivit")
 
 [node name="CardNameLabel" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 20)
@@ -64,22 +64,22 @@ position = Vector2(78.5, 90.5)
 shape = SubResource("RectangleShape2D_a2m5h")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("4_20fbl")
+script = ExtResource("4_2354f")
 initial_state = NodePath("CardBaseState")
 
 [node name="CardBaseState" type="Node" parent="CardStateMachine"]
-script = ExtResource("5_h7lph")
+script = ExtResource("5_pk72b")
 
 [node name="CardClickedState" type="Node" parent="CardStateMachine"]
-script = ExtResource("6_caox6")
+script = ExtResource("6_r4hs0")
 state = 1
 
 [node name="CardDraggingState" type="Node" parent="CardStateMachine"]
-script = ExtResource("7_t8dci")
+script = ExtResource("7_5f1d0")
 state = 2
 
 [node name="CardReleasedState" type="Node" parent="CardStateMachine"]
-script = ExtResource("8_a3bmu")
+script = ExtResource("8_m5v2u")
 state = 3
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
