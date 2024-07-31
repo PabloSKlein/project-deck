@@ -1,8 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://pwnnkgbwieyw"]
+[gd_scene load_steps=4 format=3 uid="uid://pwnnkgbwieyw"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_tsvdj"]
 
 [sub_resource type="Theme" id="Theme_j5ymm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_867wd"]
+size = Vector2(107.5, 138.625)
 
 [node name="Inventory" type="Control"]
 layout_direction = 1
@@ -24,12 +27,10 @@ layout_mode = 0
 offset_right = 565.0
 offset_bottom = 649.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Background"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 2.0
-offset_right = 457.0
-offset_bottom = 42.0
+offset_right = 563.0
+offset_bottom = 646.0
 
 [node name="Equipment2" type="Panel" parent="."]
 layout_mode = 0
@@ -100,3 +101,31 @@ offset_top = 9.0
 offset_right = 176.0
 offset_bottom = 149.0
 theme = SubResource("Theme_j5ymm")
+
+[node name="CardDropArea4" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea4"]
+position = Vector2(148, 211.688)
+shape = SubResource("RectangleShape2D_867wd")
+
+[node name="CardDropArea3" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea3"]
+position = Vector2(281, 341)
+shape = SubResource("RectangleShape2D_867wd")
+
+[node name="CardDropArea2" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea2"]
+position = Vector2(279, 217)
+shape = SubResource("RectangleShape2D_867wd")
+
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(274, 83.25)
+shape = SubResource("RectangleShape2D_867wd")
