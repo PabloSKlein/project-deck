@@ -24,10 +24,12 @@ func on_gui_input(event: InputEvent) -> void:
 		current_state.on_gui_input(event)
 
 func on_mouse_entered() -> void:
+	print('mouse entered')
 	if current_state:
 		current_state.on_mouse_entered()
 		
 func on_mouse_exited() -> void:
+	print('mouse exite')
 	if current_state:
 		current_state.on_mouse_exited()
 

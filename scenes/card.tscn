@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cflc3qkxbtyid"]
+[gd_scene load_steps=9 format=3 uid="uid://cflc3qkxbtyid"]
 
 [ext_resource type="Script" path="res://scripts/cards/card.gd" id="1_krukf"]
 [ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/main_theme.tres" id="2_0h28o"]
-[ext_resource type="Script" path="res://scripts/battle/hand.gd" id="3_hivit"]
 [ext_resource type="Script" path="res://scripts/cards/card_states/card_state_machine.gd" id="4_2354f"]
 [ext_resource type="Script" path="res://scripts/cards/card_states/card_base_state.gd" id="5_pk72b"]
 [ext_resource type="Script" path="res://scripts/cards/card_states/card_clicked_state.gd" id="6_r4hs0"]
@@ -43,7 +42,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = ExtResource("2_0h28o")
-script = ExtResource("3_hivit")
 
 [node name="CardNameLabel" type="Label" parent="VBoxContainer"]
 custom_minimum_size = Vector2(100, 20)
@@ -56,7 +54,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="DropPointDetector" type="Area2D" parent="."]
-collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]

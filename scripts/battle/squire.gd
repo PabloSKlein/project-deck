@@ -6,6 +6,8 @@ var cardsInHand: Array[Card] = []
 var handStack: HBoxContainer
 var maxHandSize: int = 5
 
+signal reparent_requested(which_card_ui: Card)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
