@@ -16,6 +16,8 @@ color = Color(0.971135, 0.566303, 0.377868, 1)
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
 [node name="Inventory" parent="BattleUI" instance=ExtResource("2_q6i41")]
+offset_right = -987.0
+offset_bottom = -168.0
 
 [node name="HandHStack" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 7

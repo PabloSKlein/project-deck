@@ -5,7 +5,7 @@
 [sub_resource type="Theme" id="Theme_j5ymm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_867wd"]
-size = Vector2(107.5, 138.625)
+size = Vector2(97.5, 99.1914)
 
 [node name="Inventory" type="Control"]
 layout_direction = 1
@@ -22,22 +22,105 @@ grow_vertical = 2
 size_flags_vertical = 2
 script = ExtResource("1_tsvdj")
 
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 156.0
+offset_bottom = 216.0
+columns = 2
+
+[node name="Helmet" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.5, 90.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Helmet"]
+visible = false
+layout_mode = 2
+
+[node name="Amulet" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.5, 90.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Amulet"]
+visible = false
+layout_mode = 2
+
+[node name="BodyArmor" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.5, 90.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/BodyArmor"]
+visible = false
+layout_mode = 2
+
+[node name="FirstHand" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.5, 90.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/FirstHand"]
+visible = false
+layout_mode = 2
+
+[node name="SecondHand" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.5, 90.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/SecondHand"]
+visible = false
+layout_mode = 2
+
+[node name="RingLeft" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.9, 90.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/RingLeft"]
+visible = false
+layout_mode = 2
+
+[node name="RingRight" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(79.5, 98.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
+visible = false
+layout_mode = 2
+
+[node name="Belts" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Belts"]
+visible = false
+layout_mode = 2
+
+[node name="Boots" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(70.5, 98.5)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Boots"]
+visible = false
+layout_mode = 2
+
+[node name="Gloves" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
+visible = false
+layout_mode = 2
+
 [node name="Background" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 565.0
 offset_bottom = 649.0
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
-layout_mode = 0
-offset_right = 563.0
-offset_bottom = 646.0
-
 [node name="Equipment2" type="Panel" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 20.0
-offset_top = 26.0
-offset_right = 546.0
-offset_bottom = 418.0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 536.0
+offset_bottom = 404.0
 
 [node name="MainHand" type="Panel" parent="Equipment2"]
 layout_mode = 0
@@ -47,31 +130,64 @@ offset_right = 177.0
 offset_bottom = 260.0
 theme = SubResource("Theme_j5ymm")
 
+[node name="CardDropAreaMainHnda" type="Area2D" parent="Equipment2/MainHand"]
+position = Vector2(-99, -139)
+collision_layer = 2
+
+[node name="CollisionShape2DMainHand" type="CollisionShape2D" parent="Equipment2/MainHand/CardDropAreaMainHnda"]
+position = Vector2(148.25, 212.809)
+shape = SubResource("RectangleShape2D_867wd")
+
 [node name="Body" type="Panel" parent="Equipment2"]
 layout_mode = 0
-offset_left = 197.0
-offset_top = 114.0
-offset_right = 311.0
-offset_bottom = 264.0
+offset_left = 199.0
+offset_top = 113.0
+offset_right = 295.0
+offset_bottom = 258.0
 theme = SubResource("Theme_j5ymm")
+
+[node name="CardDropAreaBody" type="Area2D" parent="Equipment2/Body"]
+position = Vector2(-217, -140)
+collision_layer = 2
+
+[node name="CollisionShapeBody" type="CollisionShape2D" parent="Equipment2/Body/CardDropAreaBody"]
+position = Vector2(267, 215)
+shape = SubResource("RectangleShape2D_867wd")
 
 [node name="Legs" type="Panel" parent="Equipment2"]
 layout_mode = 0
-offset_left = 196.0
-offset_top = 270.0
-offset_right = 312.0
-offset_bottom = 364.0
+offset_left = 198.0
+offset_top = 267.0
+offset_right = 297.0
+offset_bottom = 374.0
 theme = SubResource("Theme_j5ymm")
+
+[node name="CardDropAreaLegs" type="Area2D" parent="Equipment2/Legs"]
+position = Vector2(-216, -296)
+collision_layer = 2
+
+[node name="CollisionShapeLegs" type="CollisionShape2D" parent="Equipment2/Legs/CardDropAreaLegs"]
+position = Vector2(267, 346)
+shape = SubResource("RectangleShape2D_867wd")
 
 [node name="Head" type="Panel" parent="Equipment2"]
 layout_mode = 0
-offset_left = 196.0
+offset_left = 200.0
 offset_top = 12.0
-offset_right = 312.0
+offset_right = 294.0
 offset_bottom = 106.0
 theme = SubResource("Theme_j5ymm")
 
+[node name="CardDropAreaHead" type="Area2D" parent="Equipment2/Head"]
+position = Vector2(-216, -38)
+collision_layer = 2
+
+[node name="CollisionShapeHead" type="CollisionShape2D" parent="Equipment2/Head/CardDropAreaHead"]
+position = Vector2(263, 85)
+shape = SubResource("RectangleShape2D_867wd")
+
 [node name="Stats" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 19.0
 offset_top = 442.0
@@ -101,31 +217,3 @@ offset_top = 9.0
 offset_right = 176.0
 offset_bottom = 149.0
 theme = SubResource("Theme_j5ymm")
-
-[node name="CardDropArea4" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea4"]
-position = Vector2(148, 211.688)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="CardDropArea3" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea3"]
-position = Vector2(281, 341)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="CardDropArea2" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea2"]
-position = Vector2(279, 217)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="CardDropArea" type="Area2D" parent="."]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(274, 83.25)
-shape = SubResource("RectangleShape2D_867wd")
