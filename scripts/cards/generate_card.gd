@@ -9,26 +9,7 @@ const MIN_SUFFIXES = 1
 const MAX_SUFFIXES = 2
 
 func _ready():
-	randomize() # Ensure random number generation is properly seeded
-
-	var generated_card = generate_card(null)
-	print("Generated Card Name: ", generated_card.nameItem)
-	print("Card Type: ", generated_card.get_type_name())
-	print("Card Rarity: ", generated_card.get_rarity_name())
-
-	# Print card prefixes
-	var prefix_descriptions = []
-	for prefix in generated_card.prefixes:
-		prefix_descriptions.append(prefix.get_description())
-	print("Card Prefixes: ", prefix_descriptions)
-
-	# Print card suffixes
-	var suffix_descriptions = []
-	for suffix in generated_card.suffixes:
-		suffix_descriptions.append(suffix.get_description())
-	print("Card Suffixes: ", suffix_descriptions)
-
-	print("Card Modifiers: ", generated_card.modifiers)
+	pass
 
 func generate_card(cardType) -> Card:
 	 # Create a new card instance

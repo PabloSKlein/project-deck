@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://pwnnkgbwieyw"]
+[gd_scene load_steps=3 format=3 uid="uid://pwnnkgbwieyw"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_tsvdj"]
-
-[sub_resource type="Theme" id="Theme_j5ymm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_867wd"]
-size = Vector2(97.5, 99.1914)
+[ext_resource type="Script" path="res://scripts/inventory/inventory_slot.gd" id="2_nhuhp"]
 
 [node name="Inventory" type="Control"]
 layout_direction = 1
@@ -31,10 +27,15 @@ columns = 2
 [node name="Helmet" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Helmet"]
 visible = false
 layout_mode = 2
+
+[node name="helmet" type="Label" parent="GridContainer/Helmet"]
+layout_mode = 2
+text = "helmet"
 
 [node name="Amulet" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
@@ -107,113 +108,3 @@ layout_mode = 2
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
 visible = false
 layout_mode = 2
-
-[node name="Background" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 565.0
-offset_bottom = 649.0
-
-[node name="Equipment2" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 10.0
-offset_top = 12.0
-offset_right = 536.0
-offset_bottom = 404.0
-
-[node name="MainHand" type="Panel" parent="Equipment2"]
-layout_mode = 0
-offset_left = 79.0
-offset_top = 113.0
-offset_right = 177.0
-offset_bottom = 260.0
-theme = SubResource("Theme_j5ymm")
-
-[node name="CardDropAreaMainHnda" type="Area2D" parent="Equipment2/MainHand"]
-position = Vector2(-99, -139)
-collision_layer = 2
-
-[node name="CollisionShape2DMainHand" type="CollisionShape2D" parent="Equipment2/MainHand/CardDropAreaMainHnda"]
-position = Vector2(148.25, 212.809)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="Body" type="Panel" parent="Equipment2"]
-layout_mode = 0
-offset_left = 199.0
-offset_top = 113.0
-offset_right = 295.0
-offset_bottom = 258.0
-theme = SubResource("Theme_j5ymm")
-
-[node name="CardDropAreaBody" type="Area2D" parent="Equipment2/Body"]
-position = Vector2(-217, -140)
-collision_layer = 2
-
-[node name="CollisionShapeBody" type="CollisionShape2D" parent="Equipment2/Body/CardDropAreaBody"]
-position = Vector2(267, 215)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="Legs" type="Panel" parent="Equipment2"]
-layout_mode = 0
-offset_left = 198.0
-offset_top = 267.0
-offset_right = 297.0
-offset_bottom = 374.0
-theme = SubResource("Theme_j5ymm")
-
-[node name="CardDropAreaLegs" type="Area2D" parent="Equipment2/Legs"]
-position = Vector2(-216, -296)
-collision_layer = 2
-
-[node name="CollisionShapeLegs" type="CollisionShape2D" parent="Equipment2/Legs/CardDropAreaLegs"]
-position = Vector2(267, 346)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="Head" type="Panel" parent="Equipment2"]
-layout_mode = 0
-offset_left = 200.0
-offset_top = 12.0
-offset_right = 294.0
-offset_bottom = 106.0
-theme = SubResource("Theme_j5ymm")
-
-[node name="CardDropAreaHead" type="Area2D" parent="Equipment2/Head"]
-position = Vector2(-216, -38)
-collision_layer = 2
-
-[node name="CollisionShapeHead" type="CollisionShape2D" parent="Equipment2/Head/CardDropAreaHead"]
-position = Vector2(263, 85)
-shape = SubResource("RectangleShape2D_867wd")
-
-[node name="Stats" type="Panel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 19.0
-offset_top = 442.0
-offset_right = 544.0
-offset_bottom = 605.0
-
-[node name="Other" type="Panel" parent="Stats"]
-layout_mode = 0
-offset_left = 372.0
-offset_top = 14.0
-offset_right = 515.0
-offset_bottom = 149.0
-theme = SubResource("Theme_j5ymm")
-
-[node name="Defensive" type="Panel" parent="Stats"]
-layout_mode = 0
-offset_left = 187.0
-offset_top = 11.0
-offset_right = 361.0
-offset_bottom = 148.0
-theme = SubResource("Theme_j5ymm")
-
-[node name="Offensive" type="Panel" parent="Stats"]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 9.0
-offset_right = 176.0
-offset_bottom = 149.0
-theme = SubResource("Theme_j5ymm")
