@@ -30,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 color = Color(0.466043, 0.269879, 0.130823, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -40,7 +40,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 theme = ExtResource("2_0h28o")
 
 [node name="CardNameLabel" type="Label" parent="VBoxContainer"]
@@ -54,6 +53,8 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="DropPointDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
@@ -82,3 +83,5 @@ state = 3
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]

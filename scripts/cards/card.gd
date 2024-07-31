@@ -17,7 +17,7 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @onready var color : ColorRect = $Color
 @onready var CardNameLabel : Label = $State
 @onready var card_state_machine : CardStateMachine = $CardStateMachine as CardStateMachine
-@onready var drop_point_detector: Area2D = $DropPointDetector
+@onready var drop_point_detector = $DropPointDetector
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
