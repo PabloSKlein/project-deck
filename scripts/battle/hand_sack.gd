@@ -1,5 +1,4 @@
-class_name Hand
-extends HBoxContainer
+class_name Hand extends HBoxContainer
 
 func _process(delta):
 	for child in get_children():

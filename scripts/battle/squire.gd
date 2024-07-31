@@ -2,8 +2,9 @@ class_name Squire extends Node
 
 var hero: Hero
 var inventory: Array[Card] = []
+
 var cardsInHand: Array[Card] = []
-var handStack: HBoxContainer
+
 var maxHandSize: int = 5
 
 signal reparent_requested(which_card_ui: Card)
@@ -16,22 +17,18 @@ func _ready():
 func _process(delta):
 	pass
 	
-func _init(_hero: Hero, _inventory: Array[Card], _handStack: HBoxContainer) -> void:
+func _init(_hero: Hero, _inventory: Array[Card]) -> void:
 	hero = _hero
 	inventory = _inventory
-	handStack = _handStack
 
 func addToInventory(_card: Card) -> void:
 	inventory.push_back(_card)
 	
 func addToHand(_card: Card) -> void:
 	cardsInHand.push_back(_card)
-	handStack.add_child(_card)
 
 func discardHand() -> void:
 	cardsInHand = []
-	for child in handStack.get_children():
-		handStack.remove_child(child)
 
 func draw(howManyCards: int) -> void:
 	for i in howManyCards:

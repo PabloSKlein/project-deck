@@ -1,16 +1,10 @@
 class_name Hero extends Node
 
-class Slot:
-	var card: Card
-	var slotType: Card.CardType
-	func _init(_slotType : Card.CardType ) -> void:
-		slotType = _slotType
-
 @export var maxHealth: int = 0
 @export var health: int = 0
 	
 var attributes: Dictionary
-var slots: Array[Slot] = []
+var slots: Array[InventorySlot] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +14,7 @@ func _ready():
 func _process(delta):
 	pass
 	
-func _init(_maxHealth: int, _slots: Array[Slot]) -> void:
+func _init(_maxHealth: int, _slots: Array[InventorySlot]) -> void:
 	maxHealth = _maxHealth
 	health = _maxHealth
 	slots = _slots

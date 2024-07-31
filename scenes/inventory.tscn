@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://pwnnkgbwieyw"]
+[gd_scene load_steps=4 format=3 uid="uid://pwnnkgbwieyw"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_tsvdj"]
 [ext_resource type="Script" path="res://scripts/inventory/inventory_slot.gd" id="2_nhuhp"]
+[ext_resource type="Script" path="res://scenes/FirstHand.gd" id="3_cgugj"]
 
 [node name="Inventory" type="Control"]
 layout_direction = 1
@@ -20,8 +21,8 @@ script = ExtResource("1_tsvdj")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
-offset_right = 156.0
-offset_bottom = 216.0
+offset_right = 164.0
+offset_bottom = 637.0
 columns = 2
 
 [node name="Helmet" type="PanelContainer" parent="GridContainer"]
@@ -33,13 +34,14 @@ script = ExtResource("2_nhuhp")
 visible = false
 layout_mode = 2
 
-[node name="helmet" type="Label" parent="GridContainer/Helmet"]
+[node name="Label" type="Label" parent="GridContainer/Helmet"]
 layout_mode = 2
-text = "helmet"
 
 [node name="Amulet" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
+slotType = 1
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Amulet"]
 visible = false
@@ -48,6 +50,8 @@ layout_mode = 2
 [node name="BodyArmor" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
+slotType = 1
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/BodyArmor"]
 visible = false
@@ -56,6 +60,7 @@ layout_mode = 2
 [node name="FirstHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+script = ExtResource("3_cgugj")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/FirstHand"]
 visible = false
@@ -64,6 +69,7 @@ layout_mode = 2
 [node name="SecondHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/SecondHand"]
 visible = false
@@ -72,6 +78,7 @@ layout_mode = 2
 [node name="RingLeft" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.9, 90.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingLeft"]
 visible = false
@@ -80,6 +87,7 @@ layout_mode = 2
 [node name="RingRight" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
 visible = false
@@ -88,6 +96,7 @@ layout_mode = 2
 [node name="Belts" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Belts"]
 visible = false
@@ -96,6 +105,8 @@ layout_mode = 2
 [node name="Boots" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
+slotType = 3
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Boots"]
 visible = false
@@ -104,7 +115,21 @@ layout_mode = 2
 [node name="Gloves" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
 visible = false
 layout_mode = 2
+
+[node name="Helmet2" type="PanelContainer" parent="GridContainer"]
+custom_minimum_size = Vector2(78.5, 98.5)
+layout_mode = 2
+script = ExtResource("2_nhuhp")
+
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Helmet2"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Helmet2"]
+layout_mode = 2
+text = "test"

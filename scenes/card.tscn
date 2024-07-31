@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cflc3qkxbtyid"]
 
-[ext_resource type="Script" path="res://scripts/cards/card.gd" id="1_krukf"]
+[ext_resource type="Script" path="res://scripts/cards/card.gd" id="1_jbgs4"]
 [ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/main_theme.tres" id="2_0h28o"]
 [ext_resource type="Script" path="res://scripts/cards/card_states/card_state_machine.gd" id="4_2354f"]
 [ext_resource type="Script" path="res://scripts/cards/card_states/card_base_state.gd" id="5_pk72b"]
@@ -21,7 +21,7 @@ offset_right = -1002.0
 offset_bottom = -478.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_krukf")
+script = ExtResource("1_jbgs4")
 
 [node name="Color" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,16 +1,17 @@
-class_name CardReleasedState
-extends CardState
+class_name CardReleasedState extends CardState
 
 var played: bool
 var stored_cards: Dictionary = {}
 signal card_stored(card_data)
 
+
 func enter() -> void:
 	card_ui.color.color = Color.DARK_BLUE
 	played = false
-	if not card_ui.targets.is_empty():
+	var targets = card_ui.targets
+	if not targets.is_empty():
 		played = true
-		store_card_info()
+		store_card_info(targets)
 		remove_card_from_board()
 		log_card_stored()
 
@@ -19,12 +20,13 @@ func on_input(_event: InputEvent):
 		return
 	transition_requested.emit(self, CardState.State.BASE)
 
-func store_card_info() -> void:
+func store_card_info(target: Array[Node]) -> void:
 	if card_ui:
 		var card_details = card_ui.get_card_details()
 		print(card_ui.nameItem)
 		stored_cards[card_ui.nameItem] = card_details
-		emit_signal("card_stored", stored_cards)  # Emit signal with stored data
+		emit_signal("card_stored", stored_cards, target[0])
+		Events.card_droped.emit(card_ui)
 
 func remove_card_from_board() -> void:
 	if card_ui:
