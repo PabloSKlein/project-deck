@@ -36,5 +36,3 @@ func log_card_stored() -> void:
 	print("Logging stored card data:")
 	for card_name in stored_cards.keys():
 		var card_info = stored_cards[card_name]
-		print("Card Name: ", card_name)
-		print("Card Info: ", card_info)
