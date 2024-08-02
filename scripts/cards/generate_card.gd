@@ -9,9 +9,8 @@ func generate_card() -> Card:
 	var card = Card.new()
 	var base = generate_card_base()
 	var rarity = generate_card_rarity(base, card)
-	var final_card = resolve_card_attributes(base, rarity)
-	var lalala = clean_data(final_card)
-	print(lalala)
+	var resolve_attribues = resolve_card_attributes(base, rarity)
+	var final_card = clean_data(resolve_attribues)
 	card.nameItem = final_card["card_name"]
 	card.typeNew = final_card["card_category"]
 	card.rarityNew = rarity
