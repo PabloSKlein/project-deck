@@ -10,6 +10,7 @@ func generate_card() -> Card:
 	var base = generate_card_base()
 	var rarity = generate_card_rarity(base, card)
 	var final_card = resolve_card_attributes(base, rarity)
+	print(final_card)
 	card.nameItem = final_card["card_name"]
 	card.typeNew = final_card["card_category"]
 	card.rarityNew = rarity
@@ -41,7 +42,8 @@ func resolve_card_attributes(base_card, rarity):
 		elif not key.ends_with("_max"):
 			final_card_data[key] = value
 	var affixes = generate_affixes(final_card_data, rarity)
-	var final_card = rarity_calculation(final_card_data, rarity)
+	var full_card = merge_card_with_affixes(final_card_data, affixes)
+	var final_card = rarity_calculation(full_card, rarity)
 	return final_card
 
 func generate_card_rarity(base, card: Card):
@@ -80,17 +82,14 @@ func generate_affixes(final_card_data, rarity):
 	randomize()
 	valid_prefixes.shuffle()
 	valid_suffixes.shuffle()
-	
-	# Track used affix names
 	var used_affix_names = {}
-	
 	# Add unique prefixes
 	for i in range(min(num_prefixes, valid_prefixes.size())):
 		var prefix = valid_prefixes[i]
 		if not prefix["name"] in used_affix_names:
 			affix_data[prefix["name"]] = {
 				"description": prefix["description"],
-				"value": pick_random_value(prefix["tiers"], rarity),
+				"value_status": pick_random_value(prefix["tiers"], rarity),
 				"increased": prefix["increased"]
 			}
 			used_affix_names[prefix["name"]] = true
@@ -101,12 +100,10 @@ func generate_affixes(final_card_data, rarity):
 		if not suffix["name"] in used_affix_names:
 			affix_data[suffix["name"]] = {
 				"description": suffix["description"],
-				"value": pick_random_value(suffix["tiers"], rarity),
+				"value_status": pick_random_value(suffix["tiers"], rarity),
 				"increased": suffix["increased"]
 			}
 			used_affix_names[suffix["name"]] = true
-	
-	print(affix_data)
 	return affix_data
 
 func get_max_affixes_based_on_rarity(rarity):
@@ -153,3 +150,9 @@ func pick_random_value(tiers, rarity):
 		var max_value = tiers[tier]["max"]
 		return randi_range(min_value, max_value)
 	return 0
+
+func merge_card_with_affixes(final_card, affixes):
+	var merged_card = final_card.duplicate()
+	merged_card["affixes"] = affixes
+	print(merged_card)
+	return merged_card
