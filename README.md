@@ -9,7 +9,9 @@ func process_input(event):
 
 func _ready():
     pass
+
 func do_something():
+    pass
 ```
 
 ### Variables
