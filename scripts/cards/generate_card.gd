@@ -40,7 +40,8 @@ func resolve_card_attributes(base_card, rarity):
 				continue
 		elif not key.ends_with("_max"):
 			final_card_data[key] = value
-	#var resolvcard = resolve(final_card_data, rarity) AQUI TEM QUE FAZER OS CALCULOS
+	var resolvcard = rarity_calculation(final_card_data, rarity)
+	print(resolvcard)
 	return final_card_data
 
 func generate_card_rarity(base, card: Card):
@@ -51,40 +52,20 @@ func generate_card_rarity(base, card: Card):
 		cumulative += drop_rate[rarity]
 		if rarity_roll <= cumulative:
 			return rarity
-			
-			
-#func resolve(final_card_data, rarity):
-	#print(final_card_data)
-	#if final_card_data["card_category"] == "Armor":
-		#print("Armor")
-		#match rarity:
-			#1:
-				#print("magic calc")
-				#card_armor_calculation(final_card_data["card_defense"], final_card_data["card_block"], final_card_data["card_magic_multi"])
-			#2:
-				#print("rare calc")
-				#card_armor_calculation(final_card_data["card_defense"], final_card_data["card_block"], final_card_data["card_rare_multi"])
-			#3:
-				#print("unique calc")
-				#card_armor_calculation(final_card_data["card_defense"], final_card_data["card_block"], final_card_data["card_unique_multi"])
-	#else: if final_card_data["card_category"] == "Weapon":
-		#print("Weapon")
-		#match rarity:
-			#1:
-				#print("magic calc")
-				#card_weapon_calculation(final_card_data["card_attack"], final_card_data["card_magic_multi"])
-			#2:
-				#print("magic calc")
-				#card_weapon_calculation(final_card_data["card_attack"], final_card_data["card_magic_multi"])
-			#3:
-				#print("magic calc")
-				#card_weapon_calculation(final_card_data["card_attack"], final_card_data["card_magic_multi"])
-#
-#func card_armor_calculation(defense, block, multi):
-	#defense =  multi * defense
-	#block =  multi * block
-	#return [defense, block]
-	#
-#func card_weapon_calculation(attack, multi):
-	#attack = multi * attack
-	#return attack
+
+func rarity_calculation(card_data, rarity):
+	var multiplier = 1.0
+	var result = {}
+	match rarity:
+		1 :
+			multiplier = card_data.get("card_magic_multi")
+		2 :
+			multiplier = card_data.get("card_rare_multi")
+		3 :
+			multiplier = card_data.get("card_unique_multi")
+	for key in card_data.keys():
+		if key.ends_with("_status") and typeof(card_data[key]):
+			result[key] = card_data[key] * multiplier
+		else:
+			result[key] = card_data[key]
+	return result

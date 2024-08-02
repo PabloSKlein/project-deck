@@ -1,36 +1,105 @@
 {
   "prefix": {
-	"COLD_DAMAGE": {
-	  "names": ["Frostbite", "Ice", "Glacial", "Chill", "Snow"],
+	"cold_damage": {
 	  "description": "Cold Damage",
+	  "names": [
+		"Frostbite",
+		"Ice",
+		"Glacial",
+		"Chill",
+		"Snow"
+	  ],
+	  "item_capacity": "Armor, Weapon, Acessories, offHand",
+	  "increased": "Added",
 	  "tiers": {
-		"1": { "min": 5, "max": 10 },
-		"2": { "min": 11, "max": 20 },
-		"3": { "min": 21, "max": 30 },
-		"4": { "min": 31, "max": 40 },
-		"5": { "min": 41, "max": 60 }
+		"1": {
+		  "min": 5,
+		  "max": 10
+		},
+		"2": {
+		  "min": 11,
+		  "max": 20
+		},
+		"3": {
+		  "min": 21,
+		  "max": 30
+		},
+		"4": {
+		  "min": 31,
+		  "max": 40
+		},
+		"5": {
+		  "min": 41,
+		  "max": 60
+		}
 	  }
 	},
-	"FIRE_DAMAGE": {
-	  "names": ["Inferno", "Blaze", "Flame", "Scorch", "Ember"],
+	"fire_damage": {
 	  "description": "Fire Damage",
+	  "names": [
+		"Inferno",
+		"Blaze",
+		"Flame",
+		"Scorch",
+		"Ember"
+	  ],
+	  "item_capacity": "Armor, Weapon, Acessories, offHand",
+	  "increased": "Increased",
 	  "tiers": {
-		"1": { "min": 8, "max": 15 },
-		"2": { "min": 16, "max": 25 },
-		"3": { "min": 26, "max": 35 },
-		"4": { "min": 36, "max": 45 },
-		"5": { "min": 46, "max": 70 }
+		"1": {
+		  "min": 8,
+		  "max": 15
+		},
+		"2": {
+		  "min": 16,
+		  "max": 25
+		},
+		"3": {
+		  "min": 26,
+		  "max": 35
+		},
+		"4": {
+		  "min": 36,
+		  "max": 45
+		},
+		"5": {
+		  "min": 46,
+		  "max": 70
+		}
 	  }
 	},
-	"LIGHTNING_DAMAGE": {
-	  "names": ["Shock", "Thunder", "Bolt", "Storm", "Flash"],
+	"lightning_damage": {
 	  "description": "Lightning Damage",
+	  "names": [
+		"Shock",
+		"Thunder",
+		"Bolt",
+		"Storm",
+		"Flash"
+	  ],
+	  "item_capacity": "Armor, Weapon, Acessories, offHand",
+	  "increased": "Added",
 	  "tiers": {
-		"1": { "min": 6, "max": 12 },
-		"2": { "min": 13, "max": 22 },
-		"3": { "min": 23, "max": 32 },
-		"4": { "min": 33, "max": 42 },
-		"5": { "min": 43, "max": 65 }
+		"1": {
+		  "min": 6,
+		  "max": 12
+		},
+		"2": {
+		  "min": 13,
+		  "max": 22
+		},
+		"3": {
+		  "min": 23,
+		  "max": 32
+		},
+		"4": {
+		  "min": 33,
+		  "max": 42
+		},
+		"5": {
+		  "min": 43,
+		  "max": 65
+		}
 	  }
 	}
   }
