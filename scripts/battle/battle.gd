@@ -20,7 +20,7 @@ func _on_draw_button_pressed():
 	Events.connect("card_droped", self._on_child_signal)
 	
 	card._ready()
-	var generated = generator.generate_card(Card.CardType.HELMET)
+	var generated = generator.generate_card_test()
 	card.copyFrom(generated)
 	
 	squire.addToHand(card)
