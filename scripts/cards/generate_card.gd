@@ -5,7 +5,7 @@ class_name GenerateCard
 func _ready():
 	pass
 
-func generate_card_test() -> Card:
+func generate_card() -> Card:
 	var card = Card.new()
 	var base = generate_card_base()
 	var rarity = generate_card_rarity(base, card)
@@ -40,9 +40,9 @@ func resolve_card_attributes(base_card, rarity):
 				continue
 		elif not key.ends_with("_max"):
 			final_card_data[key] = value
-	var resolvcard = rarity_calculation(final_card_data, rarity)
-	print(resolvcard)
-	return final_card_data
+	var affixes = generate_affixes(final_card_data, rarity)
+	var final_card = rarity_calculation(final_card_data, rarity)
+	return final_card
 
 func generate_card_rarity(base, card: Card):
 	var rarity_roll = randi() % 100 + 1
@@ -69,3 +69,87 @@ func rarity_calculation(card_data, rarity):
 		else:
 			result[key] = card_data[key]
 	return result
+
+func generate_affixes(final_card_data, rarity):
+	var affix_data = {}
+	var max_affixes = get_max_affixes_based_on_rarity(rarity)
+	var num_prefixes = randi() % (max_affixes + 1)
+	var num_suffixes = max_affixes - num_prefixes
+	var valid_prefixes = get_valid_affixes(PrefixData.prefix_data, final_card_data["card_category"], "prefix")
+	var valid_suffixes = get_valid_affixes(SuffixData.suffix_data, final_card_data["card_category"], "suffix")
+	randomize()
+	valid_prefixes.shuffle()
+	valid_suffixes.shuffle()
+	
+	# Track used affix names
+	var used_affix_names = {}
+	
+	# Add unique prefixes
+	for i in range(min(num_prefixes, valid_prefixes.size())):
+		var prefix = valid_prefixes[i]
+		if not prefix["name"] in used_affix_names:
+			affix_data[prefix["name"]] = {
+				"description": prefix["description"],
+				"value": pick_random_value(prefix["tiers"], rarity),
+				"increased": prefix["increased"]
+			}
+			used_affix_names[prefix["name"]] = true
+	
+	# Add unique suffixes
+	for i in range(min(num_suffixes, valid_suffixes.size())):
+		var suffix = valid_suffixes[i]
+		if not suffix["name"] in used_affix_names:
+			affix_data[suffix["name"]] = {
+				"description": suffix["description"],
+				"value": pick_random_value(suffix["tiers"], rarity),
+				"increased": suffix["increased"]
+			}
+			used_affix_names[suffix["name"]] = true
+	
+	print(affix_data)
+	return affix_data
+
+func get_max_affixes_based_on_rarity(rarity):
+	match rarity:
+		1:
+			return 2
+		2:
+			return 4
+		3:
+			return 6
+	return 0
+
+func get_valid_affixes(affix_json, item_category, affix_type):
+	var valid_affixes = []
+	var affix_data = affix_json[affix_type]  # Access the affix type ('prefix' or 'suffix')
+	if affix_data:
+		for key in affix_data.keys():
+			var affix = affix_data[key]
+			if item_category in affix["item_capacity"]:
+				for name in affix["names"]:
+					valid_affixes.append({
+						"name": name,
+						"description": affix["description"],
+						"tiers": affix["tiers"],
+						"increased": affix["increased"]
+					})
+		return valid_affixes
+	return []
+
+func pick_random_name(names):
+	var random_index = randi() % names.size()
+	return names[random_index]
+
+func get_tier_value(tiers, rarity, value_type):
+	var tier = str(rarity)
+	if tier in tiers:
+		return tiers[tier][value_type]
+	return 0
+
+func pick_random_value(tiers, rarity):
+	var tier = str(rarity)
+	if tier in tiers:
+		var min_value = tiers[tier]["min"]
+		var max_value = tiers[tier]["max"]
+		return randi_range(min_value, max_value)
+	return 0

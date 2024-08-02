@@ -101,6 +101,40 @@
 		  "max": 65
 		}
 	  }
+	},
+	"lalalalalalla": {
+	  "description": "lalalalalalla Damage",
+	  "names": [
+		"Shock",
+		"Thunder",
+		"Bolt",
+		"Storm",
+		"Flash"
+	  ],
+	  "item_capacity": "Armor, Weapon, Acessories, offHand",
+	  "increased": "Added",
+	  "tiers": {
+		"1": {
+		  "min": 6,
+		  "max": 12
+		},
+		"2": {
+		  "min": 13,
+		  "max": 22
+		},
+		"3": {
+		  "min": 23,
+		  "max": 32
+		},
+		"4": {
+		  "min": 33,
+		  "max": 42
+		},
+		"5": {
+		  "min": 43,
+		  "max": 65
+		}
+	  }
 	}
   }
 }

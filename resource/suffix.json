@@ -1,5 +1,5 @@
 {
-  "prefix": {
+  "suffix": {
 	"healt_on_kill": {
 	  "description": "Health of Kill",
 	  "names": [
@@ -36,6 +36,74 @@
 	},
 	"chance_bleed_hit": {
 	  "description": "Chance to Bleed on Hit",
+	  "names": [
+		"Bleed",
+		"Tear",
+		"Pierce",
+		"Wound",
+		"Rupture"
+	  ],
+	  "item_capacity": "Armor, Weapon, Acessories, offHand",
+	  "increased": "Increased",
+	  "tiers": {
+		"1": {
+		  "min": 8,
+		  "max": 15
+		},
+		"2": {
+		  "min": 16,
+		  "max": 25
+		},
+		"3": {
+		  "min": 26,
+		  "max": 35
+		},
+		"4": {
+		  "min": 36,
+		  "max": 45
+		},
+		"5": {
+		  "min": 46,
+		  "max": 70
+		}
+	  }
+	},
+	"lelelelele": {
+	  "description": "lelelelele Hit",
+	  "names": [
+		"Bleed",
+		"Tear",
+		"Pierce",
+		"Wound",
+		"Rupture"
+	  ],
+	  "item_capacity": "Armor, Weapon, Acessories, offHand",
+	  "increased": "Increased",
+	  "tiers": {
+		"1": {
+		  "min": 8,
+		  "max": 15
+		},
+		"2": {
+		  "min": 16,
+		  "max": 25
+		},
+		"3": {
+		  "min": 26,
+		  "max": 35
+		},
+		"4": {
+		  "min": 36,
+		  "max": 45
+		},
+		"5": {
+		  "min": 46,
+		  "max": 70
+		}
+	  }
+	},
+	"lililililil": {
+	  "description": "lilililililn Hit",
 	  "names": [
 		"Bleed",
 		"Tear",
