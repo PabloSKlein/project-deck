@@ -4,31 +4,277 @@
 	"category": "Weapon",
 	"type": "OneHandedSword",
 	"equipment_slot": "MainHand/OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
 	"attributes": [
-		{
-			"type": "attack",
-			"min": 5,
-			"max": 10
-		},
-	],
-	"magic_multi": 1.2,
-	"rare_multi": 1.4,
-	"unique_multi": 1.4
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
   },
   "2": {
-	"name": "Lucky Sword",
+	"name": "Driftwood Sword",
 	"category": "Weapon",
-	"type": "OneHandedSword",
+	"type": "OneHandedAxe",
 	"equipment_slot": "MainHand/OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
 	"attributes": [
-		{
-			"type": "attack",
-			"min": 1,
-			"max": 100
-		}
-	],
-	"magic_multi": 1.2,
-	"rare_multi": 1.4,
-	"unique_multi": 1.4
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "3": {
+	"name": "Driftwood Sword",
+	"category": "Weapon",
+	"type": "Dagger",
+	"equipment_slot": "MainHand/OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "4": {
+	"name": "Driftwood Sword",
+	"category": "Weapon",
+	"type": "OneHandedMace",
+	"equipment_slot": "MainHand/OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "5": {
+	"name": "Driftwood Sword",
+	"category": "Weapon",
+	"type": "Wand",
+	"equipment_slot": "MainHand/OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "6": {
+	"name": "Driftwood Sword",
+	"category": "Weapon",
+	"type": "Bow",
+	"equipment_slot": "TwoHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "7": {
+	"name": "Driftwood Sword",
+	"category": "Weapon",
+	"type": "Staff",
+	"equipment_slot": "TwoHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "8": {
+	"name": "Driftwood Sword",
+	"category": "Weapon",
+	"type": "Claw",
+	"equipment_slot": "MainHand/OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "attack",
+		"method": "Added",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "9": {
+	"name": "Shiled",
+	"category": "Shield",
+	"type": "Shield",
+	"equipment_slot": "OffHand",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "10": {
+	"name": "body armor",
+	"category": "Armor",
+	"type": "Armor",
+	"equipment_slot": "Chest",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "11": {
+	"name": "body armor",
+	"category": "Armor",
+	"type": "Armor",
+	"equipment_slot": "Gloves",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "12": {
+	"name": "body armor",
+	"category": "Armor",
+	"type": "Armor",
+	"equipment_slot": "Chest",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "13": {
+	"name": "body armor",
+	"category": "Armor",
+	"type": "Armor",
+	"equipment_slot": "Helmet",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "14": {
+	"name": "amulet",
+	"category": "Acessories",
+	"type": "Amulet",
+	"equipment_slot": "Amulet",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "life",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  },
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "15": {
+	"name": "ring",
+	"category": "Acessories",
+	"type": "Belt",
+	"equipment_slot": "Belt",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
+  },
+  "16": {
+	"name": "ring",
+	"category": "Acessories",
+	"type": "Ring1/Ring2",
+	"equipment_slot": "Ring1/Ring2",
+	"magic_multi": "1",
+	"rare_multi": "1.4",
+	"unique_multi": "1.4",
+	"attributes": [
+	  {
+		"description": "block",
+		"method": "Increased",
+		"min": 5,
+		"max": 10
+	  }
+	]
   }
 }

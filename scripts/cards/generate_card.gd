@@ -52,7 +52,7 @@ func generate_modifiers(card_map, rarity) -> Array[Modifier]:
 	var attributes = card_map["attributes"]
 	var modifiers : Array[Modifier]
 	for atribute in attributes:
-		var type = atribute["type"]
+		var type = atribute["description"]
 		var min_value = int(atribute["min"])
 		var max_value = int(atribute["max"])
 		var modifier = Modifier.new(type, randi_range(min_value, max_value))
