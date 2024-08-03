@@ -94,7 +94,7 @@ func get_card_details() -> String:
 	details += "Rarity: " + str(rarityNew) + "\n"
 	details += "Modifiers:\n"
 	for modifier in modifiers:
-		details += "- " + str(modifier.getId()) + ": " + str(modifier.bonus) + "\n"
+		details += "- " + str(modifier.type) + ": " + str(modifier.amount) + "\n"
 	return details
 
 func _on_draw_button_pressed():
