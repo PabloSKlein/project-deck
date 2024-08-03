@@ -88,6 +88,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slotType = 4
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
 visible = false
@@ -116,6 +117,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slotType = 2
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
 visible = false
