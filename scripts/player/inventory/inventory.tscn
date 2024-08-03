@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://pwnnkgbwieyw"]
+[gd_scene load_steps=3 format=3 uid="uid://pwnnkgbwieyw"]
 
-[ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_tsvdj"]
-[ext_resource type="Script" path="res://scripts/inventory/inventory_slot.gd" id="2_nhuhp"]
-[ext_resource type="Script" path="res://scenes/FirstHand.gd" id="3_cgugj"]
+[ext_resource type="Script" path="res://scripts/player/inventory/inventory.gd" id="1_tsvdj"]
+[ext_resource type="Script" path="res://scripts/player/inventory/inventory_slot.gd" id="2_nhuhp"]
 
 [node name="Inventory" type="Control"]
 layout_direction = 1
@@ -41,7 +40,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slotType = 1
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Amulet"]
 visible = false
@@ -51,7 +49,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slotType = 1
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/BodyArmor"]
 visible = false
@@ -60,7 +57,7 @@ layout_mode = 2
 [node name="FirstHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
-script = ExtResource("3_cgugj")
+script = ExtResource("2_nhuhp")
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/FirstHand"]
 visible = false
@@ -88,7 +85,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slotType = 4
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
 visible = false
@@ -107,7 +103,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slotType = 3
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Boots"]
 visible = false
@@ -117,7 +112,6 @@ layout_mode = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slotType = 2
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
 visible = false

@@ -23,8 +23,8 @@ func on_input(_event: InputEvent):
 func store_card_info(target: Array[Node]) -> void:
 	if card_ui:
 		var card_details = card_ui.get_card_details()
-		print(card_ui.nameItem)
-		stored_cards[card_ui.nameItem] = card_details
+		print(card_ui.name_item)
+		stored_cards[card_ui.name_item] = card_details
 		emit_signal("card_stored", stored_cards, target[0])
 		Events.card_droped.emit(card_ui)
 

@@ -32,6 +32,6 @@ func get_children_by_name(name) -> Node:
 func get_children_by_type(children: Array[Node], type: Card.CardType) -> InventorySlot:
 	for child in children:
 		var iSlot = child as InventorySlot
-		if iSlot.slotType == type:
+		if iSlot.slot_type == type:
 			return iSlot
 	return null

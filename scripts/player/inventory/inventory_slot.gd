@@ -1,17 +1,16 @@
 class_name InventorySlot extends Control
 
 var card: Card
-@export var slotType: Card.CardType
+@export var slot_type: Card.CardType
 var color : ColorRect
 
 func _ready():
-	var label = self.get_children_by_name("Label")
-	color = self.get_children_by_name("ColorRect")
-	if(label!=null):
-		label.text = get_type_name(slotType)
+	var label = self.get_child_by_name("Label")
+	color = self.get_child_by_name("ColorRect")
+	if label != null:
+		label.text = get_type_name(slot_type)
 	
-func get_children_by_name(name: String) -> Node:
-	var result = []
+func get_child_by_name(_name: String) -> Node:
 	for child in get_children():
 		if child.name == name:
 			return child
@@ -23,11 +22,11 @@ func _process(delta):
 func _input_event():
 	pass
 	
-func _init(_slotType : Card.CardType = Card.CardType.HELMET) -> void:
-	slotType = _slotType
+func _init(_slot_type: Card.CardType = Card.CardType.HELMET) -> void:
+	slot_type = _slot_type
 
 func add_card(new_card):
-	if(color!=null):
+	if color != null:
 		color.visible = true
 	pass
 	
@@ -49,5 +48,3 @@ func get_type_name(type: Card.CardType) -> String:
 			return "Potion"
 		_:
 			return "Unknown Item"
-
-

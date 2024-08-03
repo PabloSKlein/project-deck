@@ -2,14 +2,12 @@ class_name Card extends Node
 
 signal reparent_requested(which_card_ui: Card)
 
-enum CardType {HELMET,BODY,GLOVES,BOOTS,BELT,WEAPON,POTION}
+enum CardType {HELMET, BODY, GLOVES, BOOTS, BELT, WEAPON, POTION}
 enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 
-@export var nameItem: String
+@export var name_item: String
 @export var type: CardType
-@export var typeNew: String
 @export var rarity: CardRarity
-@export var rarityNew: int
 @export var prefixes: Array[Prefix] = [] # Added property
 @export var suffixes: Array[Suffix] = [] # Added property
 @export var modifiers: Array[Modifier] = []
@@ -19,9 +17,9 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 	CardRarity.RARE: 30, # % of droprate
 	CardRarity.UNIQUE: 20 # % of droprate
 }
-@onready var modifiersStack : VBoxContainer = $VBoxContainer/Modifiers
+@onready var modifiers_stack : VBoxContainer = $VBoxContainer/Modifiers
 @onready var color : ColorRect = $Color
-@onready var CardNameLabel : Label = $State
+@onready var card_name_label : Label = $State
 @onready var card_state_machine : CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
 
@@ -54,44 +52,44 @@ func _process(delta):
 func _init() -> void:
 	pass
 	
-func setNameItem(value):
-	nameItem = value
-	$VBoxContainer/CardNameLabel.text = nameItem
+func set_name_item(value):
+	self.name_item = value
+	$VBoxContainer/CardNameLabel.text = name_item
 
-func setTypeItem(value):
-	typeNew = value
-	$VBoxContainer/CardTypeLabel.text = typeNew
+func set_type_item(value):
+	self.type = value
+	$VBoxContainer/CardTypeLabel.text = str(type)
 	
-func setRarityItem(value):
-	rarityNew = value
-	var rarity
-	if	rarityNew == 1:
-		rarity = "Magic"
-	elif rarityNew == 2:
-		rarity = "Rare"
+func set_rarity_item(value):
+	self.rarity = value
+	var _rarity
+	if	value == 1:
+		_rarity = "Magic"
+	elif value == 2:
+		_rarity = "Rare"
 	else:
-		rarity = "Unique"
-	$VBoxContainer/CardRarityLabel.text = rarity
+		_rarity = "Unique"
+	$VBoxContainer/CardRarityLabel.text = _rarity
 
-func setModifier(value: Array[Modifier]):
+func set_modifier(value: Array[Modifier]):
 	modifiers = value
 	for modifier in modifiers:
 		var label = Label.new()
 		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
 		label.text = modifier.type + " " + str(modifier.amount)
-		modifiersStack.add_child(label)
+		modifiers_stack.add_child(label)
 			
-func copyFrom(_card : Card):
-	setNameItem(_card.nameItem)
-	setTypeItem(_card.typeNew)
-	setRarityItem(_card.rarityNew)
-	setModifier(_card.modifiers)
+func copy_from(_card : Card):
+	set_name_item(_card.name_item)
+	set_type_item(_card.type)
+	set_rarity_item(_card.rarity)
+	set_modifier(_card.modifiers)
 	pass
 
 func get_card_details() -> String:
-	var details = "Card Name: " + nameItem + "\n"
-	details += "Type: " + typeNew + "\n"
-	details += "Rarity: " + str(rarityNew) + "\n"
+	var details = "Card Name: " + name_item + "\n"
+	details += "Type: " + str(type) + "\n"
+	details += "Rarity: " + str(rarity) + "\n"
 	details += "Modifiers:\n"
 	for modifier in modifiers:
 		details += "- " + str(modifier.type) + ": " + str(modifier.amount) + "\n"

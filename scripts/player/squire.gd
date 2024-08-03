@@ -3,9 +3,9 @@ class_name Squire extends Node
 var hero: Hero
 var inventory: Array[Card] = []
 
-var cardsInHand: Array[Card] = []
+var cards_in_hand: Array[Card] = []
 
-var maxHandSize: int = 5
+var max_hand_size: int = 5
 
 signal reparent_requested(which_card_ui: Card)
 
@@ -21,36 +21,36 @@ func _init(_hero: Hero, _inventory: Array[Card]) -> void:
 	hero = _hero
 	inventory = _inventory
 
-func addToInventory(_card: Card) -> void:
+func add_to_inventory(_card: Card) -> void:
 	inventory.push_back(_card)
 	
-func addToHand(_card: Card) -> void:
-	cardsInHand.push_back(_card)
+func add_to_hand(_card: Card) -> void:
+	cards_in_hand.push_back(_card)
 
-func discardHand() -> void:
-	cardsInHand = []
+func discard_hand() -> void:
+	cards_in_hand = []
 
-func draw(howManyCards: int) -> void:
-	for i in howManyCards:
-		drawFromTop()
+func draw(how_many_cards: int) -> void:
+	for i in how_many_cards:
+		draw_from_top()
 	pass
 	
-func equipFromHand(cardIndex: int, slot: int) -> void:
-	hero.equip(cardsInHand[cardIndex], slot)
+func equip_from_hand(card_index: int, slot: int) -> void:
+	hero.equip(cards_in_hand[card_index], slot)
 pass
 	
-func drawFromTop() -> void:
+func draw_from_top() -> void:
 	randomize()  # Seed the random number generator
-	var random_card = getRandomElement(inventory)
-	cardsInHand.push_back(random_card)
+	var random_card = get_random_element(inventory)
+	cards_in_hand.push_back(random_card)
 	pass 
 
-func showHand() -> void:
-	for card in cardsInHand:
-		print(card.nameItem)
+func show_hand() -> void:
+	for card in cards_in_hand:
+		print(card.name_item)
 	pass 
 	
-func getRandomElement(arr):
+func get_random_element(arr):
 	if arr.size() == 0:
 		return null  # Handle the case where the array is empty
 	var random_index = randi() % arr.size()  # Get a random index within the array's size

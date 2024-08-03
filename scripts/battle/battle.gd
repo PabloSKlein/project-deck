@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var cardScene: PackedScene = preload("res://scenes/card.tscn")
+@onready var card_scene: PackedScene = preload("res://scripts/card/card.tscn")
 
-@onready var handStack : HBoxContainer = $BattleUI/HandHStack
-@onready var drawButton : Button = $BattleUI/DrawButton
+@onready var hand_stack : HBoxContainer = $BattleUI/HandHStack
+@onready var draw_button : Button = $BattleUI/DrawButton
 
 @onready var generator: GenerateCard = GenerateCard.new()
 @onready var squire: Squire = set_up_squire()
@@ -11,22 +11,23 @@ extends Node2D
 
 func _ready():	
 	pass
+
 func _process(delta):
-	drawButton.disabled = squire.cardsInHand.size() == squire.maxHandSize
+	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
 	pass
 	
 func _on_draw_button_pressed():
-	var card = cardScene.instantiate()
+	var card = card_scene.instantiate()
 	Events.connect("card_droped", self._on_child_signal)
 	
 	card._ready()
 	var generated = generator.generate_card()
-	card.copyFrom(generated)
+	card.copy_from(generated)
 	
-	squire.addToHand(card)
-	handStack.add_child(card)
+	squire.add_to_hand(card)
+	hand_stack.add_child(card)
 
-	print(handStack.get_child_count())  # Check number of children before and after adding
+	print(hand_stack.get_child_count())  # Check number of children before and after adding
 	pass
 	
 func _on_child_signal(value):
@@ -36,9 +37,9 @@ func _on_child_signal(value):
 	pass	
 
 func _on_end_turn_button_pressed():
-	squire.discardHand()
-	for child in handStack.get_children():
-		handStack.remove_child(child)
+	squire.discard_hand()
+	for child in hand_stack.get_children():
+		hand_stack.remove_child(child)
 	pass
 
 func set_up_squire():
@@ -46,5 +47,5 @@ func set_up_squire():
 		InventorySlot.new(Card.CardType.HELMET),
 		InventorySlot.new(Card.CardType.GLOVES),
 		InventorySlot.new(Card.CardType.BOOTS)
-		])
-	return Squire.new(hero, [])	
+	])
+	return Squire.new(hero, [])

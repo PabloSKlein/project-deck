@@ -6,24 +6,21 @@ func _ready():
 	pass
 
 func generate_card() -> Card:
-	var card: Card = Card.new()
-	var card_map = generate_card_base()
-	var rarity = generate_card_rarity(card_map, card)
-	#var resolve_attribues = resolve_card_attributes(base, rarity)
-	#var card_map = clean_data(resolve_attribues)
-	card.modifiers = generate_modifiers(card_map, rarity)
-	card.nameItem = card_map.get("name")
-	card.typeNew = card_map.get("category")
-	card.rarityNew = rarity
+	var card = Card.new()
+	var card_data = generate_card_base()
+	var rarity = generate_card_rarity(card_data, card)
+	card.modifiers = generate_modifiers(card_data, rarity)
+	card.name_item = card_data.get("name")
+	card.type = card_data.get("category")
+	card.rarity = rarity
 	return card
 
-func generate_card_base():
+func generate_card_base() -> Dictionary:
 	var keys = CardData.card_data.keys()
 	randomize()
 	var random_index = randi() % keys.size()
 	var random_key = keys[random_index]
-	var base_card = CardData.card_data[random_key]
-	return base_card
+	return CardData.card_data[random_key]
 	
 func resolve_card_attributes(base_card, rarity):
 	var final_card_data = {}
@@ -66,7 +63,7 @@ func generate_modifiers(card_map, rarity) -> Array[Modifier]:
 		
 	return modifiers
 	
-func generate_card_rarity(base, card: Card):
+func generate_card_rarity(base, card: Card) -> int:
 	var rarity_roll = randi() % 100 + 1
 	var drop_rate = card.drop_rates
 	var cumulative = 0
@@ -74,6 +71,7 @@ func generate_card_rarity(base, card: Card):
 		cumulative += drop_rate[rarity]
 		if rarity_roll <= cumulative:
 			return rarity
+	return 0
 
 func rarity_calculation(card_data, rarity):
 	var multiplier = 1.0

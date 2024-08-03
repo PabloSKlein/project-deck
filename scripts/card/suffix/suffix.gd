@@ -68,5 +68,5 @@ func getId() -> String:
 	return "Other"
 
 # Static method to get suffix names based on type
-static func get_suffix_names(type: SuffixesType) -> Array:
-	return suffix_names.get(type, [])
+static func get_suffix_names(_type: SuffixesType) -> Array:
+	return suffix_names.get(_type, [])
