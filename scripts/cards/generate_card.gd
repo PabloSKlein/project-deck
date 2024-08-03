@@ -6,13 +6,14 @@ func _ready():
 	pass
 
 func generate_card() -> Card:
-	var card = Card.new()
-	var base = generate_card_base()
-	var rarity = generate_card_rarity(base, card)
-	var resolve_attribues = resolve_card_attributes(base, rarity)
-	var final_card = clean_data(resolve_attribues)
-	card.nameItem = final_card["card_name"]
-	card.typeNew = final_card["card_category"]
+	var card: Card = Card.new()
+	var card_map = generate_card_base()
+	var rarity = generate_card_rarity(card_map, card)
+	#var resolve_attribues = resolve_card_attributes(base, rarity)
+	#var card_map = clean_data(resolve_attribues)
+	card.modifiers = generate_modifiers(card_map, rarity)
+	card.nameItem = card_map.get("name")
+	card.typeNew = card_map.get("category")
 	card.rarityNew = rarity
 	return card
 
@@ -45,7 +46,26 @@ func resolve_card_attributes(base_card, rarity):
 	var full_card = merge_card_with_affixes(final_card_data, affixes)
 	var final_card = rarity_calculation(full_card, rarity)
 	return final_card
-
+	
+	
+func generate_modifiers(card_map, rarity) -> Array[Modifier]:
+	var attributes = card_map["attributes"]
+	var modifiers : Array[Modifier]
+	for atribute in attributes:
+		var type = atribute["type"]
+		var min_value = int(atribute["min"])
+		var max_value = int(atribute["max"])
+		var modifier = Modifier.new(type, randi_range(min_value, max_value))
+		modifiers.push_front(modifier)
+		
+	var affixes = generate_affixes(card_map, rarity)
+	for key in affixes:
+		var afix = affixes.get(key)
+		var modifier = Modifier.new(afix["description"], int(afix["value_status"]))
+		modifiers.push_front(modifier)
+		
+	return modifiers
+	
 func generate_card_rarity(base, card: Card):
 	var rarity_roll = randi() % 100 + 1
 	var drop_rate = card.drop_rates
@@ -62,11 +82,11 @@ func rarity_calculation(card_data, rarity):
 	# Determine the multiplier based on rarity
 	match rarity:
 		1:
-			multiplier = card_data.get("card_magic_multi", 1.0)
+			multiplier = card_data.get("magic_multi", 1.0)
 		2:
-			multiplier = card_data.get("card_rare_multi", 1.0)
+			multiplier = card_data.get("rare_multi", 1.0)
 		3:
-			multiplier = card_data.get("card_unique_multi", 1.0)
+			multiplier = card_data.get("unique_multi", 1.0)
 	
 	# Process the basic card stats
 	for key in card_data.keys():
@@ -91,13 +111,13 @@ func rarity_calculation(card_data, rarity):
 	
 	return result
 
-func generate_affixes(final_card_data, rarity):
+func generate_affixes(card_data, rarity):
 	var affix_data = {}
 	var max_affixes = get_max_affixes_based_on_rarity(rarity)
 	var num_prefixes = randi() % (max_affixes + 1)
 	var num_suffixes = max_affixes - num_prefixes
-	var valid_prefixes = get_valid_affixes(PrefixData.prefix_data, final_card_data["card_category"], "prefix")
-	var valid_suffixes = get_valid_affixes(SuffixData.suffix_data, final_card_data["card_category"], "suffix")
+	var valid_prefixes = get_valid_affixes(PrefixData.prefix_data, card_data["category"], "prefix")
+	var valid_suffixes = get_valid_affixes(SuffixData.suffix_data, card_data["category"], "suffix")
 	randomize()
 	valid_prefixes.shuffle()
 	valid_suffixes.shuffle()
@@ -170,8 +190,8 @@ func pick_random_value(tiers, rarity):
 		return randi_range(min_value, max_value)
 	return 0
 
-func merge_card_with_affixes(final_card, affixes):
-	var merged_card = final_card.duplicate()
+func merge_card_with_affixes(card_map, affixes):
+	var merged_card = card_map.duplicate()
 	merged_card["affixes"] = affixes
 	return merged_card
 
