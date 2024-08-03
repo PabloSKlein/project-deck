@@ -29,7 +29,8 @@ func get_children_by_name(name) -> Node:
 			return child
 	return null
 	
-func get_children_by_type(children: Array[Node], type: Card.CardType) -> InventorySlot:
+func get_children_by_type(children: Array[Node], type: CardType.Enum) -> InventorySlot:
+	print("CardType: " + str(type))
 	for child in children:
 		var iSlot = child as InventorySlot
 		if iSlot.slot_type == type:

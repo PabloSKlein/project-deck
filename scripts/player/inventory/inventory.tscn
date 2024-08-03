@@ -40,92 +40,115 @@ layout_mode = 2
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 6
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Amulet"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Amulet"]
 layout_mode = 2
 
 [node name="BodyArmor" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 1
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/BodyArmor"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/BodyArmor"]
 layout_mode = 2
 
 [node name="FirstHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 5
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/FirstHand"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/FirstHand"]
 layout_mode = 2
 
 [node name="SecondHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 5
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/SecondHand"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/SecondHand"]
 layout_mode = 2
 
 [node name="RingLeft" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.9, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 7
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingLeft"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/RingLeft"]
 layout_mode = 2
 
 [node name="RingRight" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 7
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
 visible = false
 layout_mode = 2
 
-[node name="Belts" type="PanelContainer" parent="GridContainer"]
+[node name="Label" type="Label" parent="GridContainer/RingRight"]
+layout_mode = 2
+
+[node name="Belt" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 4
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Belts"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/Belt"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Belt"]
 layout_mode = 2
 
 [node name="Boots" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 3
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Boots"]
 visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GridContainer/Boots"]
 layout_mode = 2
 
 [node name="Gloves" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
+slot_type = 2
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
 visible = false
 layout_mode = 2
 
-[node name="Helmet2" type="PanelContainer" parent="GridContainer"]
-custom_minimum_size = Vector2(78.5, 98.5)
+[node name="Label" type="Label" parent="GridContainer/Gloves"]
 layout_mode = 2
-script = ExtResource("2_nhuhp")
-
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Helmet2"]
-visible = false
-layout_mode = 2
-
-[node name="Label" type="Label" parent="GridContainer/Helmet2"]
-layout_mode = 2
-text = "test"

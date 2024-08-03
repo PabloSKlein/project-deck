@@ -44,8 +44,5 @@ func _on_end_turn_button_pressed():
 
 func set_up_squire():
 	var hero = Hero.new(10, [
-		InventorySlot.new(Card.CardType.HELMET),
-		InventorySlot.new(Card.CardType.GLOVES),
-		InventorySlot.new(Card.CardType.BOOTS)
 	])
 	return Squire.new(hero, [])

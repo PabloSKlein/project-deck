@@ -11,7 +11,7 @@ func generate_card() -> Card:
 	var rarity = generate_card_rarity(card_data, card)
 	card.modifiers = generate_modifiers(card_data, rarity)
 	card.name_item = card_data.get("name")
-	card.type = card_data.get("category")
+	card.type = CardType.get_type_by_description(card_data.get("equipment_slot"))
 	card.rarity = rarity
 	return card
 

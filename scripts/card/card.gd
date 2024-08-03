@@ -2,11 +2,10 @@ class_name Card extends Node
 
 signal reparent_requested(which_card_ui: Card)
 
-enum CardType {HELMET, BODY, GLOVES, BOOTS, BELT, WEAPON, POTION}
 enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 
 @export var name_item: String
-@export var type: CardType
+@export var type: CardType.Enum
 @export var rarity: CardRarity
 @export var prefixes: Array[Prefix] = [] # Added property
 @export var suffixes: Array[Suffix] = [] # Added property
@@ -58,7 +57,7 @@ func set_name_item(value):
 
 func set_type_item(value):
 	self.type = value
-	$VBoxContainer/CardTypeLabel.text = str(type)
+	$VBoxContainer/CardTypeLabel.text = CardType.get_type_description(type)
 	
 func set_rarity_item(value):
 	self.rarity = value

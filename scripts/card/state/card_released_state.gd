@@ -4,7 +4,6 @@ var played: bool
 var stored_cards: Dictionary = {}
 signal card_stored(card_data)
 
-
 func enter() -> void:
 	card_ui.color.color = Color.DARK_BLUE
 	played = false
