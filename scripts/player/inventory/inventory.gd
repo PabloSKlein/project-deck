@@ -18,7 +18,7 @@ func toggle_inventory() -> void:
 	
 func equip(card: Card):
 	var container = get_children_by_name("GridContainer")
-	var slot = get_children_by_type(container.get_children(), card.type)
+	var slot = get_children_by_type(container.get_children(), card.slot_types)
 	if(slot != null):
 		slot.add_card(card)
 	pass
@@ -29,10 +29,17 @@ func get_children_by_name(name) -> Node:
 			return child
 	return null
 	
-func get_children_by_type(children: Array[Node], type: CardType.Enum) -> InventorySlot:
-	print("CardType: " + str(type))
-	for child in children:
-		var iSlot = child as InventorySlot
-		if iSlot.slot_type == type:
-			return iSlot
+func get_children_by_type(children: Array[Node], types: Array[CardType.Enum]) -> InventorySlot:
+	#find empty slot
+	for type in types:
+		for child in children:
+			var _slot = child as InventorySlot
+			if _slot.slot_type == type && _slot.isEmpty:
+				return _slot
+	#find any slot
+	for type in types:
+		for child in children:
+			var _slot = child as InventorySlot
+			if _slot.slot_type == type:
+				return _slot
 	return null

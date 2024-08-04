@@ -1,7 +1,10 @@
 class_name InventorySlot extends Control
 
-var card: Card
+
 @export var slot_type: CardType.Enum
+@export var isEmpty = true
+
+var card: Card
 var color : ColorRect
 var label : Label
 
@@ -27,6 +30,7 @@ func _init(_slot_type: CardType.Enum = CardType.Enum.HELMET) -> void:
 	slot_type = _slot_type
 
 func add_card(new_card):
+	self.isEmpty = false
 	if color != null:
 		color.visible = true
 	pass

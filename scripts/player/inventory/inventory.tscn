@@ -40,7 +40,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slot_type = 6
+slot_type = 7
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/Amulet"]
 visible = false
@@ -62,37 +62,37 @@ layout_mode = 2
 [node name="Label" type="Label" parent="GridContainer/BodyArmor"]
 layout_mode = 2
 
-[node name="FirstHand" type="PanelContainer" parent="GridContainer"]
+[node name="MainHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
 slot_type = 5
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/FirstHand"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/MainHand"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/FirstHand"]
+[node name="Label" type="Label" parent="GridContainer/MainHand"]
 layout_mode = 2
 
-[node name="SecondHand" type="PanelContainer" parent="GridContainer"]
+[node name="OffHand" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slot_type = 5
+slot_type = 6
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/SecondHand"]
+[node name="ColorRect" type="ColorRect" parent="GridContainer/OffHand"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/SecondHand"]
+[node name="Label" type="Label" parent="GridContainer/OffHand"]
 layout_mode = 2
 
 [node name="RingLeft" type="PanelContainer" parent="GridContainer"]
 custom_minimum_size = Vector2(78.9, 90.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slot_type = 7
+slot_type = 8
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingLeft"]
 visible = false
@@ -105,7 +105,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
 script = ExtResource("2_nhuhp")
-slot_type = 7
+slot_type = 8
 
 [node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
 visible = false

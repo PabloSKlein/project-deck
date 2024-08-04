@@ -9,9 +9,13 @@ func generate_card() -> Card:
 	var card = Card.new()
 	var card_data = generate_card_base()
 	var rarity = generate_card_rarity(card_data, card)
+	
 	card.modifiers = generate_modifiers(card_data, rarity)
 	card.name_item = card_data.get("name")
-	card.type = CardType.get_type_by_description(card_data.get("equipment_slot"))
+	card.type = card_data.get("type")
+	var slots : Array = card_data.get("equipment_slot")
+	for slot in slots:
+		card.slot_types.push_back(CardType.get_type_by_description(slot))
 	card.rarity = rarity
 	return card
 

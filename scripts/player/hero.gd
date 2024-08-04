@@ -20,11 +20,12 @@ func _init(_max_health: int, _slots: Array[InventorySlot]) -> void:
 	slots = _slots
 	
 func equip(card: Card, target_slot: int):
-	if slots[target_slot].slot_type == card.type:
-		slots[target_slot].card = card
-		for attribute in card.modifiers:
-			add_attribute(attribute)
-		return true
+	for slot in card.slotTypes:
+		if slots[target_slot].slot_type == slot:
+			slots[target_slot].card = card
+			for attribute in card.modifiers:
+				add_attribute(attribute)
+			return true
 	return false
 	
 func add_attribute(modifier: Modifier):

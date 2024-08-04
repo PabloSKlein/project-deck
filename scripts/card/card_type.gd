@@ -1,6 +1,6 @@
 class_name CardType extends Node
 
-enum Enum {HELMET, BODY, GLOVES, BOOTS, BELT, WEAPON, AMULET, RING, POTION}
+enum Enum {HELMET, BODY, GLOVES, BOOTS, BELT, MAIN_HAND, OFF_HAND, AMULET, RING, POTION}
 
 const card_types = {
 	Enum.HELMET: "Helmet",
@@ -8,7 +8,8 @@ const card_types = {
 	Enum.GLOVES: "Gloves",
 	Enum.BOOTS: "Boots",
 	Enum.BELT: "Belt",
-	Enum.WEAPON: "Weapon",
+	Enum.MAIN_HAND: "MainHand",
+	Enum.OFF_HAND: "OffHand",
 	Enum.AMULET: "Amulet",
 	Enum.RING: "Ring",
 	Enum.POTION: "Potion"

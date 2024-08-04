@@ -5,7 +5,9 @@ signal reparent_requested(which_card_ui: Card)
 enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 
 @export var name_item: String
-@export var type: CardType.Enum
+@export var category: String
+@export var type: String
+@export var slot_types: Array[CardType.Enum]
 @export var rarity: CardRarity
 @export var prefixes: Array[Prefix] = [] # Added property
 @export var suffixes: Array[Suffix] = [] # Added property
@@ -44,12 +46,6 @@ func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 
 func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
-
-func _process(delta):
-	pass
-
-func _init() -> void:
-	pass
 	
 func set_name_item(value):
 	self.name_item = value
@@ -57,7 +53,7 @@ func set_name_item(value):
 
 func set_type_item(value):
 	self.type = value
-	$VBoxContainer/CardTypeLabel.text = CardType.get_type_description(type)
+	$VBoxContainer/CardTypeLabel.text = type
 	
 func set_rarity_item(value):
 	self.rarity = value
@@ -83,6 +79,7 @@ func copy_from(_card : Card):
 	set_type_item(_card.type)
 	set_rarity_item(_card.rarity)
 	set_modifier(_card.modifiers)
+	self.slot_types = _card.slot_types
 	pass
 
 func get_card_details() -> String:
