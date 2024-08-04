@@ -22,7 +22,11 @@ func on_gui_input(_event: InputEvent) -> void:
 	pass
 	
 func on_mouse_entered() -> void:
+	if card_ui:
+		card_ui.position.y -= 25  # Move the card 10 pixels up
 	pass
 	
 func on_mouse_exited() -> void:
+	if card_ui:
+		card_ui.position.y -= -25  # Move the card 10 pixels up
 	pass
