@@ -7,6 +7,3 @@ func _process(delta):
 
 func _on_card_ui_reparent_requested(child: Card) -> void:
 	child.reparent(self)
-
-
-

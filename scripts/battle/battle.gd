@@ -2,17 +2,20 @@ extends Node2D
 
 @onready var card_scene: PackedScene = preload("res://scripts/card/card.tscn")
 
-@onready var hand_stack : HBoxContainer = $BattleUI/HandHStack
+@onready var hand_stack : Hand = $BattleUI/Hand
 @onready var draw_button : Button = $BattleUI/DrawButton
 
 @onready var generator: GenerateCard = GenerateCard.new()
 @onready var squire: Squire = set_up_squire()
 @onready var inventory = $BattleUI/Inventory
+@onready var progress_bar = $BattleUI/ProgressBar
 
-func _ready():	
+func _ready():
+	progress_bar.max_value = squire.hero.max_health
 	pass
 
 func _process(delta):
+	progress_bar.value = squire.hero.health
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
 	pass
 	
@@ -26,8 +29,6 @@ func _on_draw_button_pressed():
 	
 	squire.add_to_hand(card)
 	hand_stack.add_child(card)
-
-	print(hand_stack.get_child_count())  # Check number of children before and after adding
 	pass
 	
 func _on_child_signal(value):

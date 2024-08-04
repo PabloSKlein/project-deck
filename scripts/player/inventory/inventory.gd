@@ -1,6 +1,6 @@
 class_name Inventory extends Control
 
-@onready var grid_container = $Control
+@onready var grid_container := $Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

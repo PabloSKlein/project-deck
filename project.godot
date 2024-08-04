@@ -22,6 +22,10 @@ CardData="*res://scripts/card/card_data.gd"
 SuffixData="*res://scripts/card/suffix/suffix_data.gd"
 PrefixData="*res://scripts/card/prefix/prefix_data.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 left_mouse={

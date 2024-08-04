@@ -1,11 +1,18 @@
-extends Node
+class_name Enemy extends Node
 
+@onready var healthBar = $ProgressBar
+@onready var label = $Label
 
-# Called when the node enters the scene tree for the first time.
+var health := 100
+var max_health := 100
+var enemy_name := "Test"
+
 func _ready():
-	pass # Replace with function body.
+	health = max_health
+	healthBar.max_value = max_health
+	label.text = enemy_name
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	healthBar.value = health
 	pass
