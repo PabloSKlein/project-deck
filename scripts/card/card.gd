@@ -18,7 +18,7 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 	CardRarity.RARE: 30, # % of droprate
 	CardRarity.UNIQUE: 20 # % of droprate
 }
-@onready var modifiers_stack : VBoxContainer = $VBoxContainer/Modifiers
+@onready var modifiers_stack : VBoxContainer = $VBoxContainer/Control/Modifiers
 @onready var color : ColorRect = $Color
 @onready var card_name_label : Label = $State
 @onready var card_state_machine : CardStateMachine = $CardStateMachine as CardStateMachine
@@ -49,11 +49,11 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	
 func set_name_item(value):
 	self.name_item = value
-	$VBoxContainer/CardNameLabel.text = name_item
+	$VBoxContainer/Control/CardNameLabel.text = name_item
 
 func set_type_item(value):
 	self.type = value
-	$VBoxContainer/CardTypeLabel.text = type
+	$VBoxContainer/Control/CardTypeLabel.text = type
 	
 func set_rarity_item(value):
 	self.rarity = value
@@ -64,7 +64,7 @@ func set_rarity_item(value):
 		_rarity = "Rare"
 	else:
 		_rarity = "Unique"
-	$VBoxContainer/CardRarityLabel.text = _rarity
+	$VBoxContainer/Control/CardRarityLabel.text = _rarity
 
 func set_modifier(value: Array[Modifier]):
 	modifiers = value
