@@ -11,7 +11,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "sword",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -33,7 +33,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "axe",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -55,7 +55,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "dagger",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -77,7 +77,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "mace",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -99,7 +99,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "wand",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -120,7 +120,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "bow",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -141,7 +141,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": true,
-	"item_image": "res://resource/card/item",
+	"item_image": "staff",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -163,7 +163,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "claw",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -184,7 +184,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "shield",
 	"attributes": [
 	  {
 		"description": "block",
@@ -205,7 +205,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "body",
 	"attributes": [
 	  {
 		"description": "block",
@@ -226,7 +226,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "gloves",
 	"attributes": [
 	  {
 		"description": "block",
@@ -247,7 +247,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "boots",
 	"attributes": [
 	  {
 		"description": "block",
@@ -268,7 +268,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "helmet",
 	"attributes": [
 	  {
 		"description": "block",
@@ -289,7 +289,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "amulet",
 	"attributes": [
 	  {
 		"description": "life",
@@ -316,7 +316,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "ring",
 	"attributes": [
 	  {
 		"description": "block",
@@ -337,7 +337,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "ring",
 	"attributes": [
 	  {
 		"description": "block",
