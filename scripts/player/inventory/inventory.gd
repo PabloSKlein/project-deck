@@ -1,6 +1,6 @@
 class_name Inventory extends Control
 
-@onready var grid_container = $GridContainer
+@onready var grid_container = $Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +17,7 @@ func toggle_inventory() -> void:
 	visible = not visible
 	
 func equip(card: Card):
-	var container = get_children_by_name("GridContainer")
+	var container = get_children_by_name("Control")
 	var slot = get_children_by_type(container.get_children(), card.slot_types)
 	if(slot != null):
 		slot.add_card(card)
