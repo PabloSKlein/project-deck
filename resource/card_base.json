@@ -1,6 +1,6 @@
 {
   "1": {
-	"name": "Driftwood Sword",
+	"name": "Gladius",
 	"category": "Weapon",
 	"type": "OneHandedSword",
 	"equipment_slot": [
@@ -11,6 +11,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -21,17 +22,18 @@
 	]
   },
   "2": {
-	"name": "Driftwood Sword",
+	"name": "Battle Axe",
 	"category": "Weapon",
 	"type": "OneHandedAxe",
 	"equipment_slot": [
 	  "MainHand",
-	  "Offhand"
+	  "OffHand"
 	],
 	"magic_multi": "1",
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -42,7 +44,7 @@
 	]
   },
   "3": {
-	"name": "Driftwood Sword",
+	"name": "Kris",
 	"category": "Weapon",
 	"type": "Dagger",
 	"equipment_slot": [
@@ -53,6 +55,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -63,17 +66,18 @@
 	]
   },
   "4": {
-	"name": "Driftwood Sword",
+	"name": "Morning Star",
 	"category": "Weapon",
 	"type": "OneHandedMace",
 	"equipment_slot": [
 	  "MainHand",
-	  "Offhand"
+	  "OffHand"
 	],
 	"magic_multi": "1",
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -84,17 +88,18 @@
 	]
   },
   "5": {
-	"name": "Driftwood Sword",
+	"name": "Ritual Stake",
 	"category": "Weapon",
 	"type": "Wand",
 	"equipment_slot": [
 	  "MainHand",
-	  "Offhand"
+	  "OffHand"
 	],
 	"magic_multi": "1",
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -105,16 +110,17 @@
 	]
   },
   "6": {
-	"name": "Driftwood Sword",
+	"name": "Birch Bow",
 	"category": "Weapon",
 	"type": "Bow",
 	"equipment_slot": [
-	  "OneHanded"
+	  "MainHand"
 	],
 	"magic_multi": "1",
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -125,7 +131,7 @@
 	]
   },
   "7": {
-	"name": "Driftwood Sword",
+	"name": "Travelling Staff",
 	"category": "Weapon",
 	"type": "Staff",
 	"equipment_slot": [
@@ -135,6 +141,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -145,7 +152,7 @@
 	]
   },
   "8": {
-	"name": "Driftwood Sword",
+	"name": "Claw",
 	"category": "Weapon",
 	"type": "Claw",
 	"equipment_slot": [
@@ -156,6 +163,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -166,7 +174,7 @@
 	]
   },
   "9": {
-	"name": "Shiled",
+	"name": "Renegade Shield",
 	"category": "Shield",
 	"type": "Shield",
 	"equipment_slot": [
@@ -176,6 +184,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
@@ -186,9 +195,9 @@
 	]
   },
   "10": {
-	"name": "Body armor",
-	"category": "Body",
-	"type": "Body",
+	"name": "Ringmail Hauberk",
+	"category": "Armor",
+	"type": "Armor",
 	"equipment_slot": [
 	  "Body"
 	],
@@ -196,6 +205,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
@@ -206,9 +216,9 @@
 	]
   },
   "11": {
-	"name": "Gloves armor",
+	"name": "Leather Gloves",
 	"category": "Armor",
-	"type": "Gloves",
+	"type": "Armor",
 	"equipment_slot": [
 	  "Gloves"
 	],
@@ -216,6 +226,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
@@ -226,9 +237,9 @@
 	]
   },
   "12": {
-	"name": "boots of destiny",
+	"name": "Veteran's Boots",
 	"category": "Armor",
-	"type": "Boots",
+	"type": "Armor",
 	"equipment_slot": [
 	  "Boots"
 	],
@@ -236,6 +247,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
@@ -246,9 +258,9 @@
 	]
   },
   "13": {
-	"name": "Helmet armor",
+	"name": "Refuge Helmet",
 	"category": "Armor",
-	"type": "Helmet",
+	"type": "Armor",
 	"equipment_slot": [
 	  "Helmet"
 	],
@@ -256,6 +268,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
@@ -266,7 +279,7 @@
 	]
   },
   "14": {
-	"name": "amulet",
+	"name": "Ruby Amulet",
 	"category": "Acessories",
 	"type": "Amulet",
 	"equipment_slot": [
@@ -276,6 +289,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "life",
@@ -292,7 +306,7 @@
 	]
   },
   "15": {
-	"name": "Isbelt",
+	"name": "Jade Ring",
 	"category": "Acessories",
 	"type": "Belt",
 	"equipment_slot": [
@@ -302,6 +316,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
@@ -312,7 +327,7 @@
 	]
   },
   "16": {
-	"name": "ring",
+	"name": "Diamont ring",
 	"category": "Acessories",
 	"type": "Ring",
 	"equipment_slot": [
@@ -322,6 +337,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
+	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {
 		"description": "block",
