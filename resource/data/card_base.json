@@ -99,7 +99,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
 		"description": "attack",
@@ -316,7 +316,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "res://resource/card/item",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
 		"description": "block",

@@ -7,6 +7,7 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var name_item: String
 @export var category: String
 @export var type: String
+@export var image: String
 @export var slot_types: Array[CardType.Enum]
 @export var rarity: CardRarity
 @export var prefixes: Array[Prefix] = [] # Added property
@@ -54,7 +55,12 @@ func set_name_item(value):
 func set_type_item(value):
 	self.type = value
 	$VBoxContainer/Control/CardTypeLabel.text = type
-	
+
+func set_image_item(value):
+	var texture_path = "res://resource/card/item/" + value + ".png"
+	var texture = load(texture_path)
+	$Item.texture = texture
+
 func set_rarity_item(value):
 	self.rarity = value
 	var _rarity
@@ -79,6 +85,7 @@ func copy_from(_card : Card):
 	set_type_item(_card.type)
 	set_rarity_item(_card.rarity)
 	set_modifier(_card.modifiers)
+	set_image_item(_card.image)
 	self.slot_types = _card.slot_types
 	pass
 
