@@ -14,9 +14,9 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var modifiers: Array[Modifier] = []
 @onready var targets: Array[Node] = []
 @export var drop_rates = {
-	CardRarity.MAGIC: 50, # % of droprate
-	CardRarity.RARE: 30, # % of droprate
-	CardRarity.UNIQUE: 20 # % of droprate
+	CardRarity.MAGIC: 70, # % of droprate
+	CardRarity.RARE: 29, # % of droprate
+	CardRarity.UNIQUE: 1 # % of droprate
 }
 @onready var modifiers_stack : VBoxContainer = $VBoxContainer/Control/Modifiers
 @onready var color : ColorRect = $Color

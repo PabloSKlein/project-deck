@@ -1,7 +1,7 @@
 extends Node
 
 var card_data = {}
-var card_data_file_path = "res://resource/card_base.json"
+var card_data_file_path = "res://resource/data/card_base.json"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

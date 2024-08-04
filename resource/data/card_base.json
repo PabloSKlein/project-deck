@@ -135,12 +135,12 @@
 	"category": "Weapon",
 	"type": "Staff",
 	"equipment_slot": [
-	  "TwoHand"
+	  "MainHand"
 	],
 	"magic_multi": "1",
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
-	"is_dual_handed": false,
+	"is_dual_handed": true,
 	"item_image": "res://resource/card/item",
 	"attributes": [
 	  {

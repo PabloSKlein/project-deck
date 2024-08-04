@@ -9,7 +9,6 @@ func generate_card() -> Card:
 	var card = Card.new()
 	var card_data = generate_card_base()
 	var rarity = generate_card_rarity(card_data, card)
-	
 	card.modifiers = generate_modifiers(card_data, rarity)
 	card.name_item = card_data.get("name")
 	card.type = card_data.get("type")
@@ -48,7 +47,6 @@ func resolve_card_attributes(base_card, rarity):
 	var final_card = rarity_calculation(full_card, rarity)
 	return final_card
 	
-	
 func generate_modifiers(card_map, rarity) -> Array[Modifier]:
 	var attributes = card_map["attributes"]
 	var modifiers : Array[Modifier]
@@ -58,7 +56,6 @@ func generate_modifiers(card_map, rarity) -> Array[Modifier]:
 		var max_value = int(atribute["max"])
 		var modifier = Modifier.new(type, randi_range(min_value, max_value))
 		modifiers.push_front(modifier)
-		
 	var affixes = generate_affixes(card_map, rarity)
 	for key in affixes:
 		var afix = affixes.get(key)
@@ -145,6 +142,7 @@ func generate_affixes(card_data, rarity):
 				"increased": suffix["increased"]
 			}
 			used_affix_names[suffix["name"]] = true
+	print(affix_data)
 	return affix_data
 
 func get_max_affixes_based_on_rarity(rarity):
@@ -178,12 +176,6 @@ func pick_random_name(names):
 	var random_index = randi() % names.size()
 	return names[random_index]
 
-func get_tier_value(tiers, rarity, value_type):
-	var tier = str(rarity)
-	if tier in tiers:
-		return tiers[tier][value_type]
-	return 0
-
 func pick_random_value(tiers, rarity):
 	var tier = str(rarity)
 	if tier in tiers:
@@ -196,48 +188,3 @@ func merge_card_with_affixes(card_map, affixes):
 	var merged_card = card_map.duplicate()
 	merged_card["affixes"] = affixes
 	return merged_card
-
-func remove_zero_values(data):
-	var cleaned_data = {}
-	for key in data.keys():
-		var value = data[key]
-		if value is Dictionary:
-			var cleaned_value = remove_zero_values(value)
-			if cleaned_value.size() > 0:
-				cleaned_data[key] = cleaned_value
-		elif value != 0 and value != "":
-			cleaned_data[key] = value
-	
-	return cleaned_data
-
-func clean_data(data):
-	if typeof(data) == TYPE_DICTIONARY:
-		var keys_to_remove = []
-		for key in data.keys():
-			var value = data[key]
-			if typeof(value) == TYPE_DICTIONARY or typeof(value) == TYPE_ARRAY:
-				data[key] = clean_data(value)
-			if should_remove_value(data[key]):
-				keys_to_remove.append(key)
-		for key in keys_to_remove:
-			data.erase(key)    
-	elif typeof(data) == TYPE_ARRAY:
-		var i = 0
-		while i < data.size():
-			data[i] = clean_data(data[i])
-			if typeof(data[i]) == TYPE_DICTIONARY and data[i].empty():
-				data.remove(i)
-			else:
-				i += 1
-	return data
-
-func should_remove_value(value):
-	match typeof(value):
-		TYPE_NIL:
-			return true
-		TYPE_FLOAT, TYPE_INT:
-			return value == 0
-		TYPE_STRING:
-			return value.strip_edges() == ""  # Remove leading and trailing whitespace
-		_:
-			return false

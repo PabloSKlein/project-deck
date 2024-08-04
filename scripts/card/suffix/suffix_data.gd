@@ -1,7 +1,7 @@
 extends Node
 
 var suffix_data = {}
-var suffix_data_file_path = "res://resource/suffix.json"
+var suffix_data_file_path = "res://resource/data/suffix.json"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
