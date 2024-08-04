@@ -24,131 +24,170 @@ offset_right = 164.0
 offset_bottom = 637.0
 columns = 2
 
-[node name="Helmet" type="PanelContainer" parent="GridContainer"]
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Helmet" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+offset_right = 79.0
+offset_bottom = 90.5
 script = ExtResource("2_nhuhp")
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Helmet"]
+[node name="ColorRect" type="ColorRect" parent="Control/Helmet"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/Helmet"]
+[node name="Label" type="Label" parent="Control/Helmet"]
 layout_mode = 2
 
-[node name="Amulet" type="PanelContainer" parent="GridContainer"]
+[node name="Amulet" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+offset_left = 204.0
+offset_top = 73.0
+offset_right = 282.5
+offset_bottom = 163.5
 script = ExtResource("2_nhuhp")
 slot_type = 7
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Amulet"]
+[node name="ColorRect" type="ColorRect" parent="Control/Amulet"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/Amulet"]
+[node name="Label" type="Label" parent="Control/Amulet"]
 layout_mode = 2
 
-[node name="BodyArmor" type="PanelContainer" parent="GridContainer"]
+[node name="BodyArmor" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+offset_top = 94.0
+offset_right = 79.0
+offset_bottom = 184.5
 script = ExtResource("2_nhuhp")
 slot_type = 1
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/BodyArmor"]
+[node name="ColorRect" type="ColorRect" parent="Control/BodyArmor"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/BodyArmor"]
+[node name="Label" type="Label" parent="Control/BodyArmor"]
 layout_mode = 2
 
-[node name="MainHand" type="PanelContainer" parent="GridContainer"]
+[node name="MainHand" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+offset_left = 83.0
+offset_top = 94.0
+offset_right = 161.5
+offset_bottom = 184.5
 script = ExtResource("2_nhuhp")
 slot_type = 5
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/MainHand"]
+[node name="ColorRect" type="ColorRect" parent="Control/MainHand"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/MainHand"]
+[node name="Label" type="Label" parent="Control/MainHand"]
 layout_mode = 2
 
-[node name="OffHand" type="PanelContainer" parent="GridContainer"]
+[node name="OffHand" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
+offset_top = 188.0
+offset_right = 79.0
+offset_bottom = 278.5
 script = ExtResource("2_nhuhp")
 slot_type = 6
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/OffHand"]
+[node name="ColorRect" type="ColorRect" parent="Control/OffHand"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/OffHand"]
+[node name="Label" type="Label" parent="Control/OffHand"]
 layout_mode = 2
 
-[node name="RingLeft" type="PanelContainer" parent="GridContainer"]
+[node name="RingLeft" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.9, 90.5)
 layout_mode = 2
+offset_left = 83.0
+offset_top = 188.0
+offset_right = 161.9
+offset_bottom = 278.5
 script = ExtResource("2_nhuhp")
 slot_type = 8
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/RingLeft"]
+[node name="ColorRect" type="ColorRect" parent="Control/RingLeft"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/RingLeft"]
+[node name="Label" type="Label" parent="Control/RingLeft"]
 layout_mode = 2
 
-[node name="RingRight" type="PanelContainer" parent="GridContainer"]
+[node name="RingRight" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
+offset_top = 282.0
+offset_right = 79.5
+offset_bottom = 380.5
 script = ExtResource("2_nhuhp")
 slot_type = 8
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/RingRight"]
+[node name="ColorRect" type="ColorRect" parent="Control/RingRight"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/RingRight"]
+[node name="Label" type="Label" parent="Control/RingRight"]
 layout_mode = 2
 
-[node name="Belt" type="PanelContainer" parent="GridContainer"]
+[node name="Belt" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+offset_left = 83.0
+offset_top = 282.0
+offset_right = 161.0
+offset_bottom = 380.0
 script = ExtResource("2_nhuhp")
 slot_type = 4
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Belt"]
+[node name="ColorRect" type="ColorRect" parent="Control/Belt"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/Belt"]
+[node name="Label" type="Label" parent="Control/Belt"]
 layout_mode = 2
 
-[node name="Boots" type="PanelContainer" parent="GridContainer"]
+[node name="Boots" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
+offset_top = 384.0
+offset_right = 79.0
+offset_bottom = 482.5
 script = ExtResource("2_nhuhp")
 slot_type = 3
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Boots"]
+[node name="ColorRect" type="ColorRect" parent="Control/Boots"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/Boots"]
+[node name="Label" type="Label" parent="Control/Boots"]
 layout_mode = 2
 
-[node name="Gloves" type="PanelContainer" parent="GridContainer"]
+[node name="Gloves" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+offset_left = 83.0
+offset_top = 384.0
+offset_right = 161.0
+offset_bottom = 482.0
 script = ExtResource("2_nhuhp")
 slot_type = 2
 
-[node name="ColorRect" type="ColorRect" parent="GridContainer/Gloves"]
+[node name="ColorRect" type="ColorRect" parent="Control/Gloves"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="GridContainer/Gloves"]
+[node name="Label" type="Label" parent="Control/Gloves"]
 layout_mode = 2
