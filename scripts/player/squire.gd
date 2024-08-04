@@ -1,10 +1,7 @@
 class_name Squire extends Node
 
-var hero: Hero
-var inventory: Array[Card] = []
-
+var blueprints: Array[Card] = []
 var cards_in_hand: Array[Card] = []
-
 var max_hand_size: int = 5
 
 signal reparent_requested(which_card_ui: Card)
@@ -17,12 +14,11 @@ func _ready():
 func _process(delta):
 	pass
 	
-func _init(_hero: Hero, _inventory: Array[Card]) -> void:
-	hero = _hero
-	inventory = _inventory
+func _init(_blueprints: Array[Card]) -> void:
+	blueprints = _blueprints
 
 func add_to_inventory(_card: Card) -> void:
-	inventory.push_back(_card)
+	blueprints.push_back(_card)
 	
 func add_to_hand(_card: Card) -> void:
 	cards_in_hand.push_back(_card)
@@ -35,13 +31,9 @@ func draw(how_many_cards: int) -> void:
 		draw_from_top()
 	pass
 	
-func equip_from_hand(card_index: int, slot: int) -> void:
-	hero.equip(cards_in_hand[card_index], slot)
-pass
-	
 func draw_from_top() -> void:
 	randomize()  # Seed the random number generator
-	var random_card = get_random_element(inventory)
+	var random_card = get_random_element(blueprints)
 	cards_in_hand.push_back(random_card)
 	pass 
 

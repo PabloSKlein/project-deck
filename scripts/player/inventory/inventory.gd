@@ -1,10 +1,13 @@
 class_name Inventory extends Control
 
-@onready var grid_container := $Control
+@onready var slots_grid := $Control
+var slots : Array[InventorySlot]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("log")
+	for slot in slots_grid.get_children():
+		slots.push_back(slot as InventorySlot)
 	hide() # Start with the inventory hidden
 
 # Called when an input event is received.
@@ -17,10 +20,14 @@ func toggle_inventory() -> void:
 	visible = not visible
 	
 func equip(card: Card):
-	var container = get_children_by_name("Control")
-	var slot = get_children_by_type(container.get_children(), card.slot_types)
+	var slot = get_children_by_type(slots_grid.get_children(), card.slot_types)
 	if(slot != null):
 		slot.add_card(card)
+	pass
+
+func show_inventory():
+	for slot in slots_grid.get_children():
+		print(slot.slot_type)
 	pass
 
 func get_children_by_name(name) -> Node:

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://dchcng5b13pes"]
+
+[ext_resource type="Script" path="res://scripts/global/main.gd" id="1_mfh1y"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_mfh1y")
+
+[node name="BattleButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 554.0
+offset_top = 199.0
+offset_right = 770.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Battle
+"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 552.0
+offset_top = 426.0
+offset_right = 772.0
+offset_bottom = 468.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 555.0
+offset_top = 402.0
+offset_right = 634.0
+offset_bottom = 425.0
+text = "Heros Life
+"
+
+[connection signal="pressed" from="BattleButton" to="." method="_on_battle_button_pressed"]
