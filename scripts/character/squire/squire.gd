@@ -6,11 +6,10 @@ var cards_in_hand: Array[Card] = []
 var max_hand_size: int = 5
 @onready var card_scene: PackedScene = preload("res://scripts/card/card.tscn")
 @onready var generator: GenerateCard = GenerateCard.new()
-@onready var hero: Hero = Hero.new(100, inventory)
 @onready var hand_stack: HandSack = $Hand
 @onready var draw_button = $HBoxContainer/DrawButton
 @onready var end_turn_button = $HBoxContainer/EndTurnButton
-@onready var inventory = $BattleUI/Inventory
+#@onready var inventory = $BattleUI/Inventory
 
 signal reparent_requested(which_card_ui: Card)
 
@@ -56,7 +55,6 @@ func get_random_element(arr):
 	return arr[random_index]
 
 func _on_draw_button_pressed():
-	print("log")
 	var card = card_scene.instantiate()
 	Events.connect("card_dropped", self._on_child_signal)
 	card._ready()
@@ -65,13 +63,12 @@ func _on_draw_button_pressed():
 	add_to_hand(card)
 
 func _on_end_turn_button_pressed():
-	print("aloooo")
 	discard_hand()
 	for child in hand_stack.get_children():
 		hand_stack.remove_child(child)
 
 func _on_child_signal(value):
 	print("Signal Recieved:" + str(value))
-	inventory.equip(value)
-	hero.equip(value)
-	pass	
+	#inventory.equip(value)
+	#hero.equip(value)
+	pass

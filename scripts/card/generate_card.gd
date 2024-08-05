@@ -143,7 +143,6 @@ func generate_affixes(card_data, rarity):
 				"increased": suffix["increased"]
 			}
 			used_affix_names[suffix["name"]] = true
-	print(affix_data)
 	return affix_data
 
 func get_max_affixes_based_on_rarity(rarity):

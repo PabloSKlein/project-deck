@@ -31,13 +31,6 @@ offset_bottom = 873.0
 size_flags_vertical = 8
 color = Color(0.581033, 0.581033, 0.581033, 1)
 
-[node name="ProgressBar" type="ProgressBar" parent="BattleUI"]
-visible = false
-offset_left = 28.0
-offset_top = 112.0
-offset_right = 189.0
-offset_bottom = 139.0
-
 [node name="CardDropArea" type="Area2D" parent="."]
 position = Vector2(-99, -139)
 collision_layer = 2

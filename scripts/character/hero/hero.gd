@@ -14,3 +14,4 @@ func _init(_max_health: int, _inventory: Inventory) -> void:
 	max_health = _max_health
 	health = _max_health
 	inventory = _inventory
+
