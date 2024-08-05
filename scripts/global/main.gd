@@ -8,7 +8,7 @@ var squire: Squire;
 func _ready():
 	var inventory := Inventory.new()
 	hero = Hero.new(100, inventory)
-	squire = Squire.new([])
+	#squire = Squire.new([])
 	
 	health_bar.max_value = hero.max_health
 	health_bar.value = hero.health

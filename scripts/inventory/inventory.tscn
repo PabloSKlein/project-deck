@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://pwnnkgbwieyw"]
 
-[ext_resource type="Script" path="res://scripts/player/inventory/inventory.gd" id="1_tsvdj"]
-[ext_resource type="Script" path="res://scripts/player/inventory/inventory_slot.gd" id="2_nhuhp"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_tsvdj"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_slot.gd" id="2_nhuhp"]
 
 [node name="Inventory" type="Control"]
 layout_direction = 1
