@@ -1,4 +1,3 @@
-# CharacterInventory.gd
 class_name CharacterInventory extends Node
 
 @export var inventory_scene = preload("res://scripts/inventory/inventory.tscn")
