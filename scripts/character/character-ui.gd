@@ -6,7 +6,7 @@ extends Control
 var character : Character
 
 func bind_character(_character : Character):
-	self.character = _character
+	character = _character
 	life_bar.max_value = character.max_health
 	life_bar.value = character.max_health
 	
