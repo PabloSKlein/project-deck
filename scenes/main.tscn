@@ -19,22 +19,4 @@ grow_vertical = 2
 text = "Battle
 "
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = 552.0
-offset_top = 426.0
-offset_right = 772.0
-offset_bottom = 468.0
-grow_horizontal = 2
-
-[node name="Label" type="Label" parent="."]
-offset_left = 555.0
-offset_top = 402.0
-offset_right = 634.0
-offset_bottom = 425.0
-text = "Heros Life
-"
-
 [connection signal="pressed" from="BattleButton" to="." method="_on_battle_button_pressed"]

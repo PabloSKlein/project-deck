@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl564dw5xgfgc"]
+
+[ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
+[ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
+[ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character_ui.tscn" id="4_i6iwv"]
+[ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire_hand_ui.tscn" id="5_gqfcq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ah"]
+size = Vector2(1279.75, 508.596)
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_f0ud5")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639.001, 361.001)
+scale = Vector2(0.849332, 0.804053)
+texture = ExtResource("2_6ong8")
+
+[node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="SquireUI" parent="BattleUI" instance=ExtResource("5_gqfcq")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = -103.0
+offset_right = 166.0
+grow_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="BattleUI"]
+visible = false
+offset_top = 431.0
+offset_right = 1150.0
+offset_bottom = 873.0
+size_flags_vertical = 8
+color = Color(0.581033, 0.581033, 0.581033, 1)
+
+[node name="Buttons" type="HBoxContainer" parent="BattleUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="DrawButton" type="Button" parent="BattleUI/Buttons"]
+layout_mode = 2
+text = "Draw"
+metadata/_edit_lock_ = true
+
+[node name="EndTurnButton" type="Button" parent="BattleUI/Buttons"]
+layout_mode = 2
+text = "End Turn"
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="CardDropArea" type="Area2D" parent="."]
+position = Vector2(-99, -139)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(737.127, 393.702)
+shape = SubResource("RectangleShape2D_6g1ah")
+metadata/_edit_lock_ = true
+
+[node name="HeroControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 249.0
+offset_bottom = 156.0
+
+[node name="CharacterUI" parent="HeroControl" instance=ExtResource("4_i6iwv")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="EnemyControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1026.0
+offset_top = 2.0
+offset_right = 1275.0
+offset_bottom = 158.0
+grow_horizontal = 0
+
+[node name="CharacterUI" parent="EnemyControl" instance=ExtResource("4_i6iwv")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

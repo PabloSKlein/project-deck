@@ -18,7 +18,6 @@ func on_input(event: InputEvent) -> void:
 		card_ui.global_position = card_ui.get_global_mouse_position() - card_ui.pivot_offset
 	
 	if cancel:
-		print('cancel')
 		transition_requested.emit(self, CardState.State.BASE)
 	elif confirm:
 		get_viewport().set_input_as_handled()

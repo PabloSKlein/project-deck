@@ -11,16 +11,16 @@ config_version=5
 [application]
 
 config/name="Project-deck"
-run/main_scene="res://scripts/battle/battle.tscn"
+run/main_scene="res://scenes/battle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Events="*res://scripts/global/events.gd"
-CardData="*res://scripts/card/card_data.gd"
-SuffixData="*res://scripts/card/suffix/suffix_data.gd"
-PrefixData="*res://scripts/card/prefix/prefix_data.gd"
+CardData="*res://scripts/global/card/card_data.gd"
+SuffixData="*res://scripts/global/card/suffix_data.gd"
+PrefixData="*res://scripts/global/card/prefix_data.gd"
 
 [display]
 

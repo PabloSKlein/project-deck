@@ -22,10 +22,10 @@ func on_input(_event: InputEvent):
 func store_card_info(target: Array[Node]) -> void:
 	if card_ui:
 		var card_details = card_ui.get_card_details()
-		print(card_ui.name_item)
 		stored_cards[card_ui.name_item] = card_details
-		emit_signal("card_stored", stored_cards, target[0])
+		emit_signal("card_stored", stored_cards)
 		Events.card_droped.emit(card_ui)
+		print("teste")
 
 func remove_card_from_board() -> void:
 	if card_ui:
@@ -34,4 +34,5 @@ func remove_card_from_board() -> void:
 func log_card_stored() -> void:
 	print("Logging stored card data:")
 	for card_name in stored_cards.keys():
+		print(stored_cards[card_name])
 		var card_info = stored_cards[card_name]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://blny60vw60nhx"]
+
+[ext_resource type="Script" path="res://scripts/squire/hand/squire_hand_ui.gd" id="1_akwcy"]
+[ext_resource type="Script" path="res://scripts/squire/hand/hand_stack.gd" id="2_xvcs7"]
+
+[node name="SquireHandUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_akwcy")
+
+[node name="Hand" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -342.0
+offset_top = -200.0
+offset_right = 468.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 4
+alignment = 1
+script = ExtResource("2_xvcs7")

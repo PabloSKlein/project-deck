@@ -1,54 +1,57 @@
 class_name Battle extends Node2D
 
-@onready var card_scene: PackedScene = preload("res://scripts/card/card.tscn")
+@onready var hero_scene = preload("res://scenes/hero.tscn")
+@onready var enemy_scene = preload("res://scenes/enemy.tscn")
 
-@onready var hand_stack : Hand = $BattleUI/Hand
-@onready var draw_button : Button = $BattleUI/HBoxContainer/DrawButton
+@onready var battle_ui = $BattleUI
+@onready var hero_ui = $HeroControl/CharacterUI
+@onready var enemy_ui = $EnemyControl/CharacterUI
+@onready var squire_ui = $BattleUI/SquireUI
+@onready var draw_button = $BattleUI/Buttons/DrawButton
+@onready var end_turn_button = $BattleUI/Buttons/EndTurnButton
 
-@onready var generator: GenerateCard = GenerateCard.new()
-@onready var inventory = $BattleUI/Inventory
-@onready var squire: Squire = Squire.new([])
-@onready var hero: Hero = Hero.new(100, inventory)
-@onready var hero_health_bar = $BattleUI/ProgressBar
-@onready var enemy = $Enemy
+var squire : Squire = Squire.new()
+var hero : Hero
+var enemy : Enemy
 
 func _ready():
-	hero_health_bar.max_value = hero.max_health
-	inventory = hero.inventory
-	enemy.inventory = inventory
-	enemy.max_health = 100
-	pass
-
+	conect_events()
+	squire_ui.bind_squire(squire)
+	
+	self.hero = hero_scene.instantiate()
+	hero.set_fields("Hero", 100)
+	hero.attach_inventory()
+	battle_ui.add_child(hero)
+	hero_ui.bind_character(hero)
+	
+	self.enemy = enemy_scene.instantiate()
+	enemy.set_fields("Enemy", 100)
+	enemy.attach_inventory()
+	battle_ui.add_child(enemy)
+	enemy_ui.bind_character(enemy)
+	enemy.equip(GenerateCard.new().generate_card())
+	enemy.show_inventory()
+	
 func _process(delta):
-	hero_health_bar.value = hero.health
-	enemy.update()
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
 	pass
-	
-func _on_draw_button_pressed():
-	var card = card_scene.instantiate()
-	Events.connect("card_droped", self._on_child_signal)
-	
-	card._ready()
-	var generated = generator.generate_card()
-	card.copy_from(generated)
-	
-	squire.add_to_hand(card)
-	hand_stack.add_child(card)
-	pass
-	
-func _on_child_signal(value):
-	print("Signal Recieved:" + str(value))
-	inventory.equip(value)
-	hero.equip(value)
-	pass	
 
 func _on_end_turn_button_pressed():
-	squire.discard_hand()
-	enemy.show_status()
-	hero.show_status()
+	squire_ui.discard_hand()
+
 	hero.take_damage(enemy.get_attribute("attack"))
+	hero_ui.update()
+	
 	enemy.take_damage(hero.get_attribute("attack"))
-	for child in hand_stack.get_children():
-		hand_stack.remove_child(child)
-	pass
+	enemy_ui.update()
+
+func _on_draw_button_pressed():
+	squire_ui.draw_card()
+
+func _on_child_signal(value):
+	hero.equip(value)
+	
+func conect_events():
+	draw_button.connect("pressed", self._on_draw_button_pressed)
+	end_turn_button.connect("pressed", self._on_end_turn_button_pressed)
+	Events.connect("card_droped", self._on_child_signal)
