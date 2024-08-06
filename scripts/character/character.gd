@@ -4,12 +4,13 @@ var health := 100
 var max_health := 100
 var character_name := "Test"
 var attributes: Dictionary = {}
-var inventory_node: CharacterInventory
+var inventory: Inventory
 
 func set_fields(_character_name: String, _max_health: int) -> void:
 	character_name = _character_name
 	max_health = _max_health
 	health = _max_health
+	inventory = Inventory.new()
 
 func take_damage(value):
 	health -= value
@@ -36,15 +37,12 @@ func add_attribute(modifier: Modifier):
 		attributes[modifier.type] += modifier.amount
 	else:
 		attributes[modifier.type] = modifier.amount
-
-func attach_inventory():
-	inventory_node = CharacterInventory.new()
-	add_child(inventory_node)
 	
 func show_inventory():
-	inventory_node.show_inventory()
+	inventory.show_inventory()
 
 func equip(card: Card):
-	inventory_node.equip(card)
+	#inventory_node.get_equiped_item(card.type)
+	inventory.equip(card)
 	for attribute in card.modifiers:
 		add_attribute(attribute)

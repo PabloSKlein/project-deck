@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cl564dw5xgfgc"]
+[gd_scene load_steps=7 format=3 uid="uid://cl564dw5xgfgc"]
 
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
 [ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
 [ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character_ui.tscn" id="4_i6iwv"]
 [ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire_hand_ui.tscn" id="5_gqfcq"]
+[ext_resource type="PackedScene" uid="uid://pwnnkgbwieyw" path="res://scenes/inventory.tscn" id="5_qyvdd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ah"]
 size = Vector2(1279.75, 508.596)
@@ -81,6 +82,13 @@ anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="InventoryUI" parent="HeroControl" instance=ExtResource("5_qyvdd")]
+layout_mode = 1
+offset_left = 9.0
+offset_top = 11.0
+offset_right = -240.0
+offset_bottom = -145.0
+
 [node name="EnemyControl" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 1
@@ -99,3 +107,10 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="Inventory" parent="EnemyControl" instance=ExtResource("5_qyvdd")]
+layout_mode = 1
+offset_left = 74.0
+offset_top = 16.0
+offset_right = -175.0
+offset_bottom = -140.0

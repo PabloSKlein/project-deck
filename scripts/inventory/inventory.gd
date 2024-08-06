@@ -1,29 +1,15 @@
 class_name Inventory extends Control
-##TODO Não misturar classes de modelo com UI
-@onready var slots_grid := $Control
 
 var slots : Array[InventorySlot]
-
-func _ready():
-	for slot in slots_grid.get_children():
-		slots.push_back(slot as InventorySlot)
-	hide()
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("open_inventory"):
-		toggle_inventory()
-
-func toggle_inventory() -> void:
-	visible = not visible
 	
 func equip(card: Card):
-	var slot = get_children_by_type(slots_grid.get_children(), card.slot_types)
+	var slot = get_children_by_type(slots, card.slot_types)
 	if(slot != null):
 		slot.add_card(card)
 	pass
 
 func show_inventory():
-	for slot in slots_grid.get_children():
+	for slot in slots:
 		print(slot.slot_type)
 	pass
 
@@ -33,7 +19,7 @@ func get_children_by_name(name) -> Node:
 			return child
 	return null
 	
-func get_children_by_type(children: Array[Node], types: Array[CardType.Enum]) -> InventorySlot:
+func get_children_by_type(children: Array[InventorySlot], types: Array[CardType.Enum]) -> InventorySlot:
 	#find empty slot
 	for type in types:
 		for child in children:

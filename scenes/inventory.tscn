@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pwnnkgbwieyw"]
 
-[ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_bpsf4"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="1_o6jax"]
 [ext_resource type="Script" path="res://scripts/inventory/inventory_slot.gd" id="2_01ild"]
 
 [node name="Inventory" type="Control"]
@@ -16,12 +16,12 @@ offset_bottom = -237.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 2
-script = ExtResource("1_bpsf4")
+script = ExtResource("1_o6jax")
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 162.0
+offset_bottom = 481.0
 
 [node name="Helmet" type="PanelContainer" parent="Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
