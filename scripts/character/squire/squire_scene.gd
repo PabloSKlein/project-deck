@@ -6,6 +6,8 @@ extends Node
 @onready var card_scene = preload("res://scripts/card/card.tscn")
 var squire: Squire
 var generator: GenerateCard = GenerateCard.new()
+var hero: Hero
+var enemy: Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,8 +24,8 @@ func _on_end_turn_button_pressed():
 	squire.discard_hand()
 	for child in hand_stack.get_children():
 		hand_stack.remove_child(child)
-	#hero.take_damage(enemy.get_attribute("attack"))
-	#enemy.take_damage(hero.get_attribute("attack"))
+	hero.take_damage(enemy.get_attribute("attack"))
+	enemy.take_damage(hero.get_attribute("attack"))
 		
 func _on_draw_button_pressed():
 	var card = card_scene.instantiate()
