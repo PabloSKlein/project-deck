@@ -26,9 +26,11 @@ func _ready():
 	
 	self.enemy = enemy_scene.instantiate()
 	enemy.set_fields("Enemy", 100)
-	#enemy.attach_inventory()
+	enemy.attach_inventory()
 	battle_ui.add_child(enemy)
 	enemy_ui.bind_character(enemy)
+	enemy.equip(GenerateCard.new().generate_card())
+	enemy.show_inventory()
 	
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
