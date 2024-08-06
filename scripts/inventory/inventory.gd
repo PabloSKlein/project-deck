@@ -1,5 +1,5 @@
 class_name Inventory extends Control
-
+##TODO Não misturar classes de modelo com UI
 @onready var slots_grid := $Control
 
 var slots : Array[InventorySlot]

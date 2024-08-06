@@ -9,7 +9,7 @@ var generator: GenerateCard = GenerateCard.new()
 
 func discard_hand():
 	squire.discard_hand()
-	for child in get_children():
+	for child in hand.get_children():
 		hand.remove_child(child)
 		
 func draw_card():

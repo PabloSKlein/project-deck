@@ -6,8 +6,7 @@ class_name Battle extends Node2D
 @onready var battle_ui = $BattleUI
 @onready var hero_ui = $HeroControl/CharacterUI
 @onready var enemy_ui = $EnemyControl/CharacterUI
-@onready var squire_ui = $SquireControl/SquireUI
-
+@onready var squire_ui = $BattleUI/SquireUI
 @onready var draw_button = $BattleUI/Buttons/DrawButton
 @onready var end_turn_button = $BattleUI/Buttons/EndTurnButton
 

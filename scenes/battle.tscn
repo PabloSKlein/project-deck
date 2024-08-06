@@ -2,21 +2,31 @@
 
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
 [ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
-[ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character-ui.tscn" id="4_i6iwv"]
-[ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire.tscn" id="5_gqfcq"]
+[ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character_ui.tscn" id="4_i6iwv"]
+[ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire_hand_ui.tscn" id="5_gqfcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ah"]
-size = Vector2(1922.75, 709.596)
+size = Vector2(1279.75, 508.596)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_f0ud5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(963, 538)
-scale = Vector2(1.28133, 1.2027)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(639.001, 361.001)
+scale = Vector2(0.849332, 0.804053)
 texture = ExtResource("2_6ong8")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
+
+[node name="SquireUI" parent="BattleUI" instance=ExtResource("5_gqfcq")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = -103.0
+offset_right = 166.0
+grow_vertical = 0
 
 [node name="ColorRect" type="ColorRect" parent="BattleUI"]
 visible = false
@@ -53,7 +63,7 @@ position = Vector2(-99, -139)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
-position = Vector2(1058.63, 494.202)
+position = Vector2(737.127, 393.702)
 shape = SubResource("RectangleShape2D_6g1ah")
 metadata/_edit_lock_ = true
 
@@ -89,24 +99,3 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
-
-[node name="SquireControl" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 460.0
-offset_top = 571.0
-offset_right = 988.0
-offset_bottom = 711.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="SquireUI" parent="SquireControl" instance=ExtResource("5_gqfcq")]
-layout_mode = 1
-offset_left = -9.0
-offset_top = -4.0
-offset_right = -9.0
-offset_bottom = -4.0
