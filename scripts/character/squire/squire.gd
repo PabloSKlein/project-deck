@@ -1,5 +1,4 @@
-extends Node
-class_name Squire
+class_name Squire extends Node 
 
 var blueprints: Array[Card] = []
 var cards_in_hand: Array[Card] = []

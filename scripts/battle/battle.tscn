@@ -3,19 +3,13 @@
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
 [ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
 [ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scripts/character/character-ui.tscn" id="4_i6iwv"]
-[ext_resource type="Script" path="res://scripts/battle/hand/hand_sack.gd" id="5_cv2pk"]
+[ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scripts/character/squire/squire.tscn" id="5_gqfcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ah"]
 size = Vector2(1922.75, 709.596)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_f0ud5")
-
-[node name="BattleBackgound" type="ColorRect" parent="."]
-offset_right = 1150.0
-offset_bottom = 650.0
-size_flags_horizontal = 3
-color = Color(0.971135, 0.566303, 0.377868, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(963, 538)
@@ -32,23 +26,7 @@ offset_bottom = 873.0
 size_flags_vertical = 8
 color = Color(0.581033, 0.581033, 0.581033, 1)
 
-[node name="Hand" type="HBoxContainer" parent="BattleUI"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -357.0
-offset_top = -218.0
-offset_right = 453.0
-offset_bottom = -18.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 4
-alignment = 1
-script = ExtResource("5_cv2pk")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="BattleUI"]
+[node name="Buttons" type="HBoxContainer" parent="BattleUI"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -59,12 +37,12 @@ offset_top = -31.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="DrawButton" type="Button" parent="BattleUI/HBoxContainer"]
+[node name="DrawButton" type="Button" parent="BattleUI/Buttons"]
 layout_mode = 2
 text = "Draw"
 metadata/_edit_lock_ = true
 
-[node name="EndTurnButton" type="Button" parent="BattleUI/HBoxContainer"]
+[node name="EndTurnButton" type="Button" parent="BattleUI/Buttons"]
 layout_mode = 2
 text = "End Turn"
 metadata/_edit_use_anchors_ = true
@@ -111,3 +89,24 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="SquireControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 460.0
+offset_top = 571.0
+offset_right = 988.0
+offset_bottom = 711.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SquireUI" parent="SquireControl" instance=ExtResource("5_gqfcq")]
+layout_mode = 1
+offset_left = -9.0
+offset_top = -4.0
+offset_right = -9.0
+offset_bottom = -4.0

@@ -2,6 +2,7 @@ class_name Main extends Node
 
 var hero: Hero;
 var squire: Squire;
+
 @onready var health_bar = $ProgressBar
 
 # Called when the node enters the scene tree for the first time.
