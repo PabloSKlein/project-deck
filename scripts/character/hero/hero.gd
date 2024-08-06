@@ -1,16 +1,25 @@
+# Hero.gd
 class_name Hero extends Character
 
+@onready var progress_bar = $ProgressBar
+@onready var label = $Label
+var inventory_node: CharacterInventory
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	label.text = self.character_name
+	progress_bar.max_value = self.max_health
+	progress_bar.value = self.health
+	attach_inventory()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-func create(_max_health: int, _inventory: Inventory) -> void:
-	character_name = "Hero"
-	max_health = _max_health
-	health = _max_health
-	inventory = _inventory
+func attach_inventory():
+	inventory_node = CharacterInventory.new()
+	add_child(inventory_node)
+
+func show_inventory():
+	if inventory_node != null:
+		inventory_node.show_inventory()
+
+func equip(card: Card):
+	if inventory_node != null:
+		inventory_node.equip(card)
+	#add_attribute(card)  # Ensure the hero's attributes are updated accordingly

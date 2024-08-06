@@ -6,22 +6,15 @@ var cards_in_hand: Array[Card] = []
 var max_hand_size: int = 5
 
 @onready var generator: GenerateCard = GenerateCard.new()
-var inventory: Inventory  # Add this line to hold the inventory reference
 var hero: Hero
 
-
 signal reparent_requested(which_card_ui: Card)
-
-
-#func _init(_blueprints: Array[Card]) -> void:
-	#blueprints = _blueprints
 
 func add_to_inventory(_card: Card) -> void:
 	blueprints.push_back(_card)
 
 func add_to_hand(_card: Card) -> void:
 	cards_in_hand.push_back(_card)
-	#hand_stack.add_card(_card)
 
 func discard_hand() -> void:
 	cards_in_hand = []

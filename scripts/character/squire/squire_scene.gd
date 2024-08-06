@@ -23,6 +23,8 @@ func _on_end_turn_button_pressed():
 	squire.discard_hand()
 	for child in hand_stack.get_children():
 		hand_stack.remove_child(child)
+	#hero.take_damage(enemy.get_attribute("attack"))
+	#enemy.take_damage(hero.get_attribute("attack"))
 		
 func _on_draw_button_pressed():
 	var card = card_scene.instantiate()

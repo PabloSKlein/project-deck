@@ -4,19 +4,15 @@ class_name Inventory extends Control
 
 var slots : Array[InventorySlot]
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	for slot in slots_grid.get_children():
 		slots.push_back(slot as InventorySlot)
-	hide() # Start with the inventory hidden
+	hide()
 
-# Called when an input event is received.
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_inventory"):
 		toggle_inventory()
 
-# Toggle the visibility of the inventory
 func toggle_inventory() -> void:
 	visible = not visible
 	

@@ -1,23 +1,26 @@
+# Battle.gd
 class_name Battle extends Node2D
 
 @onready var squire_scene = preload("res://scripts/character/squire/squire.tscn")
 @onready var hero_scene = preload("res://scripts/character/hero/hero.tscn")
-@onready var inventory = preload("res://scripts/inventory/inventory.tscn")
+#@onready var inventory_scene = preload("res://scripts/inventory/inventory.tscn")
 @onready var battleUI = $BattleUI
 @onready var enemy = $Enemy
 
 func _ready():
-	var inventoryNew = inventory.instantiate()
-	inventoryNew._ready()
 	var squireNew = squire_scene.instantiate()
 	var heroNew = hero_scene.instantiate()
-	var teste = inventoryNew.get_child(1).get_children()
+	#var inventoryNew = inventory_scene.instantiate()
+
+	heroNew.set_fields("Hero", 100)
+	heroNew.attach_inventory()
+
 	squireNew.squire = Squire.new()
 	squireNew.squire.hero = heroNew
-	heroNew.inventory = inventoryNew
 	
-	
+	#battleUI.add_child(inventoryNew)
 	battleUI.add_child(squireNew)
 	battleUI.add_child(heroNew)
-	enemy.max_health = 100
-	pass
+
+	enemy.set_fields("Enemy", 100)
+	#enemy.attach_inventory()  # If enemy also needs inventory
