@@ -6,16 +6,4 @@
 position = Vector2(2, 30)
 script = ExtResource("1_32ukg")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = 816.0
-offset_top = 248.0
-offset_right = 1041.0
-offset_bottom = 275.0
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Label" type="Label" parent="."]
-offset_left = 931.0
-offset_top = 215.0
-offset_right = 971.0
-offset_bottom = 238.0
