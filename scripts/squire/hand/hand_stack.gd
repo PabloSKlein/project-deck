@@ -1,4 +1,4 @@
-class_name HandSack extends HBoxContainer
+class_name HandStack extends HBoxContainer
 
 func _ready():
 	for child in get_children():

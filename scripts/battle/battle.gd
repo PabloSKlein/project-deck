@@ -1,7 +1,7 @@
 class_name Battle extends Node2D
 
-@onready var hero_scene = preload("res://scripts/character/hero/hero.tscn")
-@onready var enemy_scene = preload("res://scripts/character/enemy/enemy.tscn")
+@onready var hero_scene = preload("res://scenes/hero.tscn")
+@onready var enemy_scene = preload("res://scenes/enemy.tscn")
 
 @onready var battle_ui = $BattleUI
 @onready var hero_ui = $HeroControl/CharacterUI

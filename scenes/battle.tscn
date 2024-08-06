@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
 [ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
-[ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scripts/character/character-ui.tscn" id="4_i6iwv"]
-[ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scripts/character/squire/squire.tscn" id="5_gqfcq"]
+[ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character-ui.tscn" id="4_i6iwv"]
+[ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire.tscn" id="5_gqfcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1ah"]
 size = Vector2(1922.75, 709.596)

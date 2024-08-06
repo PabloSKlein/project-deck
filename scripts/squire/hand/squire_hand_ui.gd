@@ -1,6 +1,6 @@
 class_name SquireHandUI extends Node
 
-@onready var card_scene = preload("res://scripts/card/card.tscn")
+@onready var card_scene = preload("res://scenes/card.tscn")
 
 @onready var hand = $Hand
 
