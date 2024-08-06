@@ -22,4 +22,5 @@ func show_inventory():
 func equip(card: Card):
 	if inventory_node != null:
 		inventory_node.equip(card)
-	#add_attribute(card)  # Ensure the hero's attributes are updated accordingly
+		for attribute in card.modifiers:
+			add_attribute(attribute)
