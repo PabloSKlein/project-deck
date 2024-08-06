@@ -1,4 +1,3 @@
-# Character.gd
 class_name Character extends Node
 
 var health := 100

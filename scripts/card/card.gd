@@ -102,6 +102,3 @@ func get_card_details() -> String:
 	for modifier in modifiers:
 		details += "- " + str(modifier.type) + ": " + str(modifier.amount) + "\n"
 	return details
-
-func _on_draw_button_pressed():
-	pass # Replace with function body.

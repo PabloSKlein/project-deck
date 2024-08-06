@@ -1,6 +1,5 @@
 class_name SquireScene
 extends Node 
-
 @onready var hand_stack: HandSack = $Hand
 @onready var draw_button = $HBoxContainer/DrawButton
 @onready var end_turn_button = $HBoxContainer/EndTurnButton
