@@ -5,12 +5,14 @@ class_name InventorySlot extends Control
 @export var isEmpty = true
 
 var card: Card
-var color : ColorRect
-var label : Label
+#var color : ColorRect = $ColorRect
+#var label : Label = $Label
+@onready var color = $ColorRect
+@onready var label = $Label
 
 func _ready():
-	label = self.get_child_by_name("Label")
-	color = self.get_child_by_name("ColorRect")
+	#label = self.get_child_by_name("Label")
+	#color = self.get_child_by_name("ColorRect")
 	if label != null:
 		label.text = CardType.get_type_description(slot_type)
 	
@@ -25,9 +27,9 @@ func _process(delta):
 
 func _input_event():
 	pass
-	
-func _init(_slot_type: CardType.Enum = CardType.Enum.HELMET) -> void:
-	slot_type = _slot_type
+	#
+#func _init(_slot_type: CardType.Enum = CardType.Enum.HELMET) -> void:
+	#slot_type = _slot_type
 
 func add_card(new_card):
 	self.isEmpty = false

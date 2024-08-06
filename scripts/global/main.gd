@@ -7,7 +7,7 @@ var squire: Squire;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var inventory := Inventory.new()
-	hero = Hero.new(100, inventory)
+	#hero = Hero.new(100, inventory)
 	#squire = Squire.new([])
 	
 	health_bar.max_value = hero.max_health

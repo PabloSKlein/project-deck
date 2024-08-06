@@ -1,6 +1,7 @@
 class_name Inventory extends Control
 
 @onready var slots_grid := $Control
+
 var slots : Array[InventorySlot]
 
 

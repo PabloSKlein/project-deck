@@ -23,8 +23,9 @@ func store_card_info(target: Array[Node]) -> void:
 	if card_ui:
 		var card_details = card_ui.get_card_details()
 		stored_cards[card_ui.name_item] = card_details
-		emit_signal("card_stored", stored_cards, target[0])
+		emit_signal("card_stored", stored_cards)
 		Events.card_droped.emit(card_ui)
+		print("teste")
 
 func remove_card_from_board() -> void:
 	if card_ui:
