@@ -66,4 +66,4 @@ func conect_events():
 
 func check_enemys():
 	if enemy_control == null:
-		print("all enemys are dead")
+		pass #TODO quando nenhum inimigo existir na tela, um pop up de proxima fase deve ser mostrado
