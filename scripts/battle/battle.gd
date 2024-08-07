@@ -9,7 +9,7 @@ class_name Battle extends Node2D
 @onready var squire_ui = $BattleUI/SquireUI
 @onready var inventory_ui = $HeroControl/InventoryUI
 @onready var enemy_inventory_ui = $EnemyControl/Inventory
-
+@onready var enemy_control = $EnemyControl
 @onready var draw_button = $BattleUI/Buttons/DrawButton
 @onready var end_turn_button = $BattleUI/Buttons/EndTurnButton
 
@@ -38,6 +38,7 @@ func _ready():
 
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
+	check_enemys()
 	pass
 
 func _on_end_turn_button_pressed():
@@ -46,11 +47,11 @@ func _on_end_turn_button_pressed():
 	enemy.take_damage(hero.get_attribute("attack"))
 	enemy_ui.update()
 	if(enemy.is_dead()):
+		enemy_control.queue_free()
 		return
 	hero.take_damage(enemy.get_attribute("attack"))
 	hero_ui.update()
 	
-
 
 func _on_draw_button_pressed():
 	squire_ui.draw_card()
@@ -62,3 +63,7 @@ func conect_events():
 	draw_button.connect("pressed", self._on_draw_button_pressed)
 	end_turn_button.connect("pressed", self._on_end_turn_button_pressed)
 	Events.connect("card_droped", self._on_child_signal)
+
+func check_enemys():
+	if enemy_control == null:
+		print("all enemys are dead")
