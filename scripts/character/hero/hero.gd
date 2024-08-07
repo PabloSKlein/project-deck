@@ -7,7 +7,6 @@ var pop_up: PopUp
 func _process(delta):
 	var is_dead = is_dead()
 	if is_dead:
-		print("dead")
 		show_death_popup()
 
 func show_death_popup():
