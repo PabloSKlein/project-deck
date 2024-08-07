@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnkgq2as0hl8x"]
+
+[ext_resource type="Script" path="res://scripts/pop_up/pop_up.gd" id="1_h2xll"]
+
+[node name="PopUp" type="Node2D"]
+script = ExtResource("1_h2xll")
+
+[node name="RerunButton" type="Button" parent="."]
+offset_left = 385.0
+offset_top = 148.0
+offset_right = 516.0
+offset_bottom = 215.0
+text = "Rerun"
+
+[node name="MainMenuButton" type="Button" parent="."]
+offset_left = 388.0
+offset_top = 239.0
+offset_right = 514.0
+offset_bottom = 271.0
+text = "Main menu"
