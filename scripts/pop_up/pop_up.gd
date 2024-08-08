@@ -1,7 +1,6 @@
 class_name PopUp
 extends Node2D
 
-
 # Referências aos botões
 @onready var rerun_button = $RerunButton
 @onready var main_menu_button = $MainMenuButton

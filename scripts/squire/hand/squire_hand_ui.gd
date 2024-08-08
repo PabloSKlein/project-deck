@@ -13,12 +13,11 @@ func discard_hand():
 		hand.remove_child(child)
 		
 func draw_card():
-	var card := card_scene.instantiate()
-	hand.add_card(card)
+	var card = generator.generate_card()
+	var card_ui := card_scene.instantiate()
+	card_ui.bind_card(card)
 	
-	var generated = generator.generate_card()
-	card.copy_from(generated)
-	
+	hand.add_card(card_ui)
 	squire.add_to_hand(card)
 	
 func bind_squire(_squire: Squire):

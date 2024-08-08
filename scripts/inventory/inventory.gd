@@ -24,7 +24,7 @@ func get_children_by_type(children: Array[InventorySlot], types: Array[CardType.
 	for type in types:
 		for child in children:
 			var _slot = child as InventorySlot
-			if _slot.slot_type == type && _slot.isEmpty:
+			if _slot.slot_type == type && _slot.is_empty:
 				return _slot
 	#find any slot
 	for type in types:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://cflc3qkxbtyid"]
 
-[ext_resource type="Script" path="res://scripts/card/card.gd" id="1_uk5af"]
+[ext_resource type="Script" path="res://scripts/card/card_ui.gd" id="1_l76qh"]
 [ext_resource type="Texture2D" uid="uid://pvr3d755ksjf" path="res://resource/card/magic_background.png" id="2_dfexv"]
 [ext_resource type="Script" path="res://scripts/card/state/card_state_machine.gd" id="3_3v17h"]
 [ext_resource type="Script" path="res://scripts/card/state/card_base_state.gd" id="4_e0f78"]
@@ -14,7 +14,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2m5h"]
 size = Vector2(250, 350)
 
-[node name="Card" type="Control"]
+[node name="CardUI" type="Control"]
 custom_minimum_size = Vector2(250, 350)
 layout_mode = 3
 anchors_preset = 15
@@ -26,7 +26,7 @@ offset_right = -943.0
 offset_bottom = -405.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_uk5af")
+script = ExtResource("1_l76qh")
 metadata/_edit_lock_ = true
 
 [node name="Color" type="ColorRect" parent="."]

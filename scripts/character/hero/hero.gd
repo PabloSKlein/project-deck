@@ -1,5 +1,4 @@
-class_name Hero
-extends Character
+class_name Hero extends Character
 
 @onready var pop_up_death = preload("res://scenes/pop_up.tscn")
 var pop_up: PopUp
