@@ -1,8 +1,7 @@
-class_name PopUp
+class_name PopUpDeath
 extends Node2D
 
 
-# Referências aos botões
 @onready var rerun_button = $RerunButton
 @onready var main_menu_button = $MainMenuButton
 

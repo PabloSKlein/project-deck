@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://pbxwu7sg8t1c"]
+
+[ext_resource type="Script" path="res://scripts/pop_up/pop_up_win.gd" id="1_ioil0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ioil0")
+
+[node name="Next" type="Button" parent="."]
+offset_left = 608.0
+offset_top = 262.0
+offset_right = 653.0
+offset_bottom = 293.0
+text = "Next"
