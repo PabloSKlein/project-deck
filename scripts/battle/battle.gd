@@ -14,6 +14,7 @@ class_name Battle extends Node2D
 @onready var enemy_control = $EnemyControl
 @onready var draw_button = $BattleUI/Buttons/DrawButton
 @onready var end_turn_button = $BattleUI/Buttons/EndTurnButton
+@onready var buttons = $BattleUI/Buttons
 
 var squire : Squire = Squire.new()
 var hero : Hero
@@ -73,11 +74,13 @@ func _on_next_phase_pressed():
 	get_tree().reload_current_scene() #TODO add new phases
 
 func show_win_popup():
+	buttons.visible = false
 	self.pop_up_win = pop_up_win_scene.instantiate()
 	add_child(pop_up_win)
 	pop_up_win.connect("next_phase", self._on_next_phase_pressed)
 	
 func show_death_popup():
+	buttons.visible = false
 	self.pop_up_death = pop_up_death_scene.instantiate()
 	add_child(pop_up_death)
 	pop_up_death.connect("rerun_pressed", self._on_rerun_pressed)
