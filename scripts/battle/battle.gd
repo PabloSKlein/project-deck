@@ -70,7 +70,7 @@ func _on_main_menu_pressed():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _on_next_phase_pressed():
-	print("proxima fase")
+	get_tree().reload_current_scene() #TODO add new phases
 
 func show_win_popup():
 	self.pop_up_win = pop_up_win_scene.instantiate()
