@@ -1,58 +1,68 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyna75gxgf53r"]
+[gd_scene load_steps=9 format=3 uid="uid://dyna75gxgf53r"]
 
+[ext_resource type="Script" path="res://development/cards/cards_dev.gd" id="1_b4eao"]
 [ext_resource type="Texture2D" uid="uid://dhthfkx6n488" path="res://development/cards/pixelCardAssest_V01.png" id="1_pk74m"]
-[ext_resource type="Texture2D" uid="uid://in5rj232ejux" path="res://development/cards/animation/sheen__0000_sheen01.png" id="2_wf2x5"]
-[ext_resource type="Texture2D" uid="uid://bdcma4jix3jy8" path="res://development/cards/animation/sheen__0001_sheen02.png" id="3_b2lxb"]
-[ext_resource type="Texture2D" uid="uid://cysqvexriq35s" path="res://development/cards/animation/sheen__0002_sheen03.png" id="4_uhgyt"]
-[ext_resource type="Texture2D" uid="uid://c0lbjgyyahcti" path="res://development/cards/animation/sheen__0003_sheen04.png" id="5_c3ga0"]
-[ext_resource type="Texture2D" uid="uid://b0l7egf1frxwg" path="res://development/cards/animation/sheen__0004_sheen05.png" id="6_77sc5"]
-[ext_resource type="Texture2D" uid="uid://njkl0sq15r1d" path="res://development/cards/animation/sheen__0005_sheen06.png" id="7_rc0m0"]
-[ext_resource type="Texture2D" uid="uid://cb4uhgdsw730a" path="res://development/cards/animation/sheen__0006_sheen07.png" id="8_xqscf"]
-[ext_resource type="Texture2D" uid="uid://cssercidgjbqb" path="res://development/cards/animation/sheen__0007_sheen08.png" id="9_e0k5p"]
-[ext_resource type="Texture2D" uid="uid://0fd4t4dasyn4" path="res://development/cards/animation/sheen__0008_sheen09.png" id="10_3qr7r"]
-[ext_resource type="Texture2D" uid="uid://2wfngtnl2aot" path="res://development/cards/animation/sheen__0009_sheen010.png" id="11_jkk7n"]
-[ext_resource type="Texture2D" uid="uid://ctpxhu2lhmifp" path="res://development/cards/animation/sheen__0011_Background.png" id="12_r4ryf"]
+[ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://development/cards/cardbacks4092021.png" id="13_ekrwt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gftrf"]
-animations = [{
-"frames": [{
-"duration": 60.0,
-"texture": ExtResource("2_wf2x5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_b2lxb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_uhgyt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_c3ga0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_77sc5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_rc0m0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_xqscf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_e0k5p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_3qr7r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_jkk7n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_r4ryf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 29.0
-}]
+[sub_resource type="Animation" id="Animation_ssage"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.4001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1.0333, 1), Vector2(0.0753603, 1), Vector2(0.94452, 1), Vector2(0.981902, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back/Front:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_eutjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Back:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.0333, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Back/Front:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n064a"]
+_data = {
+"RESET": SubResource("Animation_eutjd"),
+"new_animation": SubResource("Animation_ssage")
+}
 
 [sub_resource type="FontFile" id="FontFile_1fxkw"]
 subpixel_positioning = 0
@@ -117,82 +127,86 @@ Label/fonts/font = SubResource("FontFile_1fxkw")
 [node name="Cards" type="Node2D"]
 position = Vector2(770.085, 651.278)
 scale = Vector2(2, 2)
+script = ExtResource("1_b4eao")
 
 [node name="V2" type="Node" parent="."]
 
-[node name="Front" type="Sprite2D" parent="V2"]
-position = Vector2(718.014, 586.625)
+[node name="Back" type="Sprite2D" parent="V2"]
+position = Vector2(763.212, 654)
+scale = Vector2(1.0333, 1)
+texture = ExtResource("13_ekrwt")
+region_enabled = true
+region_rect = Rect2(440.529, 138.191, 107.297, 129.774)
+
+[node name="Front" type="Sprite2D" parent="V2/Back"]
+z_index = -1
+position = Vector2(-51.4896, -67.3752)
+scale = Vector2(0.967769, 1)
 texture = ExtResource("1_pk74m")
 centered = false
 region_enabled = true
 region_rect = Rect2(12.7798, 2.00426, 102.699, 130.94)
 region_filter_clip_enabled = true
 
-[node name="NamePlate" type="Sprite2D" parent="V2"]
-position = Vector2(769.956, 600.692)
-scale = Vector2(0.979227, 1)
-texture = ExtResource("1_pk74m")
-region_enabled = true
-region_rect = Rect2(132.44, 271.699, 102.632, 20.0598)
-
-[node name="ItemBackground" type="Sprite2D" parent="V2"]
-position = Vector2(771.22, 641.288)
-scale = Vector2(0.687577, 0.429538)
-texture = ExtResource("1_pk74m")
-region_enabled = true
-region_rect = Rect2(606.325, 155.266, 108.338, 131.856)
-
-[node name="ItemBorda" type="Sprite2D" parent="V2"]
-position = Vector2(770.942, 641.525)
-scale = Vector2(0.811744, 0.811744)
-texture = ExtResource("1_pk74m")
-region_enabled = true
-region_rect = Rect2(130.109, 133.55, 106.913, 77.4194)
-
-[node name="Item" type="Sprite2D" parent="V2"]
-position = Vector2(771.224, 642.01)
-scale = Vector2(1.60746, 1.60746)
-texture = ExtResource("1_pk74m")
-region_enabled = true
-region_rect = Rect2(434.033, 301.376, 30.8435, 28.39)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="V2"]
-position = Vector2(-163.93, 82.3529)
-sprite_frames = SubResource("SpriteFrames_gftrf")
-frame_progress = 0.865845
-
-[node name="Hearth" type="Sprite2D" parent="V2"]
-position = Vector2(795.855, 677.11)
-scale = Vector2(0.730017, 0.730017)
-texture = ExtResource("1_pk74m")
-region_enabled = true
-region_rect = Rect2(419.93, 142.609, 32.6444, 21.9806)
-
-[node name="Sprite2D" type="Sprite2D" parent="V2"]
-position = Vector2(743.136, 677.054)
+[node name="Sprite2D" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(25.1224, 90.4295)
 scale = Vector2(0.562528, 0.562528)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(520.841, 268.418, 18.7161, 20.6748)
 
-[node name="Format" type="Sprite2D" parent="V2"]
-visible = false
+[node name="ItemBorda" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(52.928, 54.9006)
+scale = Vector2(0.811744, 0.811744)
 texture = ExtResource("1_pk74m")
 region_enabled = true
-region_rect = Rect2(218.626, 471.099, 102.831, 130.641)
+region_rect = Rect2(130.109, 133.55, 106.913, 77.4194)
 
-[node name="Description" type="Sprite2D" parent="V2"]
-position = Vector2(769.802, 698.033)
+[node name="NamePlate" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(51.9425, 14.0672)
+scale = Vector2(0.979227, 1)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(132.44, 271.699, 102.632, 20.0598)
+
+[node name="ItemBackground" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(53.2063, 54.6629)
+scale = Vector2(0.687577, 0.429538)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(606.325, 155.266, 108.338, 131.856)
+
+[node name="Item" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(53.2103, 55.385)
+scale = Vector2(1.60746, 1.60746)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(434.033, 301.376, 30.8435, 28.39)
+
+[node name="Hearth" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(77.8416, 90.4855)
+scale = Vector2(0.730017, 0.730017)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(419.93, 142.609, 32.6444, 21.9806)
+
+[node name="Description" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(51.7877, 111.408)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
 
-[node name="Sprite2D2" type="Sprite2D" parent="V2"]
-position = Vector2(769.388, 691.447)
+[node name="Sprite2D2" type="Sprite2D" parent="V2/Back/Front"]
+position = Vector2(51.3743, 104.822)
 scale = Vector2(0.636561, 0.636561)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(462.622, 185.895, 63.983, 13.0577)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="V2"]
+libraries = {
+"": SubResource("AnimationLibrary_n064a")
+}
 
 [node name="V3" type="Node" parent="."]
 
@@ -247,6 +261,7 @@ offset_bottom = 675.411
 theme = SubResource("Theme_04shq")
 text = "10
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemType2" type="Label" parent="V3"]
 offset_left = 628.207
@@ -256,6 +271,7 @@ offset_bottom = 650.748
 theme = SubResource("Theme_04shq")
 text = "10
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemType" type="Label" parent="V3"]
 offset_left = 641.542
@@ -265,6 +281,7 @@ offset_bottom = 613.863
 theme = SubResource("Theme_04shq")
 text = "Helmet
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemName" type="Label" parent="V3"]
 offset_left = 615.557
@@ -273,6 +290,7 @@ offset_right = 706.557
 offset_bottom = 620.0
 theme = SubResource("Theme_04shq")
 text = "Helmet of the destiny"
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemName" type="Label" parent="V3/ItemName"]
 offset_left = 619.309
@@ -281,12 +299,6 @@ offset_right = 710.309
 offset_bottom = 619.406
 theme = SubResource("Theme_04shq")
 text = "Helmet of the destiny"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="V3"]
-position = Vector2(50.0031, 64.6866)
-sprite_frames = SubResource("SpriteFrames_gftrf")
-frame_progress = 0.774025
-metadata/_edit_lock_ = true
 
 [node name="Hearth" type="Sprite2D" parent="V3"]
 position = Vector2(634.658, 633.477)
@@ -315,6 +327,7 @@ offset_right = 691.324
 offset_bottom = 707.209
 theme = SubResource("Theme_04shq")
 text = "10    10    10   10"
+metadata/_edit_use_anchors_ = true
 
 [node name="V1" type="Node" parent="."]
 
@@ -375,6 +388,7 @@ offset_bottom = 676.671
 theme = SubResource("Theme_04shq")
 text = "10
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemType2" type="Label" parent="V1"]
 offset_left = 516.074
@@ -384,6 +398,7 @@ offset_bottom = 652.008
 theme = SubResource("Theme_04shq")
 text = "10
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemType" type="Label" parent="V1"]
 offset_left = 529.409
@@ -393,6 +408,7 @@ offset_bottom = 615.123
 theme = SubResource("Theme_04shq")
 text = "Helmet
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="ItemName" type="Label" parent="V1"]
 offset_left = 509.557
@@ -401,12 +417,7 @@ offset_right = 600.557
 offset_bottom = 617.888
 theme = SubResource("Theme_04shq")
 text = "Helmet of the destiny"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="V1"]
-position = Vector2(50.0031, 64.6866)
-sprite_frames = SubResource("SpriteFrames_gftrf")
-frame_progress = 0.774025
-metadata/_edit_lock_ = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Hearth" type="Sprite2D" parent="V1"]
 position = Vector2(522.525, 634.737)
@@ -435,3 +446,123 @@ offset_right = 579.191
 offset_bottom = 706.469
 theme = SubResource("Theme_04shq")
 text = "10    10    10   10"
+metadata/_edit_use_anchors_ = true
+
+[node name="V1" type="Node" parent="V1"]
+
+[node name="Front" type="Sprite2D" parent="V1/V1"]
+position = Vector2(496.409, 587.123)
+texture = ExtResource("1_pk74m")
+centered = false
+region_enabled = true
+region_rect = Rect2(12.7798, 2.00426, 102.699, 130.94)
+region_filter_clip_enabled = true
+
+[node name="Description" type="Sprite2D" parent="V1/V1"]
+position = Vector2(547.518, 697.201)
+scale = Vector2(0.943613, 1.11515)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
+
+[node name="Border" type="Sprite2D" parent="V1/V1"]
+position = Vector2(545.49, 651.307)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(117.893, 335.281, 103.868, 131.563)
+
+[node name="NamePlate" type="Sprite2D" parent="V1/V1"]
+position = Vector2(546.69, 604.536)
+scale = Vector2(0.971398, 1)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
+
+[node name="ItemBackground" type="Sprite2D" parent="V1/V1"]
+position = Vector2(558.841, 652.557)
+scale = Vector2(0.503954, 0.395163)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(606.325, 155.266, 108.338, 131.856)
+
+[node name="ItemBorda" type="Sprite2D" parent="V1/V1"]
+position = Vector2(558.467, 652.373)
+scale = Vector2(0.583534, 0.704753)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(130.109, 133.55, 106.913, 77.4194)
+
+[node name="Item" type="Sprite2D" parent="V1/V1"]
+position = Vector2(558.779, 652.634)
+scale = Vector2(1.32853, 1.38714)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(434.033, 301.376, 30.8435, 28.39)
+
+[node name="ItemType3" type="Label" parent="V1/V1"]
+offset_left = 514.896
+offset_top = 663.671
+offset_right = 524.896
+offset_bottom = 676.671
+theme = SubResource("Theme_04shq")
+text = "10
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemType2" type="Label" parent="V1/V1"]
+offset_left = 516.074
+offset_top = 639.008
+offset_right = 526.074
+offset_bottom = 652.008
+theme = SubResource("Theme_04shq")
+text = "10
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemType" type="Label" parent="V1/V1"]
+offset_left = 529.409
+offset_top = 602.123
+offset_right = 560.409
+offset_bottom = 615.123
+theme = SubResource("Theme_04shq")
+text = "Helmet
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemName" type="Label" parent="V1/V1"]
+offset_left = 509.557
+offset_top = 591.888
+offset_right = 600.557
+offset_bottom = 617.888
+theme = SubResource("Theme_04shq")
+text = "Helmet of the destiny"
+metadata/_edit_use_anchors_ = true
+
+[node name="Hearth" type="Sprite2D" parent="V1/V1"]
+position = Vector2(522.525, 634.737)
+scale = Vector2(0.703034, 0.703034)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(419.93, 142.609, 32.6444, 21.9806)
+
+[node name="Damage" type="Sprite2D" parent="V1/V1"]
+position = Vector2(520.331, 659.072)
+scale = Vector2(0.593609, 0.593609)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(520.841, 268.418, 18.7161, 20.6748)
+
+[node name="Sprite2D" type="Sprite2D" parent="V1/V1"]
+position = Vector2(546.011, 689.463)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(462.622, 185.895, 63.983, 13.0577)
+
+[node name="ItemType4" type="Label" parent="V1/V1"]
+offset_left = 517.191
+offset_top = 693.469
+offset_right = 579.191
+offset_bottom = 706.469
+theme = SubResource("Theme_04shq")
+text = "10    10    10   10"
+metadata/_edit_use_anchors_ = true
