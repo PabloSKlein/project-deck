@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://ctpxhu2lhmifp" path="res://development/cards/animation/sheen__0011_Background.png" id="12_r4ryf"]
 
 [sub_resource type="FontFile" id="FontFile_1fxkw"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/9/0/ascent = 0.0
 cache/0/9/0/descent = 0.0
 cache/0/9/0/underline_position = 0.0
@@ -112,11 +115,11 @@ animations = [{
 }]
 
 [node name="Cards" type="Node2D"]
+scale = Vector2(2, 2)
 
 [node name="V2" type="Node" parent="."]
 
 [node name="Front" type="Sprite2D" parent="V2"]
-visible = false
 texture = ExtResource("1_pk74m")
 centered = false
 region_enabled = true
@@ -124,7 +127,6 @@ region_rect = Rect2(12.7798, 2.00426, 102.699, 130.94)
 region_filter_clip_enabled = true
 
 [node name="Description" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(50.8197, 110.531)
 scale = Vector2(0.96504, 1.05542)
 texture = ExtResource("1_pk74m")
@@ -132,14 +134,12 @@ region_enabled = true
 region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
 
 [node name="Border" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(49.0815, 64.1834)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(117.893, 335.281, 103.868, 131.563)
 
 [node name="NamePlate" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(51.4096, 12.5626)
 scale = Vector2(0.971398, 1)
 texture = ExtResource("1_pk74m")
@@ -147,23 +147,20 @@ region_enabled = true
 region_rect = Rect2(132.44, 271.699, 102.632, 20.0598)
 
 [node name="ItemBackground" type="Sprite2D" parent="V2"]
-visible = false
-position = Vector2(50.8213, 53.8591)
-scale = Vector2(0.760099, 0.446266)
+position = Vector2(50.8787, 52.2337)
+scale = Vector2(0.687583, 0.382893)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(606.325, 155.266, 108.338, 131.856)
 
 [node name="ItemBorda" type="Sprite2D" parent="V2"]
-visible = false
-position = Vector2(50.9429, 54.1366)
-scale = Vector2(0.925006, 0.851684)
+position = Vector2(51.0429, 52.3126)
+scale = Vector2(0.826054, 0.760575)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(130.109, 133.55, 106.913, 77.4194)
 
 [node name="Item" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(52.4325, 52.7608)
 scale = Vector2(1.42725, 1.61831)
 texture = ExtResource("1_pk74m")
@@ -171,7 +168,6 @@ region_enabled = true
 region_rect = Rect2(434.033, 301.376, 30.8435, 28.39)
 
 [node name="ItemType2" type="Label" parent="V2"]
-visible = false
 offset_left = 76.3532
 offset_top = 84.4008
 offset_right = 89.3532
@@ -181,7 +177,6 @@ text = "10
 "
 
 [node name="ItemType" type="Label" parent="V2"]
-visible = false
 offset_left = 24.8444
 offset_top = 83.9668
 offset_right = 37.8444
@@ -191,7 +186,6 @@ text = "10
 "
 
 [node name="ItemName" type="Label" parent="V2"]
-visible = false
 offset_left = 12.9286
 offset_top = 5.78642
 offset_right = 103.929
@@ -200,13 +194,12 @@ theme = SubResource("Theme_04shq")
 text = "Helmet of the destiny"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="V2"]
-visible = false
 position = Vector2(50.0031, 64.6866)
 sprite_frames = SubResource("SpriteFrames_gftrf")
 frame_progress = 0.865845
+metadata/_edit_lock_ = true
 
 [node name="Hearth" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(19.0508, 90.1421)
 scale = Vector2(0.703034, 0.703034)
 texture = ExtResource("1_pk74m")
@@ -214,7 +207,6 @@ region_enabled = true
 region_rect = Rect2(419.93, 142.609, 32.6444, 21.9806)
 
 [node name="Sprite2D" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(67.7708, 90.1784)
 scale = Vector2(0.593609, 0.593609)
 texture = ExtResource("1_pk74m")
@@ -222,7 +214,6 @@ region_enabled = true
 region_rect = Rect2(520.841, 268.418, 18.7161, 20.6748)
 
 [node name="Sprite2D2" type="Sprite2D" parent="V2"]
-visible = false
 position = Vector2(49.2361, 102.561)
 scale = Vector2(0.870631, 0.870631)
 texture = ExtResource("1_pk74m")
@@ -230,7 +221,6 @@ region_enabled = true
 region_rect = Rect2(462.622, 185.895, 63.983, 13.0577)
 
 [node name="ItemType4" type="Label" parent="V2"]
-visible = false
 offset_left = 20.0511
 offset_top = 105.733
 offset_right = 82.0511
@@ -238,9 +228,138 @@ offset_bottom = 118.733
 theme = SubResource("Theme_04shq")
 text = "10    10    10   10"
 
+[node name="V3" type="Node" parent="."]
+
+[node name="Front" type="Sprite2D" parent="V3"]
+visible = false
+texture = ExtResource("1_pk74m")
+centered = false
+region_enabled = true
+region_rect = Rect2(12.7798, 2.00426, 102.699, 130.94)
+region_filter_clip_enabled = true
+
+[node name="Description" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(51.1093, 110.078)
+scale = Vector2(0.943613, 1.11515)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
+
+[node name="NamePlate" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(51.869, 20.984)
+scale = Vector2(0.971398, 1)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
+
+[node name="ItemBackground" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(66.0037, 64.4415)
+scale = Vector2(0.503954, 0.398192)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(606.325, 155.266, 108.338, 131.856)
+
+[node name="ItemBorda" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(65.6297, 65.2496)
+scale = Vector2(0.583534, 0.704753)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(130.109, 133.55, 106.913, 77.4194)
+
+[node name="Item" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(65.9422, 65.5105)
+scale = Vector2(1.32853, 1.38714)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(434.033, 301.376, 30.8435, 28.39)
+
+[node name="ItemType3" type="Label" parent="V3"]
+visible = false
+offset_left = 18.4874
+offset_top = 76.5478
+offset_right = 28.4874
+offset_bottom = 89.5478
+theme = SubResource("Theme_04shq")
+text = "10
+"
+
+[node name="ItemType2" type="Label" parent="V3"]
+visible = false
+offset_left = 19.6649
+offset_top = 51.8844
+offset_right = 29.6649
+offset_bottom = 64.8844
+theme = SubResource("Theme_04shq")
+text = "10
+"
+
+[node name="ItemType" type="Label" parent="V3"]
+visible = false
+offset_left = 33.0
+offset_top = 15.0
+offset_right = 64.0
+offset_bottom = 28.0
+theme = SubResource("Theme_04shq")
+text = "Helmet
+"
+
+[node name="ItemName" type="Label" parent="V3"]
+visible = false
+offset_left = 10.7674
+offset_top = 7.54222
+offset_right = 101.767
+offset_bottom = 33.5423
+theme = SubResource("Theme_04shq")
+text = "Helmet of the destiny"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="V3"]
+visible = false
+position = Vector2(50.0031, 64.6866)
+sprite_frames = SubResource("SpriteFrames_gftrf")
+frame_progress = 0.774025
+metadata/_edit_lock_ = true
+
+[node name="Hearth" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(26.1163, 47.6135)
+scale = Vector2(0.703034, 0.703034)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(419.93, 142.609, 32.6444, 21.9806)
+
+[node name="Damage" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(23.9219, 71.9486)
+scale = Vector2(0.593609, 0.593609)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(520.841, 268.418, 18.7161, 20.6748)
+
+[node name="Sprite2D" type="Sprite2D" parent="V3"]
+visible = false
+position = Vector2(49.6023, 103.231)
+texture = ExtResource("1_pk74m")
+region_enabled = true
+region_rect = Rect2(462.622, 185.895, 63.983, 13.0577)
+
+[node name="ItemType4" type="Label" parent="V3"]
+visible = false
+offset_left = 20.7818
+offset_top = 108.345
+offset_right = 82.7818
+offset_bottom = 121.345
+theme = SubResource("Theme_04shq")
+text = "10    10    10   10"
+
 [node name="V1" type="Node" parent="."]
 
 [node name="Front" type="Sprite2D" parent="V1"]
+visible = false
 texture = ExtResource("1_pk74m")
 centered = false
 region_enabled = true
@@ -248,65 +367,74 @@ region_rect = Rect2(12.7798, 2.00426, 102.699, 130.94)
 region_filter_clip_enabled = true
 
 [node name="Description" type="Sprite2D" parent="V1"]
-position = Vector2(47.9912, 106.069)
+visible = false
+position = Vector2(51.1093, 110.078)
 scale = Vector2(0.943613, 1.11515)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
 
 [node name="Border" type="Sprite2D" parent="V1"]
+visible = false
 position = Vector2(49.0815, 64.1834)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(117.893, 335.281, 103.868, 131.563)
 
 [node name="NamePlate" type="Sprite2D" parent="V1"]
-position = Vector2(49.6418, 17.8659)
+visible = false
+position = Vector2(51.869, 20.984)
 scale = Vector2(0.971398, 1)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(133.269, 222.4, 99.5871, 31.3604)
 
 [node name="ItemBackground" type="Sprite2D" parent="V1"]
-position = Vector2(62.1146, 61.6131)
+visible = false
+position = Vector2(66.0037, 64.4415)
 scale = Vector2(0.503954, 0.398192)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(606.325, 155.266, 108.338, 131.856)
 
 [node name="ItemBorda" type="Sprite2D" parent="V1"]
-position = Vector2(62.0942, 61.7141)
+visible = false
+position = Vector2(65.6297, 65.2496)
 scale = Vector2(0.583534, 0.704753)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(130.109, 133.55, 106.913, 77.4194)
 
 [node name="Item" type="Sprite2D" parent="V1"]
-position = Vector2(62.7602, 62.6821)
+visible = false
+position = Vector2(65.9422, 65.5105)
 scale = Vector2(1.32853, 1.38714)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(434.033, 301.376, 30.8435, 28.39)
 
 [node name="ItemType3" type="Label" parent="V1"]
-offset_left = 18.1724
-offset_top = 74.9729
-offset_right = 28.1724
-offset_bottom = 87.9729
+visible = false
+offset_left = 18.4874
+offset_top = 76.5478
+offset_right = 28.4874
+offset_bottom = 89.5478
 theme = SubResource("Theme_04shq")
 text = "10
 "
 
 [node name="ItemType2" type="Label" parent="V1"]
-offset_left = 19.3499
-offset_top = 48.1046
-offset_right = 29.3499
-offset_bottom = 61.1046
+visible = false
+offset_left = 19.6649
+offset_top = 51.8844
+offset_right = 29.6649
+offset_bottom = 64.8844
 theme = SubResource("Theme_04shq")
 text = "10
 "
 
 [node name="ItemType" type="Label" parent="V1"]
+visible = false
 offset_left = 33.0
 offset_top = 15.0
 offset_right = 64.0
@@ -316,43 +444,49 @@ text = "Helmet
 "
 
 [node name="ItemName" type="Label" parent="V1"]
-offset_left = 8.09473
-offset_top = 5.31497
-offset_right = 99.0947
-offset_bottom = 31.315
+visible = false
+offset_left = 10.7674
+offset_top = 7.54222
+offset_right = 101.767
+offset_bottom = 33.5423
 theme = SubResource("Theme_04shq")
 text = "Helmet of the destiny"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="V1"]
+visible = false
 position = Vector2(50.0031, 64.6866)
 sprite_frames = SubResource("SpriteFrames_gftrf")
 frame_progress = 0.774025
 metadata/_edit_lock_ = true
 
 [node name="Hearth" type="Sprite2D" parent="V1"]
-position = Vector2(24.2264, 44.1487)
+visible = false
+position = Vector2(26.1163, 47.6135)
 scale = Vector2(0.703034, 0.703034)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(419.93, 142.609, 32.6444, 21.9806)
 
 [node name="Damage" type="Sprite2D" parent="V1"]
-position = Vector2(23.9219, 68.7988)
+visible = false
+position = Vector2(23.9219, 71.9486)
 scale = Vector2(0.593609, 0.593609)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(520.841, 268.418, 18.7161, 20.6748)
 
 [node name="Sprite2D" type="Sprite2D" parent="V1"]
-position = Vector2(48.2659, 98.7767)
+visible = false
+position = Vector2(49.6023, 103.231)
 texture = ExtResource("1_pk74m")
 region_enabled = true
 region_rect = Rect2(462.622, 185.895, 63.983, 13.0577)
 
 [node name="ItemType4" type="Label" parent="V1"]
-offset_left = 19.0
-offset_top = 103.0
-offset_right = 81.0
-offset_bottom = 116.0
+visible = false
+offset_left = 20.7818
+offset_top = 108.345
+offset_right = 82.7818
+offset_bottom = 121.345
 theme = SubResource("Theme_04shq")
 text = "10    10    10   10"

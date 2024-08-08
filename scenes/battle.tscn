@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl564dw5xgfgc"]
+[gd_scene load_steps=8 format=3 uid="uid://cl564dw5xgfgc"]
 
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
 [ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
+[ext_resource type="PackedScene" uid="uid://dyna75gxgf53r" path="res://development/cards/cards_dev.tscn" id="3_su2kp"]
 [ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character_ui.tscn" id="4_i6iwv"]
 [ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire_hand_ui.tscn" id="5_gqfcq"]
 [ext_resource type="PackedScene" uid="uid://pwnnkgbwieyw" path="res://scenes/inventory.tscn" id="5_qyvdd"]
@@ -16,6 +17,11 @@ script = ExtResource("1_f0ud5")
 position = Vector2(639.001, 361.001)
 scale = Vector2(0.849332, 0.804053)
 texture = ExtResource("2_6ong8")
+
+[node name="Cards" parent="." instance=ExtResource("3_su2kp")]
+position = Vector2(43, 61)
+rotation = -3.11192
+skew = -0.0593412
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
