@@ -2,6 +2,7 @@ class_name Battle extends Node2D
 
 @onready var hero_scene = preload("res://scenes/hero.tscn")
 @onready var enemy_scene = preload("res://scenes/enemy.tscn")
+@onready var pop_up_death = preload("res://scenes/pop_up.tscn")
 
 @onready var battle_ui = $BattleUI
 @onready var hero_ui = $HeroControl/CharacterUI
@@ -16,6 +17,7 @@ class_name Battle extends Node2D
 var squire : Squire = Squire.new()
 var hero : Hero
 var enemy : Enemy
+var pop_up: PopUp
 
 func _ready():
 	conect_events()
@@ -39,6 +41,7 @@ func _ready():
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
 	check_enemys()
+	check_hero()
 	pass
 
 func _on_end_turn_button_pressed():
@@ -52,7 +55,6 @@ func _on_end_turn_button_pressed():
 	hero.take_damage(enemy.get_attribute("attack"))
 	hero_ui.update()
 	
-
 func _on_draw_button_pressed():
 	squire_ui.draw_card()
 
@@ -67,3 +69,20 @@ func conect_events():
 func check_enemys():
 	if enemy_control == null:
 		pass #TODO quando nenhum inimigo existir na tela, um pop up de proxima fase deve ser mostrado
+
+func check_hero():
+	var is_dead = hero.is_dead()
+	if is_dead:
+		show_death_popup()
+
+func show_death_popup():
+	self.pop_up = pop_up_death.instantiate()
+	add_child(pop_up)
+	pop_up.connect("rerun_pressed", self._on_rerun_pressed)
+	pop_up.connect("main_menu_pressed", self._on_main_menu_pressed)
+
+func _on_rerun_pressed():
+	get_tree().reload_current_scene()
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
