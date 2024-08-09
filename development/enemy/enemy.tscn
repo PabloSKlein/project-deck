@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://vdl1w86vbvx2"]
+
+[ext_resource type="Texture2D" uid="uid://1tydwepw2tav" path="res://development/enemy/sunny-dragon-fly.png" id="1_mm8rs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxmjk"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(0, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prx2b"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(192, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hl6s"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(384, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlkgp"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(576, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvpvh"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(768, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv80o"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(960, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6k1ro"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(1152, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffvuq"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(1344, 0, 192, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pp0e"]
+atlas = ExtResource("1_mm8rs")
+region = Rect2(1536, 0, 192, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_awvtr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxmjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prx2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hl6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlkgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvpvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv80o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6k1ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffvuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pp0e")
+}],
+"loop": true,
+"name": &"enemy",
+"speed": 8.0
+}]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(975, 472)
+sprite_frames = SubResource("SpriteFrames_awvtr")
+animation = &"enemy"
+autoplay = "enemy"
+frame_progress = 0.907845
