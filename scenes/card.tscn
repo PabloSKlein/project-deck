@@ -4,12 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://pvr3d755ksjf" path="res://resource/card/magic_background.png" id="2_dfexv"]
 [ext_resource type="Script" path="res://scripts/card/state/card_state_machine.gd" id="3_3v17h"]
 [ext_resource type="Script" path="res://scripts/card/state/card_base_state.gd" id="4_e0f78"]
+[ext_resource type="Theme" uid="uid://cseven80fcm3m" path="res://resource/theme/card_type.tres" id="4_qf8s1"]
 [ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/theme/main_theme.tres" id="4_xspot"]
-[ext_resource type="Theme" uid="uid://bp85whvhr3d32" path="res://resource/theme/label.tres" id="5_mrtvr"]
 [ext_resource type="Script" path="res://scripts/card/state/card_clicked_state.gd" id="5_wlpcx"]
 [ext_resource type="Script" path="res://scripts/card/state/card_dragging_state.gd" id="6_gv8ui"]
-[ext_resource type="Theme" uid="uid://dnfaci73cf0go" path="res://resource/theme/modifiers.tres" id="6_qubg8"]
 [ext_resource type="Script" path="res://scripts/card/state/card_released_state.gd" id="7_yfh3r"]
+
+[sub_resource type="Theme" id="Theme_7hkaj"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2m5h"]
 size = Vector2(250, 350)
@@ -69,7 +72,7 @@ offset_left = 10.0
 offset_top = 4.0
 offset_right = 260.0
 offset_bottom = 27.0
-theme = ExtResource("5_mrtvr")
+theme = ExtResource("4_qf8s1")
 text = "name"
 autowrap_mode = 1
 
@@ -80,7 +83,7 @@ offset_left = 12.0
 offset_top = 194.0
 offset_right = 262.0
 offset_bottom = 217.0
-theme = ExtResource("5_mrtvr")
+theme = ExtResource("4_qf8s1")
 text = "name"
 autowrap_mode = 1
 
@@ -91,7 +94,7 @@ offset_left = 179.0
 offset_top = 194.0
 offset_right = 429.0
 offset_bottom = 217.0
-theme = ExtResource("5_mrtvr")
+theme = ExtResource("4_qf8s1")
 text = "name"
 autowrap_mode = 1
 
@@ -102,7 +105,7 @@ offset_top = 225.0
 offset_right = 234.0
 offset_bottom = 226.0
 mouse_filter = 2
-theme = ExtResource("6_qubg8")
+theme = SubResource("Theme_7hkaj")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_3v17h")

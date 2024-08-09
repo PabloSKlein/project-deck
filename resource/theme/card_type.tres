@@ -1,0 +1,18 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cseven80fcm3m"]
+
+[ext_resource type="FontFile" uid="uid://cta5nihkmfoyw" path="res://development/cards/fonts/VT323-Regular.ttf" id="1_uyr8i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2pdrt"]
+
+[resource]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 5
+Label/constants/shadow_offset_y = 5
+Label/constants/shadow_outline_size = 5
+Label/font_sizes/font_size = 14
+Label/fonts/font = ExtResource("1_uyr8i")
+Label/styles/normal = SubResource("StyleBoxEmpty_2pdrt")

@@ -11,9 +11,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "sword",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -33,9 +34,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "axe",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -55,9 +57,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "dagger",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -77,9 +80,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "mace",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -99,9 +103,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "wand",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -120,9 +125,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "bow",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -135,15 +141,16 @@
 	"category": "Weapon",
 	"type": "Staff",
 	"equipment_slot": [
-	  "MainHand"
+	  "TwoHand"
 	],
 	"magic_multi": "1",
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
-	"is_dual_handed": true,
-	"item_image": "staff",
+	"is_dual_handed": false,
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -163,9 +170,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "claw",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -184,9 +192,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "shield",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -205,9 +214,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "body",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -226,9 +236,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "gloves",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -247,9 +258,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "boots",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -268,9 +280,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "helmet",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -289,15 +302,17 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "amulet",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "life",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
 	  },
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -316,9 +331,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "ring",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -337,9 +353,10 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "ring",
+	"item_image": "headhunter",
 	"attributes": [
 	  {
+		"attributeIcon": "icon1",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
