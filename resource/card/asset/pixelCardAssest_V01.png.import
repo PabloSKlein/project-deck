@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pvr3d755ksjf"
-path="res://.godot/imported/magic_background.png-c9cb3357b85acebc436c5de7d07606ce.ctex"
+uid="uid://dhthfkx6n488"
+path="res://.godot/imported/pixelCardAssest_V01.png-2d5f7faa70f7175980102b98e732dc53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/card/magic_background.png"
-dest_files=["res://.godot/imported/magic_background.png-c9cb3357b85acebc436c5de7d07606ce.ctex"]
+source_file="res://resource/card/asset/pixelCardAssest_V01.png"
+dest_files=["res://.godot/imported/pixelCardAssest_V01.png-2d5f7faa70f7175980102b98e732dc53.ctex"]
 
 [params]
 
