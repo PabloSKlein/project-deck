@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cflc3qkxbtyid"]
+[gd_scene load_steps=18 format=3 uid="uid://cflc3qkxbtyid"]
 
 [ext_resource type="Script" path="res://scripts/card/card.gd" id="1_uk5af"]
 [ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://resource/card/asset/cardbacks4092021.png" id="2_34pdd"]
@@ -13,6 +13,14 @@
 [ext_resource type="Script" path="res://scripts/global/label.gd" id="6_1xl45"]
 [ext_resource type="Script" path="res://scripts/card/state/card_dragging_state.gd" id="6_gv8ui"]
 [ext_resource type="Script" path="res://scripts/card/state/card_released_state.gd" id="7_yfh3r"]
+
+[sub_resource type="Animation" id="Animation_ix420"]
+resource_name = "card_flip"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbtl2"]
+_data = {
+"card_flip": SubResource("Animation_ix420")
+}
 
 [sub_resource type="Theme" id="Theme_7hkaj"]
 Label/colors/font_color = Color(0, 0, 0, 1)
@@ -86,6 +94,12 @@ texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(400.632, 183.661, 19.9012, 18.6232)
 metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RareCard"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_pbtl2")
+}
 
 [node name="MagicCard" type="Sprite2D" parent="."]
 position = Vector2(125, 193)
@@ -210,18 +224,21 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(544, 272, 16, 16)
+metadata/_edit_lock_ = true
 
 [node name="ItemCategoryAcessorie" type="Sprite2D" parent="."]
 position = Vector2(50, 45)
 texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(493, 222, 22, 16)
+metadata/_edit_lock_ = true
 
 [node name="ItemCategoryArmor" type="Sprite2D" parent="."]
 position = Vector2(49, 47)
 texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(638, 308, 24, 27)
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
