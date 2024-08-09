@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://sldhyl1jkthp"]
 
-[ext_resource type="FontFile" uid="uid://cta5nihkmfoyw" path="res://development/cards/fonts/VT323-Regular.ttf" id="1_hoy5u"]
+[ext_resource type="FontFile" uid="uid://cta5nihkmfoyw" path="res://resource/card/fonts/VT323-Regular.ttf" id="1_hoy5u"]
 
 [resource]
 Label/colors/font_shadow_color = Color(0.0430392, 0.0430392, 0.0430392, 0.956863)

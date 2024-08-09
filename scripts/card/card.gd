@@ -66,8 +66,9 @@ func set_type_item(value):
 func set_image_item(value):
 	var texture_path = "res://resource/card/item/" + value + ".png"
 	var texture = load(texture_path)
-	print(texture)
-	item_rare = texture # TODO ajustar item imagem
+	item_rare.texture = texture
+	item_magic.texture = texture
+	item_rare.texture = texture
 
 func set_rarity_item(value):
 	self.rarity = value

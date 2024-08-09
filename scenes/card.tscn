@@ -11,8 +11,8 @@
 [ext_resource type="Script" path="res://scripts/global/label.gd" id="6_1xl45"]
 [ext_resource type="Script" path="res://scripts/card/state/card_dragging_state.gd" id="6_gv8ui"]
 [ext_resource type="Script" path="res://scripts/card/state/card_released_state.gd" id="7_yfh3r"]
-[ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://development/cards/cardbacks4092021.png" id="10_y7uud"]
-[ext_resource type="Texture2D" uid="uid://dhthfkx6n488" path="res://development/cards/pixelCardAssest_V01.png" id="11_q36yv"]
+[ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://resource/card/asset/cardbacks4092021.png" id="10_y7uud"]
+[ext_resource type="Texture2D" uid="uid://dhthfkx6n488" path="res://resource/card/asset/pixelCardAssest_V01.png" id="11_q36yv"]
 
 [sub_resource type="Theme" id="Theme_7hkaj"]
 Label/colors/font_color = Color(0, 0, 0, 1)

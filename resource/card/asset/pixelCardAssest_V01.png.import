@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://demc0gqbodphb"
-path="res://.godot/imported/middle-b.png-afe7b5bb9fe85da1dc1b18a968569889.ctex"
+uid="uid://dhthfkx6n488"
+path="res://.godot/imported/pixelCardAssest_V01.png-2d5f7faa70f7175980102b98e732dc53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://development/environment/middle-b.png"
-dest_files=["res://.godot/imported/middle-b.png-afe7b5bb9fe85da1dc1b18a968569889.ctex"]
+source_file="res://resource/card/asset/pixelCardAssest_V01.png"
+dest_files=["res://.godot/imported/pixelCardAssest_V01.png-2d5f7faa70f7175980102b98e732dc53.ctex"]
 
 [params]
 
