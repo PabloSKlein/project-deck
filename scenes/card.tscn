@@ -212,7 +212,6 @@ region_enabled = true
 region_rect = Rect2(400.632, 183.661, 19.9012, 18.6232)
 
 [node name="Item" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(166, 182)
 scale = Vector2(0.3009, 0.351745)
 texture = ExtResource("4_l8x5p")
@@ -269,10 +268,10 @@ metadata/_edit_lock_ = true
 [node name="CardTypeLabel" type="Label" parent="VBoxContainer/Control"]
 custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
-offset_left = 120.0
-offset_top = 49.0
-offset_right = 220.0
-offset_bottom = 70.0
+offset_left = 79.0
+offset_top = 48.0
+offset_right = 179.0
+offset_bottom = 69.0
 theme = ExtResource("4_qf8s1")
 text = "name"
 autowrap_mode = 1
