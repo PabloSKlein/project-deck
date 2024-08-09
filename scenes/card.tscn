@@ -1,7 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://cflc3qkxbtyid"]
 
 [ext_resource type="Script" path="res://scripts/card/card.gd" id="1_uk5af"]
+[ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://resource/card/asset/cardbacks4092021.png" id="2_34pdd"]
 [ext_resource type="Script" path="res://scripts/card/state/card_state_machine.gd" id="3_3v17h"]
+[ext_resource type="Texture2D" uid="uid://dhthfkx6n488" path="res://resource/card/asset/pixelCardAssest_V01.png" id="3_rfbfw"]
 [ext_resource type="Script" path="res://scripts/card/state/card_base_state.gd" id="4_e0f78"]
 [ext_resource type="Texture2D" uid="uid://b03j05xwt0rdt" path="res://resource/card/item/amulet.png" id="4_l8x5p"]
 [ext_resource type="Theme" uid="uid://cseven80fcm3m" path="res://resource/theme/card_type.tres" id="4_qf8s1"]
@@ -11,8 +13,6 @@
 [ext_resource type="Script" path="res://scripts/global/label.gd" id="6_1xl45"]
 [ext_resource type="Script" path="res://scripts/card/state/card_dragging_state.gd" id="6_gv8ui"]
 [ext_resource type="Script" path="res://scripts/card/state/card_released_state.gd" id="7_yfh3r"]
-[ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://resource/card/asset/cardbacks4092021.png" id="10_y7uud"]
-[ext_resource type="Texture2D" uid="uid://dhthfkx6n488" path="res://resource/card/asset/pixelCardAssest_V01.png" id="11_q36yv"]
 
 [sub_resource type="Theme" id="Theme_7hkaj"]
 Label/colors/font_color = Color(0, 0, 0, 1)
@@ -36,7 +36,7 @@ script = ExtResource("1_uk5af")
 [node name="RareCard" type="Sprite2D" parent="."]
 position = Vector2(125, 193)
 scale = Vector2(2.51, 2.9145)
-texture = ExtResource("10_y7uud")
+texture = ExtResource("2_34pdd")
 region_enabled = true
 region_rect = Rect2(664.754, 137.526, 100.756, 128.649)
 metadata/_edit_lock_ = true
@@ -44,58 +44,53 @@ metadata/_edit_lock_ = true
 [node name="Front" type="Sprite2D" parent="RareCard"]
 position = Vector2(-49.7649, -66.6561)
 scale = Vector2(1.01136, 1.01817)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 centered = false
 region_enabled = true
 region_rect = Rect2(480.674, 3.72857, 100.537, 128.594)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="Item" type="Sprite2D" parent="RareCard/Front"]
-z_index = 1
-position = Vector2(65.3571, 61.7597)
-scale = Vector2(0.118534, 0.118534)
-texture = ExtResource("4_l8x5p")
-
 [node name="NamePlate" type="Sprite2D" parent="RareCard/Front"]
 position = Vector2(50.4022, 15.7861)
 scale = Vector2(0.981645, 0.866608)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(251.675, 222.756, 96.7535, 29.4585)
 
 [node name="Description" type="Sprite2D" parent="RareCard/Front"]
 position = Vector2(50.4767, 111.489)
 scale = Vector2(0.980824, 0.942527)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(251.783, 222.783, 96.4832, 29.4585)
 
 [node name="ItemBackground" type="Sprite2D" parent="RareCard/Front"]
 position = Vector2(64.6657, 62.2229)
 scale = Vector2(0.552475, 0.366234)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(607.358, 4.97826, 104.752, 127.653)
 
 [node name="ItemBorda" type="Sprite2D" parent="RareCard/Front"]
 position = Vector2(64.624, 62.1864)
 scale = Vector2(0.697914, 0.716184)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(256.729, 135.807, 86.3484, 72.2722)
 
 [node name="Pin" type="Sprite2D" parent="RareCard/Front"]
 position = Vector2(19.1323, 15.6265)
 scale = Vector2(0.932982, 0.932982)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(400.632, 183.661, 19.9012, 18.6232)
+metadata/_edit_lock_ = true
 
 [node name="MagicCard" type="Sprite2D" parent="."]
 position = Vector2(125, 193)
 scale = Vector2(2.51, 2.9145)
-texture = ExtResource("10_y7uud")
+texture = ExtResource("2_34pdd")
 region_enabled = true
 region_rect = Rect2(664.754, 137.526, 100.756, 128.649)
 metadata/_edit_lock_ = true
@@ -103,58 +98,52 @@ metadata/_edit_lock_ = true
 [node name="Front" type="Sprite2D" parent="MagicCard"]
 position = Vector2(-49.7649, -66.6561)
 scale = Vector2(1.01136, 1.01817)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 centered = false
 region_enabled = true
 region_rect = Rect2(14.0258, 3.78282, 100.267, 128.516)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="Item" type="Sprite2D" parent="MagicCard/Front"]
-z_index = 1
-position = Vector2(65.751, 62.4335)
-scale = Vector2(0.116358, 0.102723)
-texture = ExtResource("4_l8x5p")
-
 [node name="NamePlate" type="Sprite2D" parent="MagicCard/Front"]
 position = Vector2(50.4022, 15.7861)
 scale = Vector2(0.981645, 0.866608)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(134.756, 224.188, 97.4292, 29.0531)
 
 [node name="Description" type="Sprite2D" parent="MagicCard/Front"]
 position = Vector2(50.0827, 111.489)
 scale = Vector2(0.980824, 0.942527)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(134.701, 223.702, 96.6184, 29.5936)
 
 [node name="ItemBackground" type="Sprite2D" parent="MagicCard/Front"]
 position = Vector2(64.6657, 62.2229)
 scale = Vector2(0.552475, 0.366234)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(607.358, 4.97826, 104.752, 127.653)
 
 [node name="ItemBorda" type="Sprite2D" parent="MagicCard/Front"]
 position = Vector2(64.624, 62.1864)
 scale = Vector2(0.697914, 0.716184)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(139.756, 135.655, 86.6187, 72.4705)
 
 [node name="Pin" type="Sprite2D" parent="MagicCard/Front"]
 position = Vector2(19.1323, 15.6265)
 scale = Vector2(0.932982, 0.932982)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(376.646, 183.756, 19.5939, 18.5129)
 
 [node name="UniqueCard" type="Sprite2D" parent="."]
 position = Vector2(125, 193)
 scale = Vector2(2.51, 2.9145)
-texture = ExtResource("10_y7uud")
+texture = ExtResource("2_34pdd")
 region_enabled = true
 region_rect = Rect2(664.754, 137.526, 100.756, 128.649)
 metadata/_edit_lock_ = true
@@ -162,24 +151,18 @@ metadata/_edit_lock_ = true
 [node name="Front" type="Sprite2D" parent="UniqueCard"]
 position = Vector2(-49.7649, -66.6561)
 scale = Vector2(1.01136, 1.01817)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 centered = false
 region_enabled = true
 region_rect = Rect2(132.809, 3.67589, 100.592, 128.211)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="Item" type="Sprite2D" parent="UniqueCard/Front"]
-z_index = 1
-position = Vector2(65.751, 62.4335)
-scale = Vector2(0.116358, 0.102723)
-texture = ExtResource("4_l8x5p")
-
 [node name="NamePlate" type="Sprite2D" parent="UniqueCard/Front"]
 modulate = Color(0.572549, 0.188235, 0.290196, 1)
 position = Vector2(50.4022, 15.7861)
 scale = Vector2(0.981645, 0.866608)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(251.675, 222.756, 96.7535, 29.4585)
 
@@ -187,14 +170,14 @@ region_rect = Rect2(251.675, 222.756, 96.7535, 29.4585)
 modulate = Color(0.572549, 0.188235, 0.290196, 1)
 position = Vector2(50.4767, 111.489)
 scale = Vector2(0.980824, 0.942527)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(251.783, 222.783, 96.4832, 29.4585)
 
 [node name="ItemBackground" type="Sprite2D" parent="UniqueCard/Front"]
 position = Vector2(64.6657, 62.2229)
 scale = Vector2(0.552475, 0.366234)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(607.358, 4.97826, 104.752, 127.653)
 
@@ -202,7 +185,7 @@ region_rect = Rect2(607.358, 4.97826, 104.752, 127.653)
 modulate = Color(1, 0.254902, 0, 1)
 position = Vector2(64.624, 62.1864)
 scale = Vector2(0.697914, 0.716184)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(256.729, 135.807, 86.3484, 72.2722)
 
@@ -210,9 +193,35 @@ region_rect = Rect2(256.729, 135.807, 86.3484, 72.2722)
 modulate = Color(0.572549, 0.188235, 0.290196, 1)
 position = Vector2(19.1323, 15.6265)
 scale = Vector2(0.932982, 0.932982)
-texture = ExtResource("11_q36yv")
+texture = ExtResource("3_rfbfw")
 region_enabled = true
 region_rect = Rect2(400.632, 183.661, 19.9012, 18.6232)
+
+[node name="Item" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(166, 182)
+scale = Vector2(0.3009, 0.351745)
+texture = ExtResource("4_l8x5p")
+metadata/_edit_lock_ = true
+
+[node name="ItemCategoryDamage" type="Sprite2D" parent="."]
+position = Vector2(48, 45)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_rfbfw")
+region_enabled = true
+region_rect = Rect2(544, 272, 16, 16)
+
+[node name="ItemCategoryAcessorie" type="Sprite2D" parent="."]
+position = Vector2(50, 45)
+texture = ExtResource("3_rfbfw")
+region_enabled = true
+region_rect = Rect2(493, 222, 22, 16)
+
+[node name="ItemCategoryArmor" type="Sprite2D" parent="."]
+position = Vector2(49, 47)
+texture = ExtResource("3_rfbfw")
+region_enabled = true
+region_rect = Rect2(638, 308, 24, 27)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -226,6 +235,7 @@ metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
+metadata/_edit_lock_ = true
 
 [node name="CardNameLabel" type="Label" parent="VBoxContainer/Control"]
 custom_minimum_size = Vector2(100, 20)
@@ -237,6 +247,7 @@ offset_bottom = 52.0
 theme = ExtResource("5_kk17f")
 text = "name"
 script = ExtResource("6_1xl45")
+metadata/_edit_lock_ = true
 
 [node name="CardTypeLabel" type="Label" parent="VBoxContainer/Control"]
 custom_minimum_size = Vector2(100, 20)
@@ -248,6 +259,7 @@ offset_bottom = 70.0
 theme = ExtResource("4_qf8s1")
 text = "name"
 autowrap_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="CardRarityLabel" type="Label" parent="VBoxContainer/Control"]
 visible = false
@@ -260,6 +272,7 @@ offset_bottom = 73.0
 theme = ExtResource("4_qf8s1")
 text = "name"
 autowrap_mode = 1
+metadata/_edit_lock_ = true
 
 [node name="Modifiers" type="VBoxContainer" parent="VBoxContainer/Control"]
 layout_mode = 2
@@ -269,6 +282,7 @@ offset_right = 234.0
 offset_bottom = 226.0
 mouse_filter = 2
 theme = SubResource("Theme_7hkaj")
+metadata/_edit_lock_ = true
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_3v17h")

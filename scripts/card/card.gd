@@ -28,8 +28,10 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @onready var rare_card = $RareCard
 @onready var magic_card = $MagicCard
 @onready var unique_card = $UniqueCard
-@onready var item_rare = $RareCard/Front/Item
-@onready var item_magic = $MagicCard/Front/Item
+@onready var item = $Item
+@onready var item_category_damage = $ItemCategoryDamage
+@onready var item_category_acessorie = $ItemCategoryAcessorie
+@onready var item_category_armor = $ItemCategoryArmor
 
 
 # Called when the node enters the scene tree for the first time.
@@ -66,9 +68,7 @@ func set_type_item(value):
 func set_image_item(value):
 	var texture_path = "res://resource/card/item/" + value + ".png"
 	var texture = load(texture_path)
-	item_rare.texture = texture
-	item_magic.texture = texture
-	item_rare.texture = texture
+	item.texture = texture
 
 func set_rarity_item(value):
 	self.rarity = value
@@ -85,6 +85,27 @@ func set_rarity_item(value):
 		_rarity = "Unique"
 		rare_card.hide()
 		magic_card.hide()
+		
+func set_category_item(value):
+	self.category = value
+	match self.category:
+		"Armor":
+			item_category_damage.hide()
+			item_category_acessorie.hide()
+			item_category_armor.show()
+		"Shield":
+			item_category_damage.hide()
+			item_category_acessorie.hide()
+			item_category_armor.show()
+		"Acessories":
+			item_category_damage.hide()
+			item_category_acessorie.show()
+			item_category_armor.hide()
+		"Weapon":
+			item_category_damage.show()
+			item_category_acessorie.hide()
+			item_category_armor.hide()
+	return "Other"
 
 func set_modifier(value: Array[Modifier]):
 	modifiers = value
@@ -100,6 +121,7 @@ func copy_from(_card : Card):
 	set_rarity_item(_card.rarity)
 	set_modifier(_card.modifiers)
 	set_image_item(_card.image)
+	set_category_item(_card.category)
 	self.slot_types = _card.slot_types
 	pass
 
