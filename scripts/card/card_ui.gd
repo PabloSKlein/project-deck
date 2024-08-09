@@ -5,9 +5,16 @@ var card: Card
 @onready var modifiers_stack : VBoxContainer = $VBoxContainer/Control/Modifiers
 @onready var color : ColorRect = $Color
 @onready var card_name_label : Label = $State
-@onready var card_state_machine : CardStateMachine = $CardStateMachine
+@onready var card_state_machine : CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
 @onready var background = $Background
+@onready var rare_card = $RareCard
+@onready var magic_card = $MagicCard
+@onready var unique_card = $UniqueCard
+@onready var item = $Item
+@onready var item_category_damage = $ItemCategoryDamage
+@onready var item_category_acessorie = $ItemCategoryAcessorie
+@onready var item_category_armor = $ItemCategoryArmor
 @onready var targets: Array[Node] = []
 
 signal reparent_requested(which_card_ui: CardUI)
@@ -63,12 +70,34 @@ func set_rarity_item(value):
 	var _rarity
 	if	value == 1:
 		_rarity = "Magic"
-		var texture = load("res://resource/card/magic_background.png")
-		$Background.texture = texture
+		unique_card.hide()
+		rare_card.hide()
 	elif value == 2:
 		_rarity = "Rare"
-		var texture = load("res://resource/card/rare_background.png")
-		$Background.texture = texture
+		unique_card.hide()
+		magic_card.hide()
 	else:
 		_rarity = "Unique"
-	$VBoxContainer/Control/CardRarityLabel.text = _rarity
+		rare_card.hide()
+		magic_card.hide()
+	
+func set_category_item(value):
+	self.category = value
+	match self.category:
+		"Armor":
+			item_category_damage.hide()
+			item_category_acessorie.hide()
+			item_category_armor.show()
+		"Shield":
+			item_category_damage.hide()
+			item_category_acessorie.hide()
+			item_category_armor.show()
+		"Acessories":
+			item_category_damage.hide()
+			item_category_acessorie.show()
+			item_category_armor.hide()
+		"Weapon":
+			item_category_damage.show()
+			item_category_acessorie.hide()
+			item_category_armor.hide()
+	return "Other"
