@@ -507,6 +507,7 @@ theme = SubResource("Theme_7hkaj")
 [node name="Magic_Draw" type="Node" parent="."]
 
 [node name="Back" type="Sprite2D" parent="Magic_Draw"]
+visible = false
 position = Vector2(889.998, 282.93)
 scale = Vector2(2.51, 2.9145)
 texture = ExtResource("13_ekrwt")
@@ -587,7 +588,6 @@ region_enabled = true
 region_rect = Rect2(117.893, 335.281, 103.868, 131.563)
 
 [node name="Pin" type="Sprite2D" parent="Magic_Draw/Back/Front"]
-visible = false
 position = Vector2(1.30254, 5.84963)
 scale = Vector2(1.14924, 1.14924)
 texture = ExtResource("1_pk74m")
@@ -595,7 +595,6 @@ region_enabled = true
 region_rect = Rect2(373.901, 180.842, 24.9284, 24.3349)
 
 [node name="PinIcon" type="Sprite2D" parent="Magic_Draw/Back/Front"]
-visible = false
 position = Vector2(1.80657, 5.24559)
 scale = Vector2(0.655403, 0.655403)
 texture = ExtResource("1_pk74m")
@@ -655,6 +654,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Unique_draw" type="Node" parent="."]
 
 [node name="Back" type="Sprite2D" parent="Unique_draw"]
+visible = false
 position = Vector2(335.321, 277.68)
 scale = Vector2(2.42696, 2.87865)
 texture = ExtResource("13_ekrwt")
@@ -744,7 +744,6 @@ region_enabled = true
 region_rect = Rect2(224.406, 332.386, 104.543, 134.562)
 
 [node name="Pin" type="Sprite2D" parent="Unique_draw/Back/Front"]
-visible = false
 modulate = Color(0.8, 0.313726, 0.435294, 1)
 position = Vector2(0.437568, 3.30313)
 scale = Vector2(1.14924, 1.14924)
@@ -753,7 +752,6 @@ region_enabled = true
 region_rect = Rect2(400.632, 183.661, 20.6615, 19.4723)
 
 [node name="PinIcon" type="Sprite2D" parent="Unique_draw/Back/Front"]
-visible = false
 position = Vector2(-0.0269938, 3.83781)
 scale = Vector2(0.655403, 0.655403)
 texture = ExtResource("1_pk74m")
@@ -810,6 +808,7 @@ theme = SubResource("Theme_7hkaj")
 [node name="Rare_draw" type="Node" parent="."]
 
 [node name="Back" type="Sprite2D" parent="Rare_draw"]
+visible = false
 position = Vector2(604.176, 279.739)
 scale = Vector2(2.51, 2.9145)
 texture = ExtResource("13_ekrwt")
@@ -891,7 +890,6 @@ region_enabled = true
 region_rect = Rect2(224.406, 332.386, 104.543, 134.562)
 
 [node name="Pin" type="Sprite2D" parent="Rare_draw/Back/Front"]
-visible = false
 position = Vector2(4.58595, 6.10325)
 scale = Vector2(1.14924, 1.14924)
 texture = ExtResource("1_pk74m")
@@ -899,7 +897,6 @@ region_enabled = true
 region_rect = Rect2(400.632, 183.661, 20.6615, 19.4723)
 
 [node name="PinIcon" type="Sprite2D" parent="Rare_draw/Back/Front"]
-visible = false
 position = Vector2(4.49299, 5.49921)
 scale = Vector2(0.655403, 0.655403)
 texture = ExtResource("1_pk74m")
