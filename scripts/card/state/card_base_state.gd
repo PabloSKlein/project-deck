@@ -7,7 +7,7 @@ func enter() -> void:
 		await card_ui.ready
 	
 	card_ui.reparent_requested.emit(card_ui)
-	card_ui.color.color = Color.PINK
+#	card_ui.color.color = Color.PINK
 	#card_ui.CardNameLabel.text = "BASE"
 	card_ui.pivot_offset = Vector2.ZERO
 

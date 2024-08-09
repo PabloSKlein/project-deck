@@ -25,6 +25,10 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @onready var card_state_machine : CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
 @onready var background = $Background
+@onready var rare_card = $RareCard
+@onready var magic_card = $MagicCard
+@onready var unique_card = $UniqueCard
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -60,22 +64,23 @@ func set_type_item(value):
 func set_image_item(value):
 	var texture_path = "res://resource/card/item/" + value + ".png"
 	var texture = load(texture_path)
-	$Item.texture = texture
+	#$Item.texture = texture # TODO ajustar item imagem
 
 func set_rarity_item(value):
 	self.rarity = value
 	var _rarity
 	if	value == 1:
 		_rarity = "Magic"
-		var texture = load("res://resource/card/magic_background.png")
-		$Background.texture = texture
+		unique_card.hide()
+		rare_card.hide()
 	elif value == 2:
 		_rarity = "Rare"
-		var texture = load("res://resource/card/rare_background.png")
-		$Background.texture = texture
+		unique_card.hide()
+		magic_card.hide()
 	else:
 		_rarity = "Unique"
-	$VBoxContainer/Control/CardRarityLabel.text = _rarity
+		rare_card.hide()
+		magic_card.hide()
 
 func set_modifier(value: Array[Modifier]):
 	modifiers = value
