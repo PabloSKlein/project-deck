@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cflc3qkxbtyid"]
+[gd_scene load_steps=16 format=3 uid="uid://cflc3qkxbtyid"]
 
 [ext_resource type="Script" path="res://scripts/card/card.gd" id="1_uk5af"]
 [ext_resource type="Script" path="res://scripts/card/state/card_state_machine.gd" id="3_3v17h"]
 [ext_resource type="Script" path="res://scripts/card/state/card_base_state.gd" id="4_e0f78"]
+[ext_resource type="Texture2D" uid="uid://b03j05xwt0rdt" path="res://resource/card/item/amulet.png" id="4_l8x5p"]
 [ext_resource type="Theme" uid="uid://cseven80fcm3m" path="res://resource/theme/card_type.tres" id="4_qf8s1"]
 [ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/theme/main_theme.tres" id="4_xspot"]
 [ext_resource type="Theme" uid="uid://sldhyl1jkthp" path="res://resource/theme/card_name.tres" id="5_kk17f"]
@@ -49,6 +50,12 @@ region_enabled = true
 region_rect = Rect2(480.674, 3.72857, 100.537, 128.594)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
+
+[node name="Item" type="Sprite2D" parent="RareCard/Front"]
+z_index = 1
+position = Vector2(65.3571, 61.7597)
+scale = Vector2(0.118534, 0.118534)
+texture = ExtResource("4_l8x5p")
 
 [node name="NamePlate" type="Sprite2D" parent="RareCard/Front"]
 position = Vector2(50.4022, 15.7861)
@@ -103,6 +110,12 @@ region_rect = Rect2(14.0258, 3.78282, 100.267, 128.516)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
 
+[node name="Item" type="Sprite2D" parent="MagicCard/Front"]
+z_index = 1
+position = Vector2(65.751, 62.4335)
+scale = Vector2(0.116358, 0.102723)
+texture = ExtResource("4_l8x5p")
+
 [node name="NamePlate" type="Sprite2D" parent="MagicCard/Front"]
 position = Vector2(50.4022, 15.7861)
 scale = Vector2(0.981645, 0.866608)
@@ -156,6 +169,12 @@ region_rect = Rect2(132.809, 3.67589, 100.592, 128.211)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
 
+[node name="Item" type="Sprite2D" parent="UniqueCard/Front"]
+z_index = 1
+position = Vector2(65.751, 62.4335)
+scale = Vector2(0.116358, 0.102723)
+texture = ExtResource("4_l8x5p")
+
 [node name="NamePlate" type="Sprite2D" parent="UniqueCard/Front"]
 modulate = Color(0.572549, 0.188235, 0.290196, 1)
 position = Vector2(50.4022, 15.7861)
@@ -203,6 +222,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_xspot")
+metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2

@@ -28,6 +28,8 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @onready var rare_card = $RareCard
 @onready var magic_card = $MagicCard
 @onready var unique_card = $UniqueCard
+@onready var item_rare = $RareCard/Front/Item
+@onready var item_magic = $MagicCard/Front/Item
 
 
 # Called when the node enters the scene tree for the first time.
@@ -64,7 +66,8 @@ func set_type_item(value):
 func set_image_item(value):
 	var texture_path = "res://resource/card/item/" + value + ".png"
 	var texture = load(texture_path)
-	#$Item.texture = texture # TODO ajustar item imagem
+	print(texture)
+	item_rare = texture # TODO ajustar item imagem
 
 func set_rarity_item(value):
 	self.rarity = value

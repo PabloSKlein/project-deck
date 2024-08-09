@@ -11,7 +11,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "sword",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -34,7 +34,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "axe",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -57,7 +57,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "dagger",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -80,7 +80,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "mace",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -103,7 +103,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "wand",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -125,7 +125,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "bow",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -147,7 +147,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "staff",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -170,7 +170,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "claw",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -192,7 +192,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "shield",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -214,7 +214,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "body",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -236,7 +236,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "gloves",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -258,7 +258,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "boots",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -280,7 +280,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "helmet",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -302,7 +302,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "amulet",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -331,7 +331,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "ring",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",
@@ -353,7 +353,7 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "headhunter",
+	"item_image": "ring",
 	"attributes": [
 	  {
 		"attributeIcon": "icon1",

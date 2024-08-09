@@ -14,6 +14,7 @@ func add_to_inventory(_card: Card) -> void:
 
 func add_to_hand(_card: Card) -> void:
 	cards_in_hand.push_back(_card)
+	
 
 func discard_hand() -> void:
 	cards_in_hand = []
