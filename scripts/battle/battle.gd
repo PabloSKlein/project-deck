@@ -50,6 +50,8 @@ func _process(delta):
 func _on_end_turn_button_pressed():
 	squire_ui.discard_hand()
 
+	hero.show_status()
+
 	enemy.take_damage(hero.get_attribute("attack"))
 	enemy_ui.update()
 	if(enemy.is_dead()):

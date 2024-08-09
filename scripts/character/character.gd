@@ -37,12 +37,14 @@ func add_attribute(modifier: Modifier):
 		attributes[modifier.type] += modifier.amount
 	else:
 		attributes[modifier.type] = modifier.amount
-	
-func show_inventory():
-	inventory.show_inventory()
 
 func equip(card: Card):
-	#inventory_node.get_equiped_item(card.type)
 	inventory.equip(card)
-	for attribute in card.modifiers:
-		add_attribute(attribute)
+	update_attributes()
+
+func update_attributes():
+	for slot in inventory.slots:
+		if(slot.is_empty):
+			continue
+		for modifier in slot.card.modifiers:
+			add_attribute(modifier)
