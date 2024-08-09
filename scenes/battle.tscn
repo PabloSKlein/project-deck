@@ -1,10 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cl564dw5xgfgc"]
+[gd_scene load_steps=7 format=3 uid="uid://cl564dw5xgfgc"]
 
 [ext_resource type="Script" path="res://scripts/battle/battle.gd" id="1_f0ud5"]
 [ext_resource type="Texture2D" uid="uid://cy0bdn0lb53v1" path="res://resource/battle/background.png" id="2_6ong8"]
-[ext_resource type="PackedScene" uid="uid://vdl1w86vbvx2" path="res://development/enemy/enemy.tscn" id="2_ihlnd"]
-[ext_resource type="PackedScene" uid="uid://cflih7bdo8abl" path="res://development/environment/env.tscn" id="2_n6ovx"]
-[ext_resource type="PackedScene" uid="uid://dyna75gxgf53r" path="res://development/cards/cards_dev.tscn" id="3_su2kp"]
 [ext_resource type="PackedScene" uid="uid://c0fsh6havs6ot" path="res://scenes/character_ui.tscn" id="4_i6iwv"]
 [ext_resource type="PackedScene" uid="uid://blny60vw60nhx" path="res://scenes/squire_hand_ui.tscn" id="5_gqfcq"]
 [ext_resource type="PackedScene" uid="uid://pwnnkgbwieyw" path="res://scenes/inventory.tscn" id="5_qyvdd"]
@@ -14,17 +11,6 @@ size = Vector2(1279.75, 508.596)
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_f0ud5")
-
-[node name="Dev" type="Node" parent="."]
-
-[node name="Scene" parent="Dev" instance=ExtResource("2_n6ovx")]
-
-[node name="Enemy" parent="Dev" instance=ExtResource("2_ihlnd")]
-
-[node name="Cards" parent="Dev" instance=ExtResource("3_su2kp")]
-position = Vector2(43, 61)
-rotation = -3.11192
-skew = -0.0593412
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(639.001, 361.001)
