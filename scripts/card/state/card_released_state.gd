@@ -5,7 +5,7 @@ var stored_cards: Dictionary = {}
 signal card_stored(card_data)
 
 func enter() -> void:
-	card_ui.color.color = Color.DARK_BLUE
+#	card_ui.color.color = Color.DARK_BLUE
 	played = false
 	var targets = card_ui.targets
 	if not targets.is_empty():

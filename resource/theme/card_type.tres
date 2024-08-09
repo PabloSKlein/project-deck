@@ -13,6 +13,6 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 5
 Label/constants/shadow_offset_y = 5
 Label/constants/shadow_outline_size = 5
-Label/font_sizes/font_size = 14
+Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("1_uyr8i")
 Label/styles/normal = SubResource("StyleBoxEmpty_2pdrt")
