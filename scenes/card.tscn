@@ -1,11 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cflc3qkxbtyid"]
+[gd_scene load_steps=17 format=3 uid="uid://cflc3qkxbtyid"]
 
 [ext_resource type="Script" path="res://scripts/card/card_ui.gd" id="1_l76qh"]
 [ext_resource type="Texture2D" uid="uid://cr8rj6vn7m26e" path="res://resource/card/asset/cardbacks4092021.png" id="2_34pdd"]
 [ext_resource type="Script" path="res://scripts/card/state/card_state_machine.gd" id="3_3v17h"]
 [ext_resource type="Texture2D" uid="uid://dhthfkx6n488" path="res://resource/card/asset/pixelCardAssest_V01.png" id="3_rfbfw"]
 [ext_resource type="Script" path="res://scripts/card/state/card_base_state.gd" id="4_e0f78"]
-[ext_resource type="Texture2D" uid="uid://b03j05xwt0rdt" path="res://resource/card/item/amulet.png" id="4_l8x5p"]
+[ext_resource type="Texture2D" uid="uid://b03j05xwt0rdt" path="res://resource/card/icon/amulet.png" id="4_l8x5p"]
 [ext_resource type="Theme" uid="uid://cseven80fcm3m" path="res://resource/theme/card_type.tres" id="4_qf8s1"]
 [ext_resource type="Theme" uid="uid://b1b0umhwrlhaw" path="res://resource/theme/main_theme.tres" id="4_xspot"]
 [ext_resource type="Theme" uid="uid://sldhyl1jkthp" path="res://resource/theme/card_name.tres" id="5_kk17f"]
@@ -21,10 +21,6 @@ resource_name = "card_flip"
 _data = {
 "card_flip": SubResource("Animation_ix420")
 }
-
-[sub_resource type="Theme" id="Theme_7hkaj"]
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a2m5h"]
 size = Vector2(255, 380)
@@ -247,7 +243,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_xspot")
-metadata/_edit_lock_ = true
 
 [node name="Control" type="Control" parent="VBoxContainer"]
 layout_mode = 2
@@ -270,7 +265,7 @@ custom_minimum_size = Vector2(100, 20)
 layout_mode = 2
 offset_left = 79.0
 offset_top = 48.0
-offset_right = 179.0
+offset_right = 242.0
 offset_bottom = 69.0
 theme = ExtResource("4_qf8s1")
 text = "name"
@@ -292,13 +287,12 @@ metadata/_edit_lock_ = true
 
 [node name="Modifiers" type="VBoxContainer" parent="VBoxContainer/Control"]
 layout_mode = 2
-offset_left = 12.0
-offset_top = 225.0
-offset_right = 234.0
-offset_bottom = 226.0
+offset_left = 39.0
+offset_top = 107.0
+offset_right = 87.0
+offset_bottom = 288.0
 mouse_filter = 2
-theme = SubResource("Theme_7hkaj")
-metadata/_edit_lock_ = true
+theme = ExtResource("4_qf8s1")
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_3v17h")

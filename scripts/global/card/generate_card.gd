@@ -54,14 +54,15 @@ func generate_modifiers(card_map, rarity) -> Array[Modifier]:
 	var modifiers : Array[Modifier]
 	for atribute in attributes:
 		var type = atribute["description"]
+		var icon = atribute["attributeIcon"]
 		var min_value = int(atribute["min"])
 		var max_value = int(atribute["max"])
-		var modifier = Modifier.new(type, randi_range(min_value, max_value))
+		var modifier = Modifier.new(type, icon, randi_range(min_value, max_value))
 		modifiers.push_front(modifier)
 	var affixes = generate_affixes(card_map, rarity)
 	for key in affixes:
 		var afix = affixes.get(key)
-		var modifier = Modifier.new(afix["description"], int(afix["value_status"]))
+		var modifier = Modifier.new(afix["description"], afix["affix_icon"], int(afix["value_status"]))
 		modifiers.push_front(modifier)
 		
 	return modifiers
@@ -130,7 +131,8 @@ func generate_affixes(card_data, rarity):
 			affix_data[prefix["name"]] = {
 				"description": prefix["description"],
 				"value_status": pick_random_value(prefix["tiers"], rarity),
-				"increased": prefix["increased"]
+				"increased": prefix["increased"],
+				"affix_icon": prefix["affix_icon"]
 			}
 			used_affix_names[prefix["name"]] = true
 	
@@ -141,7 +143,8 @@ func generate_affixes(card_data, rarity):
 			affix_data[suffix["name"]] = {
 				"description": suffix["description"],
 				"value_status": pick_random_value(suffix["tiers"], rarity),
-				"increased": suffix["increased"]
+				"increased": suffix["increased"],
+				"affix_icon": suffix["affix_icon"]
 			}
 			used_affix_names[suffix["name"]] = true
 	return affix_data
@@ -168,7 +171,8 @@ func get_valid_affixes(affix_json, item_category, affix_type):
 						"name": name,
 						"description": affix["description"],
 						"tiers": affix["tiers"],
-						"increased": affix["increased"]
+						"increased": affix["increased"],
+						"affix_icon": affix["affix_icon"]
 					})
 		return valid_affixes
 	return []

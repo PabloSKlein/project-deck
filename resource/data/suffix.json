@@ -11,7 +11,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Added",
-	  "suffix_icon": "icon1",
+	  "affix_icon": "axe",
 	  "tiers": {
 		"1": {
 		  "min": 5,
@@ -46,7 +46,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Increased",
-	  "suffix_icon": "icon1",
+	  "affix_icon": "axe",
 	  "tiers": {
 		"1": {
 		  "min": 8,

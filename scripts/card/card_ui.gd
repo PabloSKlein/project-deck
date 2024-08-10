@@ -57,15 +57,31 @@ func set_image_item(image):
 	var texture_path = "res://resource/card/item/" + image + ".png"
 	var texture = load(texture_path)
 	$Item.texture = texture
-
+		
 func update_modifiers():
 	for modifier in card.modifiers:
+		var vbox = VBoxContainer.new()
+		var sprite = Sprite2D.new()
+		var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
+		var spacer = Control.new()
 		var label = Label.new()
-		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
-		label.text = modifier.type + " " + str(modifier.amount)
-		modifiers_stack.add_child(label)
-		modifiers_stack.add_child(label)
-
+		
+		sprite.scale = Vector2(0.12, 0.12)
+		spacer.custom_minimum_size = Vector2(0, 5)
+		
+		label.text = "  " + str(modifier.amount)  # TODO: Add modifier.type as a tooltip
+		sprite.texture = icon
+		
+		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		
+		vbox.add_child(sprite)
+		vbox.add_child(label)
+		vbox.add_child(spacer)
+	
+		modifiers_stack.add_child(vbox)
+		
 func set_rarity_item(value):
 	var _rarity
 	if	value == 1:
@@ -101,3 +117,11 @@ func set_category_item(value):
 			item_category_acessorie.hide()
 			item_category_armor.hide()
 	return "Other"
+
+func _on_icon_mouse_entered(type: String):
+	# Display tooltip or any other action when mouse enters
+	print("Mouse entered icon: ", type)
+
+func _on_icon_mouse_exited():
+	# Hide tooltip or any other action when mouse exits
+	print("Mouse exited icon")

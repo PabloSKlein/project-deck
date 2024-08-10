@@ -14,7 +14,7 @@
 	"item_image": "sword",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -37,7 +37,7 @@
 	"item_image": "axe",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -60,7 +60,7 @@
 	"item_image": "dagger",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -83,7 +83,7 @@
 	"item_image": "mace",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -106,7 +106,7 @@
 	"item_image": "wand",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -128,7 +128,7 @@
 	"item_image": "bow",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -150,7 +150,7 @@
 	"item_image": "staff",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -173,7 +173,7 @@
 	"item_image": "claw",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "attack",
 		"method": "Added",
 		"min": 5,
@@ -195,7 +195,7 @@
 	"item_image": "shield",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -217,7 +217,7 @@
 	"item_image": "body",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -239,7 +239,7 @@
 	"item_image": "gloves",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -261,7 +261,7 @@
 	"item_image": "boots",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -283,7 +283,7 @@
 	"item_image": "helmet",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -305,14 +305,14 @@
 	"item_image": "amulet",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "life",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
 	  },
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -334,7 +334,7 @@
 	"item_image": "belt",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,
@@ -356,7 +356,7 @@
 	"item_image": "ring",
 	"attributes": [
 	  {
-		"attributeIcon": "icon1",
+		"attributeIcon": "amulet",
 		"description": "block",
 		"method": "Increased",
 		"min": 5,

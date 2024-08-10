@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd4ipx2v2p85r"
-path="res://.godot/imported/axe.png-b3cb07095f3589c14e1a497b4f1ed4e7.ctex"
+uid="uid://b03j05xwt0rdt"
+path="res://.godot/imported/amulet.png-6781b134545d18bd7e738d015df3455b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/card/item/axe.png"
-dest_files=["res://.godot/imported/axe.png-b3cb07095f3589c14e1a497b4f1ed4e7.ctex"]
+source_file="res://resource/card/icon/amulet.png"
+dest_files=["res://.godot/imported/amulet.png-6781b134545d18bd7e738d015df3455b.ctex"]
 
 [params]
 
