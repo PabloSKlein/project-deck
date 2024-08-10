@@ -93,7 +93,7 @@ func update_modifiers():
 
 		var spacer = Control.new()
 		spacer.custom_minimum_size = Vector2(0, 10) 
-
+		
 		modifiers_stack.add_child(spacer)
 
 		control.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
