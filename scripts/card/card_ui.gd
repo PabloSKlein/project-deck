@@ -117,11 +117,3 @@ func set_category_item(value):
 			item_category_acessorie.hide()
 			item_category_armor.hide()
 	return "Other"
-
-func _on_icon_mouse_entered(type: String):
-	# Display tooltip or any other action when mouse enters
-	print("Mouse entered icon: ", type)
-
-func _on_icon_mouse_exited():
-	# Hide tooltip or any other action when mouse exits
-	print("Mouse exited icon")
