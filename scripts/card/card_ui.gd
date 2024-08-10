@@ -63,7 +63,7 @@ func set_image_item(image):
 		
 func _on_sprite_mouse_entered(modifier):
 	tooltip.text = modifier
-	tooltip.visible = true 
+	tooltip.visible = true
 
 func _on_sprite_mouse_exited():
 	tooltip.visible = false
@@ -71,7 +71,7 @@ func _on_sprite_mouse_exited():
 func update_modifiers():
 	for modifier in card.modifiers:
 		var control = Control.new()
-		control.custom_minimum_size = Vector2(50, 25)  # Increase size to cover the desired area
+		control.custom_minimum_size = Vector2(50, 20)  # Increase size to cover the desired area
 		
 		var label = Label.new()
 		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
@@ -98,8 +98,6 @@ func update_modifiers():
 
 		control.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
 		control.connect("mouse_exited", self._on_sprite_mouse_exited)
-
-
 		
 func set_rarity_item(value):
 	var _rarity
@@ -140,4 +138,4 @@ func set_category_item(value):
 func set_tooltip():
 	tooltip = Label.new()
 	tooltip.text = "" 
-	tooltip.visible = false 
+	tooltip.visible = false

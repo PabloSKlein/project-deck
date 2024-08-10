@@ -218,3 +218,14 @@ layout_mode = 2
 text = ">>"
 
 [connection signal="pressed" from="HBoxContainer/ButtonShow" to="HBoxContainer/StatusUI" method="_on_button_show_pressed"]
+[node name="ButtonHide" type="Button" parent="."]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 402.0
+offset_top = 2.0
+offset_right = 429.0
+offset_bottom = 33.0
+text = "<<"
+
+[connection signal="pressed" from="ButtonShow" to="StatusUI" method="_on_button_show_pressed"]
+[connection signal="pressed" from="ButtonHide" to="StatusUI" method="_on_button_hide_pressed"]
