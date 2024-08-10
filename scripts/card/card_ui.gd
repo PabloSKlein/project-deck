@@ -70,30 +70,6 @@ func _on_sprite_mouse_entered(modifier):
 func _on_sprite_mouse_exited():
 	tooltip.visible = false
 
-#func update_modifiers():
-	#for modifier in card.modifiers:
-		#var vbox = VBoxContainer.new()
-		#var sprite = Sprite2D.new()
-		#var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
-		#var spacer = Control.new()
-		#var label = Label.new()
-#
-		#sprite.scale = Vector2(0.10, 0.10)
-		#spacer.custom_minimum_size = Vector2(0, 10)
-		#
-		#label.text = "  " + str(modifier.amount) 
-		#sprite.texture = icon
-#
-		#
-		#vbox.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
-		#vbox.connect("mouse_exited", self._on_sprite_mouse_exited)
-		#
-		#vbox.add_child(sprite)
-		#vbox.add_child(label)
-		#vbox.add_child(spacer)
-	#
-		#modifiers_stack.add_child(vbox)
-
 func update_modifiers():
 	var y_offset = 0
 	for modifier in card.modifiers:
