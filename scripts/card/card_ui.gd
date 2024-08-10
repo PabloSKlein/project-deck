@@ -23,10 +23,7 @@ signal reparent_requested(which_card_ui: CardUI)
 func _ready():
 	card_state_machine.init(self)
 	update_ui()
-	tooltip = Label.new()
-	tooltip.text = ""  # Start with empty text
-	tooltip.visible = false  # Start hidden
-	add_child(tooltip)  # Add tooltip to the scene tree
+	add_child(tooltip)
 	pass
 
 func bind_card(_card: Card):
@@ -57,6 +54,7 @@ func update_ui():
 	update_modifiers()
 	set_image_item(card.image)
 	set_rarity_item(card.rarity)
+	set_tooltip()
 
 func set_image_item(image):
 	var texture_path = "res://resource/card/item/" + image + ".png"
@@ -133,3 +131,8 @@ func set_category_item(value):
 			item_category_acessorie.hide()
 			item_category_armor.hide()
 	return "Other"
+
+func set_tooltip():
+	tooltip = Label.new()
+	tooltip.text = "" 
+	tooltip.visible = false 
