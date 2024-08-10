@@ -6,12 +6,12 @@ class_name Battle extends Node2D
 @onready var pop_up_win_scene = preload("res://scenes/pop_up_win.tscn")
 
 @onready var battle_ui = $BattleUI
-@onready var hero_ui = $HeroControl/CharacterUI
-@onready var enemy_ui = $EnemyControl/CharacterUI
+@onready var hero_ui = $CharactersUI/HeroControl/CharacterUI
+@onready var enemy_ui = $CharactersUI/EnemyControl/CharacterUI
 @onready var squire_ui = $BattleUI/SquireUI
-@onready var inventory_ui = $HeroControl/InventoryUI
-@onready var enemy_inventory_ui = $EnemyControl/Inventory
-@onready var enemy_control = $EnemyControl
+@onready var inventory_ui = $CharactersUI/HeroControl/InventoryUI
+@onready var enemy_inventory_ui = $CharactersUI/EnemyControl/Inventory
+@onready var enemy_control = $CharactersUI/EnemyControl
 @onready var draw_button = $BattleUI/Buttons/DrawButton
 @onready var end_turn_button = $BattleUI/Buttons/EndTurnButton
 @onready var buttons = $BattleUI/Buttons
