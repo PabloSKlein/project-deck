@@ -91,7 +91,7 @@ func update_modifiers():
 		modifiers_stack.add_child(control)
 
 		var spacer = Control.new()
-		spacer.custom_minimum_size = Vector2(0, 20) 
+		spacer.custom_minimum_size = Vector2(0, 10) 
 
 		modifiers_stack.add_child(spacer)
 
