@@ -21,26 +21,30 @@ grow_vertical = 2
 size_flags_vertical = 2
 script = ExtResource("1_o6jax")
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 162.0
-offset_bottom = 481.0
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Helmet" type="PanelContainer" parent="Control"]
+[node name="Control" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(170, 485)
+layout_mode = 2
+
+[node name="Helmet" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 offset_right = 79.0
 offset_bottom = 90.5
 script = ExtResource("3_mdlel")
 
-[node name="ColorRect" type="ColorRect" parent="Control/Helmet"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/Helmet"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Helmet"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/Helmet"]
 layout_mode = 2
 
-[node name="Amulet" type="PanelContainer" parent="Control"]
+[node name="Amulet" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 offset_left = 83.0
@@ -49,14 +53,14 @@ offset_bottom = 90.5
 script = ExtResource("3_mdlel")
 slot_type = 7
 
-[node name="ColorRect" type="ColorRect" parent="Control/Amulet"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/Amulet"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Amulet"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/Amulet"]
 layout_mode = 2
 
-[node name="BodyArmor" type="PanelContainer" parent="Control"]
+[node name="BodyArmor" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 offset_top = 94.0
@@ -65,14 +69,14 @@ offset_bottom = 184.5
 script = ExtResource("3_mdlel")
 slot_type = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/BodyArmor"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/BodyArmor"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/BodyArmor"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/BodyArmor"]
 layout_mode = 2
 
-[node name="MainHand" type="PanelContainer" parent="Control"]
+[node name="MainHand" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 offset_left = 83.0
@@ -82,14 +86,14 @@ offset_bottom = 184.5
 script = ExtResource("3_mdlel")
 slot_type = 5
 
-[node name="ColorRect" type="ColorRect" parent="Control/MainHand"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/MainHand"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/MainHand"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/MainHand"]
 layout_mode = 2
 
-[node name="OffHand" type="PanelContainer" parent="Control"]
+[node name="OffHand" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
 offset_top = 188.0
@@ -98,14 +102,14 @@ offset_bottom = 278.5
 script = ExtResource("3_mdlel")
 slot_type = 6
 
-[node name="ColorRect" type="ColorRect" parent="Control/OffHand"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/OffHand"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/OffHand"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/OffHand"]
 layout_mode = 2
 
-[node name="RingLeft" type="PanelContainer" parent="Control"]
+[node name="RingLeft" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.9, 90.5)
 layout_mode = 2
 offset_left = 83.0
@@ -115,14 +119,14 @@ offset_bottom = 278.5
 script = ExtResource("3_mdlel")
 slot_type = 8
 
-[node name="ColorRect" type="ColorRect" parent="Control/RingLeft"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/RingLeft"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/RingLeft"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/RingLeft"]
 layout_mode = 2
 
-[node name="RingRight" type="PanelContainer" parent="Control"]
+[node name="RingRight" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
 offset_top = 282.0
@@ -131,14 +135,14 @@ offset_bottom = 380.5
 script = ExtResource("3_mdlel")
 slot_type = 8
 
-[node name="ColorRect" type="ColorRect" parent="Control/RingRight"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/RingRight"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/RingRight"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/RingRight"]
 layout_mode = 2
 
-[node name="Belt" type="PanelContainer" parent="Control"]
+[node name="Belt" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 offset_left = 83.0
@@ -148,14 +152,14 @@ offset_bottom = 380.0
 script = ExtResource("3_mdlel")
 slot_type = 4
 
-[node name="ColorRect" type="ColorRect" parent="Control/Belt"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/Belt"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Belt"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/Belt"]
 layout_mode = 2
 
-[node name="Boots" type="PanelContainer" parent="Control"]
+[node name="Boots" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
 offset_top = 384.0
@@ -164,14 +168,14 @@ offset_bottom = 482.5
 script = ExtResource("3_mdlel")
 slot_type = 3
 
-[node name="ColorRect" type="ColorRect" parent="Control/Boots"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/Boots"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Boots"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/Boots"]
 layout_mode = 2
 
-[node name="Gloves" type="PanelContainer" parent="Control"]
+[node name="Gloves" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 offset_left = 83.0
@@ -181,27 +185,25 @@ offset_bottom = 482.0
 script = ExtResource("3_mdlel")
 slot_type = 2
 
-[node name="ColorRect" type="ColorRect" parent="Control/Gloves"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Control/Gloves"]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Gloves"]
+[node name="Label" type="Label" parent="HBoxContainer/Control/Gloves"]
 layout_mode = 2
 
-[node name="StatusUI" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 164.0
-offset_top = 1.0
-offset_right = 403.0
-offset_bottom = 483.0
+[node name="StatusUI" type="Control" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
 script = ExtResource("3_wdvi2")
 
-[node name="AttributesList" type="VBoxContainer" parent="StatusUI"]
+[node name="AttributesList" type="VBoxContainer" parent="HBoxContainer/StatusUI"]
 layout_mode = 0
-offset_right = 171.0
-offset_bottom = 480.0
+offset_top = 3.0
+offset_right = 201.0
+offset_bottom = 483.0
 
-[node name="ColorRect" type="ColorRect" parent="StatusUI"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/StatusUI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -210,22 +212,9 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.239216)
 
-[node name="ButtonShow" type="Button" parent="."]
+[node name="ButtonShow" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = 164.0
-offset_top = 1.0
-offset_right = 191.0
-offset_bottom = 32.0
+layout_mode = 2
 text = ">>"
 
-[node name="ButtonHide" type="Button" parent="."]
-custom_minimum_size = Vector2(20, 20)
-offset_left = 402.0
-offset_top = 2.0
-offset_right = 429.0
-offset_bottom = 33.0
-text = "<<"
-
-[connection signal="pressed" from="ButtonShow" to="StatusUI" method="_on_button_show_pressed"]
-[connection signal="pressed" from="ButtonHide" to="StatusUI" method="_on_button_hide_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonShow" to="HBoxContainer/StatusUI" method="_on_button_show_pressed"]

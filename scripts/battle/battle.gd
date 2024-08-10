@@ -38,7 +38,7 @@ func _ready():
 	battle_ui.add_child(enemy)
 	enemy_ui.bind_character(enemy)
 	enemy_inventory_ui.attach_inventory(enemy)
-	
+	enemy_inventory_ui.invert_text()
 	enemy.equip(GenerateCard.new().generate_card())
 
 func _process(delta):

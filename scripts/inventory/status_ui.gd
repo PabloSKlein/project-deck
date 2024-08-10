@@ -1,19 +1,18 @@
-extends Control
+extends Node
 
-@onready var button_hide = $"../ButtonHide"
 @onready var button_show = $"../ButtonShow"
 
 @onready var color_rect = $ColorRect
 @onready var attributes_list = $AttributesList
+@onready var status_ui = $"."
 
 var character: Character
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	button_show.visible = true
-	button_hide.visible = false
-	color_rect.visible = false
 	attributes_list.visible = false
+	status_ui.custom_minimum_size  = Vector2.ZERO
 	pass
 
 func _process(delta):
@@ -33,15 +32,11 @@ func update_ui():
 		attributes_list.add_child(label)
 
 func _on_button_show_pressed():
-	button_show.visible = false
-	button_hide.visible = true
-	color_rect.visible = true
-	attributes_list.visible = true
-	pass
-	
-func _on_button_hide_pressed():
-	button_show.visible = true
-	button_hide.visible = false
-	color_rect.visible = false
-	attributes_list.visible = false
+	attributes_list.visible = !attributes_list.visible
+	if(attributes_list.visible):
+		button_show.text = "<<"
+		status_ui.custom_minimum_size = Vector2(200,200)
+	else:
+		button_show.text = ">>"
+		status_ui.custom_minimum_size  = Vector2.ZERO
 	pass

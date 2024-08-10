@@ -2,8 +2,9 @@ class_name InventoryUI extends Control
 
 var character: Character
 
-@onready var slots_grid = $Control
-@onready var status_ui = $StatusUI
+@onready var slots_grid = $HBoxContainer/Control
+@onready var status_ui = $HBoxContainer/StatusUI
+@onready var attributes_list = $HBoxContainer/StatusUI/AttributesList
 
 func _ready():
 	hide()
@@ -28,3 +29,8 @@ func _on_card_equiped():
 	character.update_attributes()
 	status_ui.update_ui()
 	pass
+
+func invert_text():
+	attributes_list.scale = Vector2(-1, 1)
+	attributes_list.position = Vector2(200, 1)
+	
