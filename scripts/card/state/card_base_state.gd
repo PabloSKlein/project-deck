@@ -1,14 +1,10 @@
 extends CardState
 
-
-# Called when the node enters the scene tree for the first time.
 func enter() -> void:
 	if not card_ui.is_node_ready():
 		await card_ui.ready
 	
-	card_ui.reparent_requested.emit(card_ui)
-#	card_ui.color.color = Color.PINK
-	#card_ui.CardNameLabel.text = "BASE"
+	Events.reparent_requested.emit(card_ui)
 	card_ui.pivot_offset = Vector2.ZERO
 
 func on_gui_input(event: InputEvent) -> void:

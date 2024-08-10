@@ -7,8 +7,6 @@ var max_hand_size: int = 5
 @onready var generator: GenerateCard = GenerateCard.new()
 var hero: Hero
 
-signal reparent_requested(which_card_ui: Card)
-
 func add_to_inventory(_card: Card) -> void:
 	blueprints.push_back(_card)
 

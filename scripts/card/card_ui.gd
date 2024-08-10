@@ -18,8 +18,6 @@ var card: Card
 @onready var targets: Array[Node] = []
 var tooltip: Label
 
-signal reparent_requested(which_card_ui: CardUI)
-
 func _ready():
 	card_state_machine.init(self)
 	update_ui()
