@@ -1,11 +1,14 @@
 class_name InventoryUI extends Control
 
-var inventory: Inventory
+var character: Character
 
 @onready var slots_grid = $Control
+@onready var status_ui = $StatusUI
 
 func _ready():
 	hide()
+	for slot in slots_grid.get_children():
+		slot.connect("card_equiped", _on_card_equiped)
 	pass
 
 func _input(event: InputEvent) -> void:
@@ -15,7 +18,13 @@ func _input(event: InputEvent) -> void:
 func toggle_inventory() -> void:
 	visible = not visible
 
-func attach_inventory(inventory):
-	inventory = inventory
+func attach_inventory(_character):
+	character = _character
+	status_ui.bind_character(character)
 	for slot in slots_grid.get_children():
-		inventory.slots.push_back(slot as InventorySlot)
+		character.inventory.slots.push_back(slot as InventorySlot)
+
+func _on_card_equiped():
+	character.update_attributes()
+	status_ui.update_ui()
+	pass

@@ -43,6 +43,7 @@ func equip(card: Card):
 	update_attributes()
 
 func update_attributes():
+	attributes.clear()
 	for slot in inventory.slots:
 		if(slot.is_empty):
 			continue

@@ -31,13 +31,13 @@ func _ready():
 	hero.set_fields("Hero", 100)
 	battle_ui.add_child(hero)
 	hero_ui.bind_character(hero)
-	inventory_ui.attach_inventory(hero.inventory)
+	inventory_ui.attach_inventory(hero)
 		
 	self.enemy = enemy_scene.instantiate()
 	enemy.set_fields("Enemy", 100)
 	battle_ui.add_child(enemy)
 	enemy_ui.bind_character(enemy)
-	enemy_inventory_ui.attach_inventory(enemy.inventory)
+	enemy_inventory_ui.attach_inventory(enemy)
 	
 	enemy.equip(GenerateCard.new().generate_card())
 
