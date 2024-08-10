@@ -16,12 +16,17 @@ var card: Card
 @onready var item_category_acessorie = $ItemCategoryAcessorie
 @onready var item_category_armor = $ItemCategoryArmor
 @onready var targets: Array[Node] = []
+var tooltip: Label
 
 signal reparent_requested(which_card_ui: CardUI)
 
 func _ready():
 	card_state_machine.init(self)
 	update_ui()
+	tooltip = Label.new()
+	tooltip.text = ""  # Start with empty text
+	tooltip.visible = false  # Start hidden
+	add_child(tooltip)  # Add tooltip to the scene tree
 	pass
 
 func bind_card(_card: Card):
@@ -58,6 +63,14 @@ func set_image_item(image):
 	var texture = load(texture_path)
 	$Item.texture = texture
 		
+# Declare the signal handler functions
+func _on_sprite_mouse_entered(modifier):
+	tooltip.text = modifier
+	tooltip.visible = true 
+
+func _on_sprite_mouse_exited():
+	tooltip.visible = false
+
 func update_modifiers():
 	for modifier in card.modifiers:
 		var vbox = VBoxContainer.new()
@@ -69,18 +82,21 @@ func update_modifiers():
 		sprite.scale = Vector2(0.12, 0.12)
 		spacer.custom_minimum_size = Vector2(0, 5)
 		
-		label.text = "  " + str(modifier.amount)  # TODO: Add modifier.type as a tooltip
+		label.text = "  " + str(modifier.amount) 
 		sprite.texture = icon
 		
 		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		
+		vbox.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
+		vbox.connect("mouse_exited", self._on_sprite_mouse_exited)
 		
 		vbox.add_child(sprite)
 		vbox.add_child(label)
 		vbox.add_child(spacer)
 	
 		modifiers_stack.add_child(vbox)
+
 		
 func set_rarity_item(value):
 	var _rarity
