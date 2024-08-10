@@ -287,10 +287,10 @@ metadata/_edit_lock_ = true
 
 [node name="Modifiers" type="VBoxContainer" parent="VBoxContainer/Control"]
 layout_mode = 2
-offset_left = 39.0
-offset_top = 107.0
-offset_right = 87.0
-offset_bottom = 288.0
+offset_left = 30.0
+offset_top = 98.0
+offset_right = 78.0
+offset_bottom = 275.0
 mouse_filter = 2
 theme = ExtResource("4_qf8s1")
 
@@ -314,6 +314,7 @@ script = ExtResource("7_yfh3r")
 state = 3
 
 [node name="DropPointDetector" type="Area2D" parent="."]
+z_index = 1
 position = Vector2(126, 166)
 collision_mask = 2
 monitorable = false

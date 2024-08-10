@@ -221,6 +221,7 @@ text = ">>"
 
 [node name="ButtonHide" type="Button" parent="."]
 custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
 offset_left = 402.0
 offset_top = 2.0
 offset_right = 429.0
