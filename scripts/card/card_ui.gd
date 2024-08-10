@@ -70,30 +70,57 @@ func _on_sprite_mouse_entered(modifier):
 func _on_sprite_mouse_exited():
 	tooltip.visible = false
 
+#func update_modifiers():
+	#for modifier in card.modifiers:
+		#var vbox = VBoxContainer.new()
+		#var sprite = Sprite2D.new()
+		#var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
+		#var spacer = Control.new()
+		#var label = Label.new()
+#
+		#sprite.scale = Vector2(0.10, 0.10)
+		#spacer.custom_minimum_size = Vector2(0, 10)
+		#
+		#label.text = "  " + str(modifier.amount) 
+		#sprite.texture = icon
+#
+		#
+		#vbox.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
+		#vbox.connect("mouse_exited", self._on_sprite_mouse_exited)
+		#
+		#vbox.add_child(sprite)
+		#vbox.add_child(label)
+		#vbox.add_child(spacer)
+	#
+		#modifiers_stack.add_child(vbox)
+
 func update_modifiers():
+	var y_offset = 0
 	for modifier in card.modifiers:
-		var vbox = VBoxContainer.new()
+		var container = HBoxContainer.new()
+		container.custom_minimum_size = Vector2(0, 0)
+		container.position = Vector2(0, y_offset)
+		
+		var label = Label.new()
+		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
+		label.text = "  " + str(modifier.amount)
+		label.custom_minimum_size = Vector2(200, 35)
+
 		var sprite = Sprite2D.new()
 		var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
-		var spacer = Control.new()
-		var label = Label.new()
-
-		sprite.scale = Vector2(0.10, 0.10)
-		spacer.custom_minimum_size = Vector2(0, 10)
-		
-		label.text = "  " + str(modifier.amount) 
 		sprite.texture = icon
-
+		sprite.scale = Vector2(0.10, 0.10)
+		sprite.position = Vector2(0, 10)
 		
-		vbox.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
-		vbox.connect("mouse_exited", self._on_sprite_mouse_exited)
+		container.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
+		container.connect("mouse_exited", self._on_sprite_mouse_exited)
 		
-		vbox.add_child(sprite)
-		vbox.add_child(label)
-		vbox.add_child(spacer)
-	
-		modifiers_stack.add_child(vbox)
+		container.add_child(label)
+		container.add_child(sprite)
 
+		modifiers_stack.add_child(container)
+
+		y_offset += container.custom_minimum_size.y + 10
 		
 func set_rarity_item(value):
 	var _rarity
