@@ -63,7 +63,6 @@ func set_image_item(image):
 	var texture = load(texture_path)
 	$Item.texture = texture
 		
-# Declare the signal handler functions
 func _on_sprite_mouse_entered(modifier):
 	tooltip.text = modifier
 	tooltip.visible = true 
@@ -78,15 +77,13 @@ func update_modifiers():
 		var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
 		var spacer = Control.new()
 		var label = Label.new()
-		
-		sprite.scale = Vector2(0.12, 0.12)
-		spacer.custom_minimum_size = Vector2(0, 5)
+
+		sprite.scale = Vector2(0.10, 0.10)
+		spacer.custom_minimum_size = Vector2(0, 10)
 		
 		label.text = "  " + str(modifier.amount) 
 		sprite.texture = icon
-		
-		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		spacer.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
 		
 		vbox.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
 		vbox.connect("mouse_exited", self._on_sprite_mouse_exited)
