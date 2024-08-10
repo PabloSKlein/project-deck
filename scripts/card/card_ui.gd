@@ -34,9 +34,11 @@ func _on_gui_input(event: InputEvent) -> void:
 	card_state_machine.on_gui_input(event)
 	
 func _on_mouse_entered() -> void:
+	print("mouse entered")
 	card_state_machine.on_mouse_entered()
 
 func _on_mouse_exited() -> void:
+	print("mouse left")
 	card_state_machine.on_mouse_exited()
 	
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
@@ -77,13 +79,17 @@ func update_modifiers():
 		label.custom_minimum_size = Vector2(35, 0)
 		label.position = Vector2(10, 2)  # Adjust the position inside the larger control
 
-
+		var rect = ColorRect.new()
+		rect.position  = Vector2(10, 2)
+		rect.custom_minimum_size = Vector2(35, 0)
+		
 		var sprite = Sprite2D.new()
 		var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
 		sprite.texture = icon
 		sprite.scale = Vector2(0.10, 0.10)
 		sprite.position = Vector2(10, 15)  # Adjust position inside the larger control
 
+		control.add_child(rect)
 		control.add_child(sprite)
 		control.add_child(label)
 
@@ -96,6 +102,7 @@ func update_modifiers():
 
 		control.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
 		control.connect("mouse_exited", self._on_sprite_mouse_exited)
+		control.connect("gui_input", self._on_gui_input)
 		
 func set_rarity_item(value):
 	var _rarity
