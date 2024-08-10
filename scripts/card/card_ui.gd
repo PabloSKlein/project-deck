@@ -69,32 +69,36 @@ func _on_sprite_mouse_exited():
 	tooltip.visible = false
 
 func update_modifiers():
-	var y_offset = 0
 	for modifier in card.modifiers:
-		var container = HBoxContainer.new()
-		container.custom_minimum_size = Vector2(0, 0)
-		container.position = Vector2(0, y_offset)
-		
+		var control = Control.new()
+		control.custom_minimum_size = Vector2(20, 15)
+
 		var label = Label.new()
 		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
 		label.text = "  " + str(modifier.amount)
-		label.custom_minimum_size = Vector2(200, 35)
+		label.custom_minimum_size = Vector2(35, 0)
+		label.position = Vector2(0, -10)
 
 		var sprite = Sprite2D.new()
 		var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
 		sprite.texture = icon
 		sprite.scale = Vector2(0.10, 0.10)
-		sprite.position = Vector2(0, 10)
-		
-		container.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
-		container.connect("mouse_exited", self._on_sprite_mouse_exited)
-		
-		container.add_child(label)
-		container.add_child(sprite)
+		sprite.position = Vector2(0, 0)
 
-		modifiers_stack.add_child(container)
+		control.add_child(sprite)
+		control.add_child(label)
 
-		y_offset += container.custom_minimum_size.y + 10
+		modifiers_stack.add_child(control)
+
+		var spacer = Control.new()
+		spacer.custom_minimum_size = Vector2(0, 20) 
+
+		modifiers_stack.add_child(spacer)
+
+		control.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
+		control.connect("mouse_exited", self._on_sprite_mouse_exited)
+
+
 		
 func set_rarity_item(value):
 	var _rarity
