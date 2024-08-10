@@ -71,19 +71,20 @@ func _on_sprite_mouse_exited():
 func update_modifiers():
 	for modifier in card.modifiers:
 		var control = Control.new()
-		control.custom_minimum_size = Vector2(20, 15)
-
+		control.custom_minimum_size = Vector2(50, 25)  # Increase size to cover the desired area
+		
 		var label = Label.new()
 		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
 		label.text = "  " + str(modifier.amount)
 		label.custom_minimum_size = Vector2(35, 0)
-		label.position = Vector2(0, -10)
+		label.position = Vector2(10, 2)  # Adjust the position inside the larger control
+
 
 		var sprite = Sprite2D.new()
 		var icon = load("res://resource/card/icon/" + modifier.icon + ".png")
 		sprite.texture = icon
 		sprite.scale = Vector2(0.10, 0.10)
-		sprite.position = Vector2(0, 0)
+		sprite.position = Vector2(10, 15)  # Adjust position inside the larger control
 
 		control.add_child(sprite)
 		control.add_child(label)
