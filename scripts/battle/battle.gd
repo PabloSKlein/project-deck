@@ -46,6 +46,7 @@ func _on_end_turn_button_pressed():
 	
 func start_battle():
 	while is_battle_active:
+		buttons.hide()
 		if hero.health > 0 and enemy.health > 0:
 			enemy.take_damage(hero.get_attribute("attack"))
 			enemy_ui.update()
@@ -60,6 +61,7 @@ func start_battle():
 			end_battle()
 	
 func end_battle():
+	buttons.show()
 	if hero.health <= 0:
 		print("Hero is defeated!")
 	elif enemy.health <= 0:
