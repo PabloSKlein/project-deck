@@ -2,8 +2,8 @@ class_name PopUpDeath
 extends Node2D
 
 
-@onready var rerun_button = $RerunButton
-@onready var main_menu_button = $MainMenuButton
+@onready var rerun_button = $CanvasLayer/RerunButton
+@onready var main_menu_button = $CanvasLayer/MainMenuButton
 
 # Sinais para os botões
 signal rerun_pressed

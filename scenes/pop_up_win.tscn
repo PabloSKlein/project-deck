@@ -5,9 +5,18 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_ioil0")
 
-[node name="Next" type="Button" parent="."]
-offset_left = 608.0
-offset_top = 262.0
-offset_right = 653.0
-offset_bottom = 293.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Next" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.5
+offset_top = -15.5
+offset_right = 22.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
 text = "Next"

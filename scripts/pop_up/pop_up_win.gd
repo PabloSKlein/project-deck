@@ -1,7 +1,7 @@
 class_name PopUpWin
 extends Node2D
 
-@onready var next_phase_button = $Next
+@onready var next_phase_button = $CanvasLayer/Next
 
 signal next_phase
 
