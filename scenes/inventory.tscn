@@ -44,6 +44,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/Helmet"]
 layout_mode = 2
 
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Helmet"]
+
 [node name="Amulet" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
@@ -60,6 +62,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/Amulet"]
 layout_mode = 2
 
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Amulet"]
+
 [node name="BodyArmor" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
@@ -75,6 +79,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/BodyArmor"]
 layout_mode = 2
+
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/BodyArmor"]
 
 [node name="MainHand" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
@@ -93,6 +99,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/MainHand"]
 layout_mode = 2
 
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/MainHand"]
+
 [node name="OffHand" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
@@ -108,6 +116,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/OffHand"]
 layout_mode = 2
+
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/OffHand"]
 
 [node name="RingLeft" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.9, 90.5)
@@ -126,6 +136,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/RingLeft"]
 layout_mode = 2
 
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/RingLeft"]
+
 [node name="RingRight" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
@@ -141,6 +153,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/RingRight"]
 layout_mode = 2
+
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/RingRight"]
 
 [node name="Belt" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(40, 40)
@@ -159,6 +173,8 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/Belt"]
 layout_mode = 2
 
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Belt"]
+
 [node name="Boots" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
@@ -174,6 +190,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/Boots"]
 layout_mode = 2
+
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Boots"]
 
 [node name="Gloves" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(40, 40)
@@ -191,6 +209,8 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/Gloves"]
 layout_mode = 2
+
+[node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Gloves"]
 
 [node name="StatusUI" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
