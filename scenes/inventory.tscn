@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://pwnnkgbwieyw"]
+[gd_scene load_steps=12 format=3 uid="uid://pwnnkgbwieyw"]
 
 [ext_resource type="Script" path="res://scripts/inventory/inventory_ui.gd" id="1_o6jax"]
+[ext_resource type="Texture2D" uid="uid://b631u5dllo074" path="res://resource/inventory/icons/helmet.png" id="3_cyja2"]
 [ext_resource type="Script" path="res://scripts/inventory/Inventory_slot_ui.gd" id="3_mdlel"]
+[ext_resource type="Texture2D" uid="uid://dpm8le0r50u15" path="res://resource/inventory/icons/amulet.png" id="3_ounri"]
 [ext_resource type="Script" path="res://scripts/inventory/status_ui.gd" id="3_wdvi2"]
+[ext_resource type="Texture2D" uid="uid://c1ajskr1d8kq2" path="res://resource/inventory/icons/sword.png" id="5_6wqjs"]
+[ext_resource type="Texture2D" uid="uid://bquloxolf1yo1" path="res://resource/inventory/icons/shield.png" id="5_d0hdm"]
+[ext_resource type="Texture2D" uid="uid://dgslrrw8kg1kp" path="res://resource/inventory/icons/body.png" id="5_hqnv5"]
+[ext_resource type="Texture2D" uid="uid://0fn8ot1xgmx4" path="res://resource/inventory/icons/boots.png" id="5_jhm74"]
+[ext_resource type="Texture2D" uid="uid://bt0ec5fpx76y5" path="res://resource/inventory/icons/ring.png" id="5_yab3b"]
+[ext_resource type="Texture2D" uid="uid://dqsdjbeb3ie02" path="res://resource/inventory/icons/missing.png" id="9_0a6bm"]
 
 [node name="Inventory" type="Control"]
 light_mask = 4
@@ -44,6 +52,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/Helmet"]
 layout_mode = 2
 
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/Helmet"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("3_cyja2")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
+
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Helmet"]
 
 [node name="Amulet" type="PanelContainer" parent="HBoxContainer/Control"]
@@ -62,6 +78,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="HBoxContainer/Control/Amulet"]
 layout_mode = 2
 
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/Amulet"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(38, 45)
+scale = Vector2(2.46053, 2.46053)
+texture = ExtResource("3_ounri")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
+
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Amulet"]
 
 [node name="BodyArmor" type="PanelContainer" parent="HBoxContainer/Control"]
@@ -79,6 +103,14 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/Control/BodyArmor"]
 layout_mode = 2
+
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/BodyArmor"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("5_hqnv5")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/BodyArmor"]
 
@@ -101,6 +133,14 @@ layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/MainHand"]
 
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/MainHand"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("5_6wqjs")
+region_enabled = true
+region_rect = Rect2(0, 0, 15.6709, 16.9704)
+
 [node name="OffHand" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.5, 90.5)
 layout_mode = 2
@@ -118,6 +158,14 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/OffHand"]
+
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/OffHand"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("5_d0hdm")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
 
 [node name="RingLeft" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(78.9, 90.5)
@@ -138,6 +186,14 @@ layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/RingLeft"]
 
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/RingLeft"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("5_yab3b")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
+
 [node name="RingRight" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(79.5, 98.5)
 layout_mode = 2
@@ -155,6 +211,14 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/RingRight"]
+
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/RingRight"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("5_yab3b")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
 
 [node name="Belt" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(40, 40)
@@ -175,6 +239,14 @@ layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Belt"]
 
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/Belt"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(38, 46)
+scale = Vector2(1.95464, 1.95464)
+texture = ExtResource("9_0a6bm")
+region_enabled = true
+region_rect = Rect2(80, 82, 32, 29)
+
 [node name="Boots" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(70.5, 98.5)
 layout_mode = 2
@@ -192,6 +264,14 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Boots"]
+
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/Boots"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(40, 45)
+scale = Vector2(2.461, 2.461)
+texture = ExtResource("5_jhm74")
+region_enabled = true
+region_rect = Rect2(134, 99, 19, 25)
 
 [node name="Gloves" type="PanelContainer" parent="HBoxContainer/Control"]
 custom_minimum_size = Vector2(40, 40)
@@ -211,6 +291,14 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="EquipedItem" type="Sprite2D" parent="HBoxContainer/Control/Gloves"]
+
+[node name="ItemSlot" type="Sprite2D" parent="HBoxContainer/Control/Gloves"]
+modulate = Color(0.172549, 0.172549, 0.172549, 1)
+position = Vector2(38, 42)
+scale = Vector2(1.98912, 1.98912)
+texture = ExtResource("9_0a6bm")
+region_enabled = true
+region_rect = Rect2(80, 82, 32, 29)
 
 [node name="StatusUI" type="Control" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
