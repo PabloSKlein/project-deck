@@ -21,26 +21,16 @@ var hero : Hero
 var enemy : Enemy
 var pop_up_death: PopUpDeath
 var pop_up_win: PopUpWin
+var rng = RandomNumberGenerator.new()
+var is_battle_active = false
+
 
 func _ready():
 	conect_events()
-	
 	squire_ui.bind_squire(squire)
+	hero_setup()
+	enemy_setup()
 	
-	self.hero = hero_scene.instantiate()
-	hero.set_fields("Hero", 100)
-	battle_ui.add_child(hero)
-	hero_ui.bind_character(hero)
-	inventory_ui.attach_inventory(hero)
-		
-	self.enemy = enemy_scene.instantiate()
-	enemy.set_fields("Enemy", 100)
-	battle_ui.add_child(enemy)
-	enemy_ui.bind_character(enemy)
-	enemy_inventory_ui.attach_inventory(enemy)
-	enemy_inventory_ui.invert_text()
-	enemy.equip(GenerateCard.new().generate_card())
-
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
 	check_enemys()
@@ -48,18 +38,34 @@ func _process(delta):
 	pass
 
 func _on_end_turn_button_pressed():
+	is_battle_active = true
+	end_turn_button.disabled = true
+	start_battle()
 	squire_ui.discard_hand()
-
 	hero.show_status()
-
-	enemy.take_damage(hero.get_attribute("attack"))
-	enemy_ui.update()
-	if(enemy.is_dead()):
-		enemy_control.queue_free()
-		return
-	hero.take_damage(enemy.get_attribute("attack"))
-	hero_ui.update()
 	
+func start_battle():
+	while is_battle_active:
+		if hero.health > 0 and enemy.health > 0:
+			enemy.take_damage(hero.get_attribute("attack"))
+			enemy_ui.update()
+			await get_tree().create_timer(0.5).timeout  # Delay for a short time
+			if enemy.health > 0:
+				hero.take_damage(enemy.get_attribute("attack"))
+				hero_ui.update()
+				await get_tree().create_timer(0.5).timeout  # Delay for a short time
+		else:
+			is_battle_active = false
+			enemy_control.queue_free()
+			end_battle()
+	
+func end_battle():
+	if hero.health <= 0:
+		print("Hero is defeated!")
+	elif enemy.health <= 0:
+		print("Enemy is defeated!")
+	end_turn_button.disabled = false
+		
 func _on_draw_button_pressed():
 	squire_ui.draw_card()
 
@@ -102,3 +108,22 @@ func conect_events():
 	draw_button.connect("pressed", self._on_draw_button_pressed)
 	end_turn_button.connect("pressed", self._on_end_turn_button_pressed)
 	Events.connect("card_droped", self._on_child_signal)
+
+func hero_setup():
+	self.hero = hero_scene.instantiate()
+	hero.set_fields("Hero", 100)
+	battle_ui.add_child(hero)
+	hero_ui.bind_character(hero)
+	inventory_ui.attach_inventory(hero)
+
+func enemy_setup():
+	self.enemy = enemy_scene.instantiate()
+	enemy.set_fields("Enemy", 100)
+	battle_ui.add_child(enemy)
+	enemy_ui.bind_character(enemy)
+	enemy_inventory_ui.attach_inventory(enemy)
+	enemy_inventory_ui.invert_text()
+	var item_equip = rng.randi_range(1, 10)
+	print(item_equip)
+	for i in item_equip:
+		enemy.equip(GenerateCard.new().generate_card())
