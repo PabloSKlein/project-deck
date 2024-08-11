@@ -8,8 +8,6 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var image: String
 @export var slot_types: Array[CardType.Enum]
 @export var rarity: CardRarity
-@export var prefixes: Array[Prefix] = [] # Added property
-@export var suffixes: Array[Suffix] = [] # Added property
 @export var modifiers: Array[Modifier] = []
 @export var drop_rates = {
 	CardRarity.MAGIC: 70, # % of droprate
