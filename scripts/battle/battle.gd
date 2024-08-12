@@ -4,7 +4,6 @@ class_name Battle extends Node2D
 @onready var enemy_scene = preload("res://scenes/enemy.tscn")
 @onready var pop_up_death_scene = preload("res://scenes/pop_up_death.tscn")
 @onready var pop_up_win_scene = preload("res://scenes/pop_up_win.tscn")
-@onready var compare_scene = preload("res://scenes/compare_cards.tscn")
 
 @onready var battle_ui = $BattleUI
 @onready var hero_ui = $CharactersUI/HeroControl/CharacterUI
@@ -28,10 +27,11 @@ var is_battle_active = false
 
 func _ready():
 	conect_events()
-	squire_ui.bind_squire(squire)
 	hero_setup()
 	enemy_setup()
-	
+	squire.hero = hero
+	squire_ui.bind_squire(squire)
+
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
 	check_enemys()
@@ -84,21 +84,6 @@ func _on_main_menu_pressed():
 func _on_next_phase_pressed():
 	get_tree().reload_current_scene() #TODO add new phases
 
-func _on_compare_card(card: CardUI):
-	print(card.card.name_item)
-	_on_stop_compare_card()
-	compare_ui = compare_scene.instantiate()
-	var equiped_card
-	for slot in hero.inventory.slots:
-		if(not slot.is_empty and slot.card.type == card.card.type):
-			equiped_card = slot.card
-	compare_ui.bind_cards(equiped_card , card.card)
-	self.add_child(compare_ui)
-	
-func _on_stop_compare_card():
-	if compare_ui != null:
-		compare_ui.queue_free()
-
 func show_win_popup():
 	buttons.visible = false
 	self.pop_up_win = pop_up_win_scene.instantiate()
@@ -126,8 +111,6 @@ func conect_events():
 	draw_button.connect("pressed", self._on_draw_button_pressed)
 	end_turn_button.connect("pressed", self._on_end_turn_button_pressed)
 	Events.connect("card_droped", self._on_child_signal)
-	Events.connect("compare_card", self._on_compare_card)
-	Events.connect("stop_compare_card", self._on_stop_compare_card)
 
 
 func hero_setup():
