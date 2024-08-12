@@ -113,7 +113,7 @@ func rarity_calculation(card_data, rarity):
 	
 	return result
 
-func generate_affixes(card_data, rarity):
+func generate_affixes(card_data: Dictionary, rarity: int) -> Dictionary:
 	var affix_data = {}
 	var max_affixes = get_max_affixes_based_on_rarity(rarity)
 	var num_prefixes = randi() % (max_affixes + 1)
@@ -124,13 +124,14 @@ func generate_affixes(card_data, rarity):
 	valid_prefixes.shuffle()
 	valid_suffixes.shuffle()
 	var used_affix_names = {}
+	
 	# Add unique prefixes
 	for i in range(min(num_prefixes, valid_prefixes.size())):
 		var prefix = valid_prefixes[i]
 		if not prefix["name"] in used_affix_names:
 			affix_data[prefix["name"]] = {
 				"description": prefix["description"],
-				"value_status": pick_random_value(prefix["tiers"], rarity),
+				"value_status": pick_random_value(prefix["tiers"], rarity),  # Random tier for each prefix
 				"increased": prefix["increased"],
 				"affix_icon": prefix["affix_icon"]
 			}
@@ -142,11 +143,12 @@ func generate_affixes(card_data, rarity):
 		if not suffix["name"] in used_affix_names:
 			affix_data[suffix["name"]] = {
 				"description": suffix["description"],
-				"value_status": pick_random_value(suffix["tiers"], rarity),
+				"value_status": pick_random_value(suffix["tiers"], rarity),  # Random tier for each suffix
 				"increased": suffix["increased"],
 				"affix_icon": suffix["affix_icon"]
 			}
 			used_affix_names[suffix["name"]] = true
+	
 	return affix_data
 
 func get_max_affixes_based_on_rarity(rarity):
@@ -181,13 +183,18 @@ func pick_random_name(names):
 	var random_index = randi() % names.size()
 	return names[random_index]
 
-func pick_random_value(tiers, rarity):
-	var tier = str(rarity)
-	if tier in tiers:
-		var min_value = tiers[tier]["min"]
-		var max_value = tiers[tier]["max"]
-		return randi_range(min_value, max_value)
-	return 0
+func pick_random_value(tiers: Dictionary, rarity: int) -> int:
+	# Randomize tier selection
+	randomize()
+	var tier_keys = tiers.keys()
+	tier_keys.shuffle()  # Shuffle the keys to randomize selection
+	var chosen_tier = tier_keys[randi() % tier_keys.size()]  # Randomly pick a tier from the shuffled keys
+	
+	var min_value = tiers[chosen_tier]["min"]
+	var max_value = tiers[chosen_tier]["max"]
+	
+	# Return a random value within the selected tier's range
+	return randi_range(min_value, max_value)
 
 func merge_card_with_affixes(card_map, affixes):
 	var merged_card = card_map.duplicate()
