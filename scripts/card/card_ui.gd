@@ -16,11 +16,19 @@ var card: Card
 @onready var item_category_damage = $ItemCategoryDamage
 @onready var item_category_acessorie = $ItemCategoryAcessorie
 @onready var item_category_armor = $ItemCategoryArmor
+
 @onready var targets: Array[Node] = []
+var mouse_inside_tooltip = false
+var mouse_inside_card = false
+
 var tooltip: Label
 
+var test = true
+var is_comparing = false
+
 func _ready():
-	card_state_machine.init(self)
+	if test:
+		card_state_machine.init(self)
 	update_ui()
 	add_child(tooltip)
 	pass
@@ -29,18 +37,18 @@ func bind_card(_card: Card):
 	self.card = _card
 
 func _input(event: InputEvent) -> void:
-	card_state_machine.on_input(event)
-	
-func _on_gui_input(event: InputEvent) -> void:
-	card_state_machine.on_gui_input(event)
-	
-func _on_mouse_entered() -> void:
-	print("mouse entered")
-	card_state_machine.on_mouse_entered()
-
-func _on_mouse_exited() -> void:
-	print("mouse left")
-	card_state_machine.on_mouse_exited()
+	if event is InputEventKey:
+		if event.keycode == KEY_ALT:
+			if event.pressed and mouse_inside_card && !is_comparing:
+				is_comparing = true
+				print("pressed")
+				_on_alt_pressed()
+			elif event.is_released():
+				is_comparing = false
+				print("released")
+				_on_alt_released()
+	else:
+		card_state_machine.on_input(event)
 	
 func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
@@ -61,13 +69,41 @@ func set_image_item(image):
 	var texture_path = "res://resource/card/item/" + image + ".png"
 	var texture = load(texture_path)
 	$Item.texture = texture
+
+func _on_gui_input(event: InputEvent) -> void:
+	card_state_machine.on_gui_input(event)
+
+func _on_alt_pressed():
+	Events.compare_card.emit(self)
+	
+func _on_alt_released():
+	Events.stop_compare_card.emit()
 		
 func _on_sprite_mouse_entered(modifier):
+	mouse_inside_tooltip = true
 	tooltip.text = modifier
 	tooltip.visible = true
 
 func _on_sprite_mouse_exited():
+
+	mouse_inside_tooltip = false
 	tooltip.visible = false
+
+func _on_mouse_entered() -> void:
+	if not mouse_inside_card and not mouse_inside_tooltip:
+
+		mouse_inside_card = true
+		card_state_machine.on_mouse_entered()
+		
+func _on_mouse_exited(text: String) -> void:
+	if text == "tooltip":
+		_on_sprite_mouse_exited()
+	else:
+		if mouse_inside_card and not mouse_inside_tooltip:
+			mouse_inside_card = false
+			is_comparing = false
+			card_state_machine.on_mouse_exited()
+			_on_alt_released()
 
 func update_modifiers():
 	for modifier in card.modifiers:
@@ -102,8 +138,11 @@ func update_modifiers():
 		modifiers_stack.add_child(spacer)
 
 		control.connect("mouse_entered", self._on_sprite_mouse_entered.bind(modifier.type))
-		control.connect("mouse_exited", self._on_sprite_mouse_exited)
+		control.connect("mouse_exited", self._on_mouse_exited.bind("tooltip"))
 		control.connect("gui_input", self._on_gui_input)
+		
+		self.connect("mouse_entered", self._on_mouse_entered)
+		self.connect("mouse_exited", self._on_mouse_exited.bind("card"))
 		
 func set_rarity_item(value):
 	var _rarity

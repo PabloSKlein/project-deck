@@ -4,6 +4,7 @@ class_name Battle extends Node2D
 @onready var enemy_scene = preload("res://scenes/enemy.tscn")
 @onready var pop_up_death_scene = preload("res://scenes/pop_up_death.tscn")
 @onready var pop_up_win_scene = preload("res://scenes/pop_up_win.tscn")
+@onready var compare_scene = preload("res://scenes/compare_cards.tscn")
 
 @onready var battle_ui = $BattleUI
 @onready var hero_ui = $CharactersUI/HeroControl/CharacterUI
@@ -16,6 +17,7 @@ class_name Battle extends Node2D
 @onready var end_turn_button = $BattleUI/Buttons/EndTurnButton
 @onready var buttons = $BattleUI/Buttons
 
+var compare_ui
 var squire : Squire = Squire.new()
 var hero : Hero
 var enemy : Enemy
@@ -24,12 +26,11 @@ var pop_up_win: PopUpWin
 var rng = RandomNumberGenerator.new()
 var is_battle_active = false
 
-
 func _ready():
 	conect_events()
 	squire_ui.bind_squire(squire)
 	hero_setup()
-	enemy_setup(Enemy.EnemyType.BOSS)
+	enemy_setup()
 	
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
@@ -83,6 +84,21 @@ func _on_main_menu_pressed():
 func _on_next_phase_pressed():
 	get_tree().reload_current_scene() #TODO add new phases
 
+func _on_compare_card(card: CardUI):
+	print(card.card.name_item)
+	_on_stop_compare_card()
+	compare_ui = compare_scene.instantiate()
+	var equiped_card
+	for slot in hero.inventory.slots:
+		if(not slot.is_empty and slot.card.type == card.card.type):
+			equiped_card = slot.card
+	compare_ui.bind_cards(equiped_card , card.card)
+	self.add_child(compare_ui)
+	
+func _on_stop_compare_card():
+	if compare_ui != null:
+		compare_ui.queue_free()
+
 func show_win_popup():
 	buttons.visible = false
 	self.pop_up_win = pop_up_win_scene.instantiate()
@@ -110,6 +126,9 @@ func conect_events():
 	draw_button.connect("pressed", self._on_draw_button_pressed)
 	end_turn_button.connect("pressed", self._on_end_turn_button_pressed)
 	Events.connect("card_droped", self._on_child_signal)
+	Events.connect("compare_card", self._on_compare_card)
+	Events.connect("stop_compare_card", self._on_stop_compare_card)
+
 
 func hero_setup():
 	self.hero = hero_scene.instantiate()
@@ -118,33 +137,14 @@ func hero_setup():
 	hero_ui.bind_character(hero)
 	inventory_ui.attach_inventory(hero)
 
-func enemy_setup(enemy_type: Enemy.EnemyType = Enemy.EnemyType.NORMAL):
+func enemy_setup():
 	self.enemy = enemy_scene.instantiate()
-	self.enemy._init(enemy_type)
-	
 	enemy.set_fields("Enemy", 100)
 	battle_ui.add_child(enemy)
 	enemy_ui.bind_character(enemy)
 	enemy_inventory_ui.attach_inventory(enemy)
 	enemy_inventory_ui.invert_text()
-	
-	var min_equip: int
-	var max_equip: int
-	
-	match enemy_type:
-		Enemy.EnemyType.NORMAL:
-			min_equip = 1
-			max_equip = 3
-		Enemy.EnemyType.ELITE:
-			min_equip = 3
-			max_equip = 6
-		Enemy.EnemyType.BOSS:
-			min_equip = 6
-			max_equip = 10
-	
-	var item_equip = rng.randi_range(min_equip, max_equip)
+	var item_equip = rng.randi_range(1, 10)
 	print(item_equip)
-	
-	for i in range(item_equip):
+	for i in item_equip:
 		enemy.equip(GenerateCard.new().generate_card())
-
