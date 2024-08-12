@@ -20,7 +20,7 @@ func _ready():
 func _process(delta):
 	pass
 	
-func _init(_type : String, _icon : String, _amount : float):
+func _init(_type : String, _amount : float, _icon : String):
 	type = _type
 	icon = _icon
 	amount = _amount

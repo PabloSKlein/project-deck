@@ -29,7 +29,7 @@ func _ready():
 	conect_events()
 	squire_ui.bind_squire(squire)
 	hero_setup()
-	enemy_setup()
+	enemy_setup(Enemy.EnemyType.BOSS)
 	
 func _process(delta):
 	draw_button.disabled = squire.cards_in_hand.size() == squire.max_hand_size
@@ -118,14 +118,33 @@ func hero_setup():
 	hero_ui.bind_character(hero)
 	inventory_ui.attach_inventory(hero)
 
-func enemy_setup():
+func enemy_setup(enemy_type: Enemy.EnemyType = Enemy.EnemyType.NORMAL):
 	self.enemy = enemy_scene.instantiate()
+	self.enemy._init(enemy_type)
+	
 	enemy.set_fields("Enemy", 100)
 	battle_ui.add_child(enemy)
 	enemy_ui.bind_character(enemy)
 	enemy_inventory_ui.attach_inventory(enemy)
 	enemy_inventory_ui.invert_text()
-	var item_equip = rng.randi_range(1, 10)
+	
+	var min_equip: int
+	var max_equip: int
+	
+	match enemy_type:
+		Enemy.EnemyType.NORMAL:
+			min_equip = 1
+			max_equip = 3
+		Enemy.EnemyType.ELITE:
+			min_equip = 3
+			max_equip = 6
+		Enemy.EnemyType.BOSS:
+			min_equip = 6
+			max_equip = 10
+	
+	var item_equip = rng.randi_range(min_equip, max_equip)
 	print(item_equip)
-	for i in item_equip:
+	
+	for i in range(item_equip):
 		enemy.equip(GenerateCard.new().generate_card())
+

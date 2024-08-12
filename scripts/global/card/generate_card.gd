@@ -57,12 +57,12 @@ func generate_modifiers(card_map, rarity) -> Array[Modifier]:
 		var icon = atribute["attributeIcon"]
 		var min_value = int(atribute["min"])
 		var max_value = int(atribute["max"])
-		var modifier = Modifier.new(type, icon, randi_range(min_value, max_value))
+		var modifier = Modifier.new(type, randi_range(min_value, max_value), icon)
 		modifiers.push_front(modifier)
 	var affixes = generate_affixes(card_map, rarity)
 	for key in affixes:
 		var afix = affixes.get(key)
-		var modifier = Modifier.new(afix["description"], afix["affix_icon"], int(afix["value_status"]))
+		var modifier = Modifier.new(afix["description"], int(afix["value_status"]), afix["affix_icon"])
 		modifiers.push_front(modifier)
 		
 	return modifiers
