@@ -25,6 +25,9 @@ func set_slot_color(rarity):
 			color.color = Color.YELLOW
 			color.show()
 		3:
+			color.color = Color.REBECCA_PURPLE
+			color.show()
+		4:
 			color.color = Color.RED
 			color.show()
 

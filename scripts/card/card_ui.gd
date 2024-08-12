@@ -11,6 +11,7 @@ var card: Card
 @onready var rare_card = $RareCard
 @onready var magic_card = $MagicCard
 @onready var unique_card = $UniqueCard
+@onready var exalted_card = $ExaltedCard
 @onready var item = $Item
 @onready var item_category_damage = $ItemCategoryDamage
 @onready var item_category_acessorie = $ItemCategoryAcessorie
@@ -110,14 +111,22 @@ func set_rarity_item(value):
 		_rarity = "Magic"
 		unique_card.hide()
 		rare_card.hide()
+		exalted_card.hide()
 	elif value == 2:
 		_rarity = "Rare"
 		unique_card.hide()
 		magic_card.hide()
+		exalted_card.hide()
+	elif value == 3:
+		_rarity = "Exalted"
+		unique_card.hide()
+		magic_card.hide()
+		rare_card.hide()
 	else:
 		_rarity = "Unique"
 		rare_card.hide()
 		magic_card.hide()
+		exalted_card.hide()
 	
 func set_category_item(value):
 	self.category = value

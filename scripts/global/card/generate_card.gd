@@ -184,16 +184,12 @@ func pick_random_name(names):
 	return names[random_index]
 
 func pick_random_value(tiers: Dictionary, rarity: int) -> int:
-	# Randomize tier selection
 	randomize()
 	var tier_keys = tiers.keys()
-	tier_keys.shuffle()  # Shuffle the keys to randomize selection
-	var chosen_tier = tier_keys[randi() % tier_keys.size()]  # Randomly pick a tier from the shuffled keys
-	
+	tier_keys.shuffle()
+	var chosen_tier = tier_keys[randi() % tier_keys.size()]
 	var min_value = tiers[chosen_tier]["min"]
 	var max_value = tiers[chosen_tier]["max"]
-	
-	# Return a random value within the selected tier's range
 	return randi_range(min_value, max_value)
 
 func merge_card_with_affixes(card_map, affixes):

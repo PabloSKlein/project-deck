@@ -1,6 +1,6 @@
 class_name Card extends Node
 
-enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
+enum CardRarity {BASIC, MAGIC, RARE, EXALTED, UNIQUE}
 
 @export var name_item: String
 @export var category: String
@@ -12,7 +12,7 @@ enum CardRarity {BASIC, MAGIC, RARE, UNIQUE}
 @export var drop_rates = {
 	CardRarity.MAGIC: 70, # % of droprate
 	CardRarity.RARE: 29, # % of droprate
-	CardRarity.UNIQUE: 1 # % of droprate
+	CardRarity.EXALTED: 1 # % of droprate
 }
 
 func get_card_details() -> String:
