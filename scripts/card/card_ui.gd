@@ -85,7 +85,6 @@ func _on_sprite_mouse_entered(modifier):
 	tooltip.visible = true
 
 func _on_sprite_mouse_exited():
-
 	mouse_inside_tooltip = false
 	tooltip.visible = false
 

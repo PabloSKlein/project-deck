@@ -1,18 +1,16 @@
-# Mace.gd
 extends NewCard
 
 func _init():
 	name = "Mace"
-	category = "Weapon"
-	item_type = "Two Handed Mace"
-	equipment_slot = ["MainHand"]
+	category = "Weapon" 
+	type = "Two Handed Mace"
+	slot = ["MainHand"] 
 	rarity = "" #this will be filled when the item is unique
 	magic_multi = 1.2
 	rare_multi = 1.5
 	unique_multi = 1.8
 	is_dual_handed = true
-	item_image = "mace"
-
+	image = "mace"
 	var physical_damage = NewCardAttibute.new()
 	physical_damage.kind = "Base"
 	physical_damage.name = "Physical Damage"
