@@ -21,6 +21,7 @@ Events="*res://scripts/global/events.gd"
 CardData="*res://scripts/global/card/card_data.gd"
 SuffixData="*res://scripts/global/card/suffix_data.gd"
 PrefixData="*res://scripts/global/card/prefix_data.gd"
+NewCardLoader="*res://scripts/card/NEW_CARD/new_card_loader.gd"
 
 [display]
 
