@@ -11,11 +11,13 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "sword",
+	"item_image": "weapon",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Fire Damage",
+		"type": "fire",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -37,8 +39,10 @@
 	"item_image": "axe",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Cold Damage",
+		"type": "cold",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -60,8 +64,10 @@
 	"item_image": "dagger",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Fire Damage",
+		"type": "fire",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -83,8 +89,10 @@
 	"item_image": "mace",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Physical Damage",
+		"type": "physical",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -106,8 +114,10 @@
 	"item_image": "wand",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Physical Damage",
+		"type": "physical",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -128,8 +138,10 @@
 	"item_image": "bow",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Physical Damage",
+		"type": "physical",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -150,8 +162,10 @@
 	"item_image": "staff",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Physical Damage",
+		"type": "physical",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -173,8 +187,10 @@
 	"item_image": "claw",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "attack",
+		"attributeIcon": "icon1",
+		"description": "Physical Damage",
+		"type": "physical",
+		"function": "damage",
 		"method": "Added",
 		"min": 5,
 		"max": 10
@@ -195,8 +211,10 @@
 	"item_image": "shield",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Physical Block",
+		"type": "physical",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -214,11 +232,13 @@
 	"rare_multi": "1.4",
 	"unique_multi": "1.4",
 	"is_dual_handed": false,
-	"item_image": "body",
+	"item_image": "armor",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Fire resistence",
+		"type": "fire",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -239,8 +259,10 @@
 	"item_image": "gloves",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Cold Resistence",
+		"type": "cold",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -261,8 +283,10 @@
 	"item_image": "boots",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Physical block",
+		"type": "physical",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -283,8 +307,10 @@
 	"item_image": "helmet",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Physical block",
+		"type": "physical",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -305,15 +331,19 @@
 	"item_image": "amulet",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
+		"attributeIcon": "icon1",
 		"description": "life",
+		"type": "life",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
 	  },
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Physical block",
+		"type": "physical",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -334,8 +364,10 @@
 	"item_image": "belt",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Physical block",
+		"type": "physical",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10
@@ -356,8 +388,10 @@
 	"item_image": "ring",
 	"attributes": [
 	  {
-		"attributeIcon": "amulet",
-		"description": "block",
+		"attributeIcon": "icon1",
+		"description": "Physical block",
+		"type": "physical",
+		"function": "defense",
 		"method": "Increased",
 		"min": 5,
 		"max": 10

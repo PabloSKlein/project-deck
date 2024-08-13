@@ -1,7 +1,9 @@
 {
   "suffix": {
-	"healt_on_kill": {
-	  "description": "Health of Kill",
+	"Health of Kill": {
+	  "prefix_type": "healt",
+	  "function": "damage",
+	  "description": "Health of Kill what this do",
 	  "names": [
 		"Phoenix",
 		"Dragon",
@@ -11,7 +13,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Added",
-	  "affix_icon": "axe",
+	  "affix_icon": "icon1",
 	  "tiers": {
 		"1": {
 		  "min": 5,
@@ -35,8 +37,10 @@
 		}
 	  }
 	},
-	"chance_bleed_hit": {
-	  "description": "Chance to Bleed on Hit",
+	"Chance to Bleed": {
+	  "prefix_type": "bleed",
+	  "function": "damage",
+	  "description": "Chance to Bleed on Hit wha this do",
 	  "names": [
 		"Bleed",
 		"Tear",
@@ -46,7 +50,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Increased",
-	  "affix_icon": "axe",
+	  "affix_icon": "icon1",
 	  "tiers": {
 		"1": {
 		  "min": 8,

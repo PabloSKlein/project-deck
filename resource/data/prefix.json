@@ -1,7 +1,9 @@
 {
   "prefix": {
-	"cold_damage": {
-	  "description": "Cold Damage",
+	"Cold Damage": {
+	  "prefix_type": "cold",
+	  "function": "damage",
+	  "description": "Cold Damage what this do",
 	  "names": [
 		"Frostbite",
 		"Ice",
@@ -11,7 +13,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Added",
-	  "affix_icon": "axe",
+	  "affix_icon": "icon1",
 	  "tiers": {
 		"1": {
 		  "min": 5,
@@ -35,8 +37,10 @@
 		}
 	  }
 	},
-	"fire_damage": {
-	  "description": "Fire Damage",
+	"Fire Damage": {
+	  "prefix_type": "fire",
+	  "function": "damage",
+	  "description": "Fire Damage what this do",
 	  "names": [
 		"Inferno",
 		"Blaze",
@@ -46,7 +50,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Increased",
-	  "affix_icon": "axe",
+	  "affix_icon": "icon1",
 	  "tiers": {
 		"1": {
 		  "min": 8,
@@ -70,8 +74,10 @@
 		}
 	  }
 	},
-	"lightning_damage": {
-	  "description": "Lightning Damage",
+	"Lightning Damage": {
+	  "prefix_type": "lightning",
+	  "function": "damage",
+	  "description": "Light Damage what this do",
 	  "names": [
 		"Shock",
 		"Thunder",
@@ -81,7 +87,7 @@
 	  ],
 	  "item_capacity": "Armor, Weapon, Acessories, offHand",
 	  "increased": "Added",
-	  "affix_icon": "axe",
+	  "affix_icon": "icon1",
 	  "tiers": {
 		"1": {
 		  "min": 6,
