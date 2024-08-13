@@ -28,7 +28,7 @@ var is_battle_active = false
 func _ready():
 	conect_events()
 	hero_setup()
-	enemy_setup(Enemy.EnemyType.BOSS)
+	enemy_setup(Enemy.EnemyType.NORMAL)
 	squire.hero = hero
 	squire_ui.bind_squire(squire)
 
@@ -49,13 +49,13 @@ func start_battle():
 	while is_battle_active:
 		buttons.hide()
 		if hero.health > 0 and enemy.health > 0:
-			enemy.take_damage(hero.get_attribute("attack"))
+			enemy.take_damage(hero.get_attack())
 			enemy_ui.update()
-			await get_tree().create_timer(0.5).timeout  # Delay for a short time
+			await get_tree().create_timer(0.5).timeout
 			if enemy.health > 0:
-				hero.take_damage(enemy.get_attribute("attack"))
+				hero.take_damage(enemy.get_attack())
 				hero_ui.update()
-				await get_tree().create_timer(0.5).timeout  # Delay for a short time
+				await get_tree().create_timer(0.5).timeout
 		else:
 			is_battle_active = false
 			enemy_control.queue_free()
