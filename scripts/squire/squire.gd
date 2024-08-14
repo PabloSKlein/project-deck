@@ -1,13 +1,13 @@
 class_name Squire extends Node 
 
-var blueprints: Array[Card] = []
-var cards_in_hand: Array[Card] = []
+var blueprints: Array[NewCard] = []
+var cards_in_hand: Array[NewCard] = []
 var max_hand_size: int = 5
 
 @onready var generator: GenerateCard = GenerateCard.new()
 var hero: Hero
 
-func add_to_inventory(_card: Card) -> void:
+func add_to_inventory(_card: NewCard) -> void:
 	blueprints.push_back(_card)
 
 func add_to_hand(_card: NewCard) -> void:
