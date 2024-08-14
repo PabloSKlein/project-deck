@@ -1,5 +1,5 @@
 class_name Card extends Node
-
+# TODO REMOVER ESSE
 enum CardRarity {BASIC, MAGIC, RARE, EXALTED, UNIQUE}
 
 @export var name_item: String

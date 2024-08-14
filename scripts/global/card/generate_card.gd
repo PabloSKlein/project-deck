@@ -12,7 +12,6 @@ func new_generate_card() -> NewCard:
 	var randon_item = teste.get_random_item_from_folder(items_folder)
 	var base_item = new_generate_base_item(randon_item)
 	var rarity = card.update_rarity(base_item)
-	print(rarity)
 	#card.modifiers = generate_modifiers(card_data, rarity)
 	#card.name_item = card_data.get("name")
 	#card.type = card_data.get("type")
