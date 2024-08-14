@@ -2,16 +2,19 @@ class_name GenerateCard
 extends Node
 
 var teste : NewCardGen = NewCardGen.new()
-@export var items_folder: String = "res://scripts/card/NEW_CARD/card_base"
+@export var card_folder: String = "res://scripts/card/NEW_CARD/card_base"
 
 func _ready():
 	pass
 	
 func new_generate_card() -> NewCard:
 	var card = NewCard.new()
-	var randon_item = teste.get_random_item_from_folder(items_folder)
-	var base_item = new_generate_base_item(randon_item)
-	var rarity = card.update_rarity(base_item)
+	var randon_card = teste.get_random_card_from_folder(card_folder)
+	var base_card = teste.new_generate_base_card(randon_card)
+	var base_card_with_rarity = card.update_rarity(base_card)
+	var full_base_card = card.calculate_attribute_value(base_card_with_rarity)
+	var full_base_card_with_affix = teste.attach_affixes_to_card(full_base_card)
+	print(full_base_card_with_affix)
 	#card.modifiers = generate_modifiers(card_data, rarity)
 	#card.name_item = card_data.get("name")
 	#card.type = card_data.get("type")
@@ -23,67 +26,10 @@ func new_generate_card() -> NewCard:
 	#card.rarity = rarity
 	return card
 
-func new_generate_base_item(resource: Resource) -> Dictionary:
-	var result = {}
-	if resource == null:
-		result["error"] = "Resource is null."
-		return result
 
-	var desired_properties = [
-		"name", "category", "type", "slot", "rarity", "magic_multi", "rare_multi", "unique_multi", "is_dual_handed", "image", "attributes", 
-		"kind", "function", "description", "method", "icon", "min", "max"]
-	var property_list = resource.get_property_list()
-	for property_info in property_list:
-		var property_name = property_info.name
-		if desired_properties.has(property_name):
-			var property_value = resource.get(property_name)
-			if typeof(property_value) == TYPE_ARRAY:
-				var array_result = []
-				for item in property_value:
-					if item is Resource:
-						array_result.append(new_generate_base_item(item))
-					else:
-						array_result.append(item)
-				result[property_name] = array_result
-			elif typeof(property_value) == TYPE_DICTIONARY:
-				var dict_result = {}
-				for key in property_value.keys():
-					var dict_value = property_value[key]
-					if dict_value is Resource:
-						dict_result[key] = new_generate_base_item(dict_value)
-					else:
-						dict_result[key] = dict_value
-				result[property_name] = dict_result
-			elif property_value is Resource:
-				result[property_name] = new_generate_base_item(property_value)
-			else:
-				result[property_name] = property_value
-	return result
 
-func new_generate_card_rarity(base_item: Dictionary, resource: Resource) -> Dictionary:
-	# Extract initial rarity from the base_item
-	var rarity = base_item.get("rarity", 0)
-	
-	# Check if the rarity is 0
-	if rarity == 0:
-		# Ensure resource has the get_rarity method
-		if resource.has_method("get_rarity"):
-			# Get new rarity from the resource's get_rarity method
-			var new_rarity_str = resource.call("get_rarity")
-			var new_rarity = int(new_rarity_str)
-			
-			# Update base_item's rarity with the new value
-			base_item["rarity"] = new_rarity
-		else:
-			print("Resource does not have get_rarity method")
-			base_item["rarity"] = 1  # Default to Basic rarity if no method is available
 
-	# Ensure the rarity is never 0
-	if base_item["rarity"] == 0:
-		base_item["rarity"] = 1  # Default to Basic rarity if somehow it's still 0
-	
-	# Return the updated base_item dictionary
-	return base_item
+
 
 
 ######## OLD

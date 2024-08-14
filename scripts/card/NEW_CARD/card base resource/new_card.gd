@@ -53,3 +53,25 @@ func update_rarity(base_item: Dictionary) -> Dictionary:
 	if base_item["rarity"] == 0:
 		base_item["rarity"] = 1
 	return base_item
+
+func calculate_attribute_value(base_item: Dictionary) -> Dictionary:
+	if base_item.has("attributes") and base_item["attributes"].size() > 0:
+		for i in range(base_item["attributes"].size()):
+			var attribute = base_item["attributes"][i]
+			var min_value = attribute.get("min", 0)
+			var max_value = attribute.get("max", 0)
+			if min_value != 0 and max_value != 0:
+				var random_value = randi_range(min_value, max_value)
+				var multiplier = 1.0
+				match base_item.get("rarity", 0):
+					1:
+						multiplier = base_item.get("magic_multi", 1.0)
+					2:
+						multiplier = base_item.get("rare_multi", 1.0)
+					3:
+						multiplier = base_item.get("unique_multi", 1.0)
+				var final_value = random_value * multiplier
+				attribute["value"] = final_value
+				attribute.erase("min")
+				attribute.erase("max")
+	return base_item
