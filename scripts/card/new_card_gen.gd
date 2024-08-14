@@ -98,8 +98,8 @@ func new_generate_base_card(resource: Resource) -> Dictionary:
 
 func attach_affixes_to_card(card_dict: Dictionary) -> Dictionary:
 	var rarity = card_dict.get("rarity", 0)
-	var prefix_folder = "res://scripts/card/NEW_CARD/affix/prefix"
-	var suffix_folder = "res://scripts/card/NEW_CARD/affix/suffix"
+	var prefix_folder = "res://scripts/card/affix/prefix"
+	var suffix_folder = "res://scripts/card/affix/suffix"
 	
 	var prefixes = get_items_from_folder(prefix_folder)
 	var suffix = get_items_from_folder(suffix_folder)

@@ -19,6 +19,6 @@ func _ready():
 	selected_card_ui.bind_card(selected_card)
 	cards.add_child(selected_card_ui)
 
-func bind_cards(_equipped_card: Card, _selected_card: Card):
+func bind_cards(_equipped_card: NewCard, _selected_card: NewCard):
 	equiped_card = _equipped_card
 	selected_card = _selected_card

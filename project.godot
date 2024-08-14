@@ -19,9 +19,6 @@ config/icon="res://icon.svg"
 
 Events="*res://scripts/global/events.gd"
 CardData="*res://scripts/global/card/card_data.gd"
-SuffixData="*res://scripts/global/card/suffix_data.gd"
-PrefixData="*res://scripts/global/card/prefix_data.gd"
-NewLoader="*res://scripts/card/NEW_CARD/new_loader.gd"
 
 [display]
 
