@@ -11,8 +11,8 @@ func new_generate_card() -> NewCard:
 	var card = NewCard.new()
 	var randon_item = teste.get_random_item_from_folder(items_folder)
 	var base_item = new_generate_base_item(randon_item)
-	print(base_item)
-	#var rarity = generate_card_rarity(card_data, card)
+	var rarity = card.update_rarity(base_item)
+	print(rarity)
 	#card.modifiers = generate_modifiers(card_data, rarity)
 	#card.name_item = card_data.get("name")
 	#card.type = card_data.get("type")
@@ -61,8 +61,30 @@ func new_generate_base_item(resource: Resource) -> Dictionary:
 				result[property_name] = property_value
 	return result
 
+func new_generate_card_rarity(base_item: Dictionary, resource: Resource) -> Dictionary:
+	# Extract initial rarity from the base_item
+	var rarity = base_item.get("rarity", 0)
+	
+	# Check if the rarity is 0
+	if rarity == 0:
+		# Ensure resource has the get_rarity method
+		if resource.has_method("get_rarity"):
+			# Get new rarity from the resource's get_rarity method
+			var new_rarity_str = resource.call("get_rarity")
+			var new_rarity = int(new_rarity_str)
+			
+			# Update base_item's rarity with the new value
+			base_item["rarity"] = new_rarity
+		else:
+			print("Resource does not have get_rarity method")
+			base_item["rarity"] = 1  # Default to Basic rarity if no method is available
 
-
+	# Ensure the rarity is never 0
+	if base_item["rarity"] == 0:
+		base_item["rarity"] = 1  # Default to Basic rarity if somehow it's still 0
+	
+	# Return the updated base_item dictionary
+	return base_item
 
 
 ######## OLD
