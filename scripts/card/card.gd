@@ -1,5 +1,5 @@
 extends Resource
-class_name NewCard
+class_name Card
 
 
 var drop_rates = {

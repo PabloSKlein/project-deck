@@ -1,4 +1,4 @@
-extends NewCard
+extends Card
 
 func _init():
 	name = "Battle Axe"

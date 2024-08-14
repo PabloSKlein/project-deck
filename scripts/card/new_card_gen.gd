@@ -4,7 +4,7 @@ extends Node
 func _ready():
 	pass
 
-func get_random_card_from_folder(folder_path: String) -> NewCard:
+func get_random_card_from_folder(folder_path: String) -> Card:
 	var dir = DirAccess.open(folder_path)
 	if dir == null:
 		print("Failed to open folder: ", folder_path)

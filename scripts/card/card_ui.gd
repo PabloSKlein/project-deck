@@ -1,6 +1,6 @@
 class_name CardUI extends Node
 
-var card: NewCard
+var card: Card
 
 @onready var modifiers_stack : VBoxContainer = $VBoxContainer/Control/Modifiers
 @onready var color : ColorRect = $Color
@@ -33,7 +33,7 @@ func _ready():
 	add_child(tooltip)
 	pass
 
-func bind_card(_card: NewCard):
+func bind_card(_card: Card):
 	self.card = _card
 
 func _input(event: InputEvent) -> void:

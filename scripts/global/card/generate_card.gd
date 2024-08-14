@@ -7,8 +7,8 @@ var teste : NewCardGen = NewCardGen.new()
 func _ready():
 	pass
 	
-func new_generate_card() -> NewCard:
-	var card = NewCard.new()
+func new_generate_card() -> Card:
+	var card = Card.new()
 	var randon_card = teste.get_random_card_from_folder(card_folder)
 	var base_card = teste.new_generate_base_card(randon_card)
 	var base_card_with_rarity = card.update_rarity(base_card)

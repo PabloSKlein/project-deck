@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu2pmudajm43e"]
 
-[ext_resource type="Script" path="res://scripts/card/compare_cards.gd" id="1_oa447"]
+[ext_resource type="Script" path="res://scripts/card/compare/compare_cards.gd" id="1_oa447"]
 
 [node name="CompareCards" type="Node2D"]
 position = Vector2(446, 188)
