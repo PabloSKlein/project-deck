@@ -20,11 +20,10 @@ func discard_hand():
 		hand.remove_child(child)
 		
 func draw_card():
-	var new_card = generator.new_generate_card()
+	var tst = generator.new_generate_card() #start passing the new card generator
 	var card = generator.generate_card()
 	var card_ui := card_scene.instantiate()
 	card_ui.bind_card(card)
-	
 	hand.add_card(card_ui)
 	squire.add_to_hand(card)
 	

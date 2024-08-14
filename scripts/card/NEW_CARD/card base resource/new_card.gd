@@ -17,7 +17,9 @@ var drop_rates = {
 @export var unique_multi: float
 @export var is_dual_handed: bool
 @export var image: String
-@export var attributes: Array[Resource] = []
+@export var attributes: Array[Resource]
+@export var prefixes: Array[Resource]
+@export var suffixes: Array[Resource]
 
 func get_card_details() -> String:
 	var details = "Card Name: " + name + "\n"

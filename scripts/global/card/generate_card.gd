@@ -14,25 +14,20 @@ func new_generate_card() -> NewCard:
 	var base_card_with_rarity = card.update_rarity(base_card)
 	var full_base_card = card.calculate_attribute_value(base_card_with_rarity)
 	var full_base_card_with_affix = teste.attach_affixes_to_card(full_base_card)
-	var LALALALALALA = teste.process_card_data(full_base_card_with_affix)
+	var full_base_card_with_affix_tiers = teste.process_card_data(full_base_card_with_affix)
+	card.name = full_base_card_with_affix_tiers.get("name")
+	card.category = full_base_card_with_affix_tiers.get("category")
+	card.type = full_base_card_with_affix_tiers.get("type")
+	card.slot = full_base_card_with_affix_tiers.get("slot")
+	card.rarity = full_base_card_with_affix_tiers.get("rarity")
+	card.is_dual_handed = full_base_card_with_affix_tiers.get("is_dual_handed")
+	card.image = full_base_card_with_affix_tiers.get("image")
 	
-	print(LALALALALALA)
+	#card.attributes = full_base_card_with_affix_tiers.get("attributes")
+	#card.prefixes = full_base_card_with_affix_tiers.get("prefixes")
+	#card.suffixes = full_base_card_with_affix_tiers.get("attributes")
 	
-	
-	#print(full_base_card_with_affix)
-	#card.name = full_base_card_with_affix.get("name")
-	#card.category = full_base_card_with_affix.get("category")
-	#card.type = full_base_card_with_affix.get("type")
-	#card.slot = full_base_card_with_affix.get("slot")
-	#card.rarity = full_base_card_with_affix.get("rarity")
-	#card.magic_multi = full_base_card_with_affix.get("magic_multi")
-	#card.rare_multi = full_base_card_with_affix.get("rare_multi")
-	#card.unique_multi = full_base_card_with_affix.get("unique_multi")
-	#card.is_dual_handed = full_base_card_with_affix.get("is_dual_handed")
-	#card.image = full_base_card_with_affix.get("image")
-	#card.attributes = full_base_card_with_affix.get("attributes")
-	#card.prefixes = full_base_card_with_affix.get("prefixes")
-	#card.suffix = full_base_card_with_affix.get("suffix")
+
 	return card
 
 
