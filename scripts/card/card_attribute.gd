@@ -1,5 +1,5 @@
 extends Resource
-class_name NewCardAttibute
+class_name CardAttibute
 
 @export var kind: String
 @export var name: String

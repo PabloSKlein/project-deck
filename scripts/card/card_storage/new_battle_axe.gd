@@ -12,7 +12,7 @@ func _init():
 	is_dual_handed = false
 	image = "axe"
 
-	var cold_damage = NewCardAttibute.new()
+	var cold_damage = CardAttibute.new()
 	cold_damage.kind = "Base"
 	cold_damage.name = "Cold Damage"
 	cold_damage.type = "cold"
@@ -23,7 +23,7 @@ func _init():
 	cold_damage.min = 5
 	cold_damage.max = 10
 	
-	var fire_damage = NewCardAttibute.new()
+	var fire_damage = CardAttibute.new()
 	cold_damage.kind = "Base"
 	cold_damage.name = "Cold Damage"
 	cold_damage.type = "cold"

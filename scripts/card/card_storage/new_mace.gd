@@ -11,7 +11,7 @@ func _init():
 	unique_multi = 1.8
 	is_dual_handed = true
 	image = "mace"
-	var physical_damage = NewCardAttibute.new()
+	var physical_damage = CardAttibute.new()
 	physical_damage.kind = "Base"
 	physical_damage.name = "Physical Damage"
 	physical_damage.type = "physical"
@@ -22,7 +22,7 @@ func _init():
 	physical_damage.min = 15
 	physical_damage.max = 25
 
-	var stun_chance = NewCardAttibute.new()
+	var stun_chance = CardAttibute.new()
 	stun_chance.kind = "Base"
 	stun_chance.name = "Stun chance"
 	stun_chance.type = "Stun"

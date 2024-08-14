@@ -18,7 +18,7 @@ var drop_rates = {
 @export var unique_multi: float
 @export var is_dual_handed: bool
 @export var image: String
-@export var attributes: Array[NewCardAttibute]
+@export var attributes: Array[CardAttibute]
 @export var prefixes: Array[NewAffix]
 @export var suffixes: Array[NewAffix]
 
@@ -29,7 +29,7 @@ func get_card_details() -> String:
 	details += "Rarity: " + str(rarity) + "\n"
 	details += "Attributes:\n"
 	for attribute in attributes:
-		if attribute is NewCardAttibute:
+		if attribute is CardAttibute:
 			details += "- " + attribute.name + ": " + attribute.description + "\n"
 			details += "  Type: " + attribute.type + "\n"
 			details += "  Function: " + attribute.function + "\n"

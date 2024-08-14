@@ -12,7 +12,7 @@ func _init():
 	is_dual_handed = false
 	image = "armor"
 
-	var fire_resistance = NewCardAttibute.new()
+	var fire_resistance = CardAttibute.new()
 	fire_resistance.kind = "Base"
 	fire_resistance.name = "Fire Resistance"
 	fire_resistance.type = "fire"

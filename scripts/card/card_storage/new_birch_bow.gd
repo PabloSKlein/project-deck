@@ -12,7 +12,7 @@ func _init():
 	is_dual_handed = false
 	image = "bow"
 
-	var physical_damage = NewCardAttibute.new()
+	var physical_damage = CardAttibute.new()
 	physical_damage.kind = "Base"
 	physical_damage.name = "Physical Damage"
 	physical_damage.type = "physical"

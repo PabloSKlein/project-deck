@@ -12,7 +12,7 @@ func _init():
 	is_dual_handed = false
 	image = "shield"
 
-	var physical_block = NewCardAttibute.new()
+	var physical_block = CardAttibute.new()
 	physical_block.kind = "Base"
 	physical_block.name = "Physical Block"
 	physical_block.type = "physical"

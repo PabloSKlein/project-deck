@@ -12,7 +12,7 @@ func _init():
 	is_dual_handed = false
 	image = "gloves"
 
-	var cold_resistance = NewCardAttibute.new()
+	var cold_resistance = CardAttibute.new()
 	cold_resistance.kind = "Base"
 	cold_resistance.name = "Cold Resistance"
 	cold_resistance.type = "cold"

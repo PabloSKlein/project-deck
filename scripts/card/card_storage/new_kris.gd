@@ -12,7 +12,7 @@ func _init():
 	is_dual_handed = false
 	image = "dagger"
 
-	var fire_damage = NewCardAttibute.new()
+	var fire_damage = CardAttibute.new()
 	fire_damage.kind = "Base"
 	fire_damage.name = "Fire Damage"
 	fire_damage.type = "fire"
