@@ -4,7 +4,7 @@ func _init():
 	name = "Leather Gloves"
 	category = "Armor"
 	type = "Armor"
-	slot = ["Gloves"]
+	slot = [CardType.Enum.MAIN_HAND]
 	rarity = 0
 	magic_multi = 1
 	rare_multi = 1.4

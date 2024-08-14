@@ -5,7 +5,7 @@ func _init():
 	category = "Armor"
 	type = "Armor"
 	slot = ["Body"]
-	rarity = 0
+	slot = [CardType.Enum.MAIN_HAND]
 	magic_multi = 1
 	rare_multi = 1.4
 	unique_multi = 1.4

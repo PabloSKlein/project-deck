@@ -4,7 +4,7 @@ func _init():
 	name = "Renegade Shield"
 	category = "Shield"
 	type = "Shield"
-	slot = ["OffHand"]
+	slot = [CardType.Enum.MAIN_HAND]
 	rarity = 0
 	magic_multi = 1
 	rare_multi = 1.4

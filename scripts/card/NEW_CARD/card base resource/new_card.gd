@@ -1,6 +1,7 @@
 extends Resource
 class_name NewCard
 
+
 var drop_rates = {
 	1: 60, # Magic
 	2: 29, # Rare
