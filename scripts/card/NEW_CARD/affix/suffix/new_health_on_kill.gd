@@ -1,12 +1,12 @@
 extends NewAffix
 
 func _init():
-	kind = "Prefix"
-	name = "Fire Damage"
-	type = "fire"
+	kind = "Suffix"
+	name = "Chance to Bleed"
+	type = "bleed"
 	function = "damage"
-	description = "Fire Damage what this do"
-	names = ["Inferno", "Blaze", "Flame", "Scorch", "Ember"]
+	description = "Chance to Bleed on Hit wha this do"
+	names = ["Bleed", "Tear", "Pierce", "Wound", "Rupture"]
 	capacity = "Armor, Weapon, Accessories, OffHand"
 	increased = "Increased"
 	icon = "icon1"
