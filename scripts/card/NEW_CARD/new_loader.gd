@@ -1,7 +1,6 @@
 extends Node
 
-class_name Autoloader
-
+class_name CardLoader
 
 var items: Dictionary = {}
 var prefix_data: Dictionary = {}
