@@ -1,4 +1,4 @@
-class_name NewCardGen
+class_name CardGenerator
 extends Node
 
 func _ready():

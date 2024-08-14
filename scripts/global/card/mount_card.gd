@@ -1,20 +1,20 @@
-class_name GenerateCard
+class_name MountCard
 extends Node
 
-var teste : NewCardGen = NewCardGen.new()
+var cardGenerator : CardGenerator = CardGenerator.new()
 @export var card_folder: String = "res://scripts/card/card_storage"
 
 func _ready():
 	pass
 	
-func new_generate_card() -> Card:
+func generate_card() -> Card:
 	var card = Card.new()
-	var randon_card = teste.get_random_card_from_folder(card_folder)
-	var base_card = teste.new_generate_base_card(randon_card)
+	var randon_card = cardGenerator.get_random_card_from_folder(card_folder)
+	var base_card = cardGenerator.new_generate_base_card(randon_card)
 	var base_card_with_rarity = card.update_rarity(base_card)
 	var full_base_card = card.calculate_attribute_value(base_card_with_rarity)
-	var full_base_card_with_affix = teste.attach_affixes_to_card(full_base_card)
-	var full_base_card_with_affix_tiers = teste.process_card_data(full_base_card_with_affix)
+	var full_base_card_with_affix = cardGenerator.attach_affixes_to_card(full_base_card)
+	var full_base_card_with_affix_tiers = cardGenerator.process_card_data(full_base_card_with_affix)
 	card.name = full_base_card_with_affix_tiers.get("name")
 	card.category = full_base_card_with_affix_tiers.get("category")
 	card.type = full_base_card_with_affix_tiers.get("type")
