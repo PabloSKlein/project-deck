@@ -99,7 +99,7 @@ func new_generate_base_card(resource: Resource) -> Dictionary:
 func attach_affixes_to_card(card_dict: Dictionary) -> Dictionary:
 	var rarity = card_dict.get("rarity", 0)
 	var prefix_folder = "res://scripts/card/NEW_CARD/affix/prefix"
-	var suffix_folder = "res://scripts/card/NEW_CARD/affix/prefix"
+	var suffix_folder = "res://scripts/card/NEW_CARD/affix/suffix"
 	
 	var prefixes = get_items_from_folder(prefix_folder)
 	var suffix = get_items_from_folder(suffix_folder)
@@ -130,7 +130,7 @@ func attach_affixes_to_card(card_dict: Dictionary) -> Dictionary:
 	
 	# Attach prefixes and affixes to the card dictionary
 	card_dict["prefixes"] = random_prefixes
-	card_dict["affixes"] = random_suffix
+	card_dict["suffixes"] = random_suffix
 	
 	return card_dict
 
@@ -163,16 +163,73 @@ func get_resource_info(resource: Resource) -> Dictionary:
 	var info = {}
 	if resource == null:
 		return info
-	
+
 	var desired_properties = [
-		"name", "type", "function", "description", "kind"
+		"name", "type", "function", "description", "kind", "tiers"
 	]
-	
+
 	var properties = resource.get_property_list()
 	for prop in properties:
 		var name = prop.name
 		if name in desired_properties:
 			var value = resource.get(name)
-			info[name] = value
-	
+
+			if name == "tiers":
+				if typeof(value) == TYPE_DICTIONARY:
+					var tiers_info = {}
+					for key in value.keys():
+						var tier = value[key]
+						if tier:
+							var min_value = tier.min
+							var max_value = tier.max
+
+							var tier_info = {
+								"min": min_value,
+								"max": max_value
+							}
+							tiers_info[key] = tier_info
+					info[name] = tiers_info
+				else:
+					info[name] = "Invalid format for tiers"
+			else:
+				info[name] = value
+
 	return info
+
+func get_random_value(min: int, max: int) -> int:
+	return randi() % (max - min + 1) + min
+
+func select_random_tier_value(tiers: Dictionary) -> Dictionary:
+	var tier_keys = tiers.keys()
+	if tier_keys.size() == 0:
+		return {}  # Return empty dictionary if no tiers are present
+
+	var random_key = tier_keys[randi() % tier_keys.size()]
+	var selected_tier = tiers[random_key]
+	
+	if selected_tier is Dictionary:
+		var min_value = selected_tier.get("min", 0)
+		var max_value = selected_tier.get("max", 0)
+		var tier_value = get_random_value(min_value, max_value)
+		return { "tier" + str(random_key): { "value": tier_value } }
+	
+	return {}
+
+func process_tiers(tiers: Dictionary) -> Dictionary:
+	var processed_tiers = select_random_tier_value(tiers)
+	return processed_tiers
+
+func process_card_data(card_data: Dictionary) -> Dictionary:
+	if card_data.has("prefixes"):
+		for i in range(card_data["prefixes"].size()):
+			var prefix = card_data["prefixes"][i]
+			if prefix.has("tiers"):
+				prefix["tiers"] = process_tiers(prefix["tiers"])
+
+	if card_data.has("suffixes"):
+		for i in range(card_data["suffixes"].size()):
+			var suffix = card_data["suffixes"][i]
+			if suffix.has("tiers"):
+				suffix["tiers"] = process_tiers(suffix["tiers"])
+
+	return card_data

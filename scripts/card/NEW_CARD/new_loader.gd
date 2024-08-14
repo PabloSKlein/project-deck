@@ -61,26 +61,3 @@ func load_all_affixes():
 		else:
 			print("Failed to load suffix at path: ", path)
 
-func get_random_item() -> Resource:
-	var keys = items.keys()
-	if keys.size() == 0:
-		print("No items loaded.")
-		return null
-	var random_key = keys[randi() % keys.size()]
-	return items[random_key]
-
-func get_random_prefix() -> Resource:
-	var keys = prefix_data.keys()
-	if keys.size() == 0:
-		print("No prefixes loaded.")
-		return null
-	var random_key = keys[randi() % keys.size()]
-	return prefix_data[random_key]
-
-func get_random_suffix() -> Resource:
-	var keys = suffix_data.keys()
-	if keys.size() == 0:
-		print("No suffixes loaded.")
-		return null
-	var random_key = keys[randi() % keys.size()]
-	return suffix_data[random_key]

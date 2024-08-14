@@ -12,10 +12,10 @@ var drop_rates = {
 @export var type: String
 @export var slot: Array
 @export var rarity: int
-@export var magic_multi: float = 1.0
-@export var rare_multi: float = 1.0
-@export var unique_multi: float = 1.0
-@export var is_dual_handed: bool = false
+@export var magic_multi: float
+@export var rare_multi: float
+@export var unique_multi: float
+@export var is_dual_handed: bool
 @export var image: String
 @export var attributes: Array[Resource] = []
 
@@ -65,11 +65,11 @@ func calculate_attribute_value(base_item: Dictionary) -> Dictionary:
 				var multiplier = 1.0
 				match base_item.get("rarity", 0):
 					1:
-						multiplier = base_item.get("magic_multi", 1.0)
+						multiplier = base_item.get(magic_multi)
 					2:
-						multiplier = base_item.get("rare_multi", 1.0)
+						multiplier = base_item.get(rare_multi)
 					3:
-						multiplier = base_item.get("unique_multi", 1.0)
+						multiplier = base_item.get(unique_multi)
 				var final_value = random_value * multiplier
 				attribute["value"] = final_value
 				attribute.erase("min")
