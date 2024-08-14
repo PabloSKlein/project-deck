@@ -19,7 +19,8 @@ func new_generate_card() -> NewCard:
 	card.name = full_base_card_with_affix_tiers.get("name")
 	card.category = full_base_card_with_affix_tiers.get("category")
 	card.type = full_base_card_with_affix_tiers.get("type")
-	card.slot.push_front(full_base_card_with_affix_tiers.get("slot"))
+	for i in full_base_card_with_affix_tiers.get("slot"):
+		card.slot.push_back(i)
 	card.rarity = full_base_card_with_affix_tiers.get("rarity")
 	card.is_dual_handed = full_base_card_with_affix_tiers.get("is_dual_handed")
 	card.image = full_base_card_with_affix_tiers.get("image")

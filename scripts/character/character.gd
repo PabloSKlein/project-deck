@@ -52,7 +52,7 @@ func show_status():
 	for attribute in attributes:
 		print(attribute + " : " + str(snapped(attributes[attribute], 0.01)))
 
-func add_attribute(modifier: Modifier):
+func add_attribute(modifier):
 	if modifier.type in attributes:
 		attributes[modifier.type] += modifier.amount
 	else:
@@ -67,5 +67,5 @@ func update_attributes():
 	for slot in inventory.slots:
 		if(slot.is_empty):
 			continue
-		for modifier in slot.card.modifiers:
+		for modifier in slot.card.attributes:
 			add_attribute(modifier)

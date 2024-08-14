@@ -21,7 +21,7 @@ func discard_hand():
 		
 func draw_card():
 	var test = generator.new_generate_card() #start passing the new card generator
-	var card = generator.generate_card()
+	#var card = generator.generate_card()
 	var card_ui := card_scene.instantiate()
 	card_ui.bind_card(test)
 	hand.add_card(card_ui)
