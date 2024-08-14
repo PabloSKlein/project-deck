@@ -58,7 +58,7 @@ func add_attribute(modifier: Modifier):
 	else:
 		attributes[modifier.type] = modifier.amount
 
-func equip(card: Card):
+func equip(card: NewCard):
 	inventory.equip(card)
 	update_attributes()
 

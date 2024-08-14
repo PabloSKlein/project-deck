@@ -10,7 +10,7 @@ var hero: Hero
 func add_to_inventory(_card: Card) -> void:
 	blueprints.push_back(_card)
 
-func add_to_hand(_card: Card) -> void:
+func add_to_hand(_card: NewCard) -> void:
 	cards_in_hand.push_back(_card)
 	
 

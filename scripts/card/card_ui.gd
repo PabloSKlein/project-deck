@@ -1,6 +1,6 @@
 class_name CardUI extends Node
 
-var card: Card
+var card: NewCard
 
 @onready var modifiers_stack : VBoxContainer = $VBoxContainer/Control/Modifiers
 @onready var color : ColorRect = $Color
@@ -33,7 +33,7 @@ func _ready():
 	add_child(tooltip)
 	pass
 
-func bind_card(_card: Card):
+func bind_card(_card: NewCard):
 	self.card = _card
 
 func _input(event: InputEvent) -> void:
@@ -58,7 +58,7 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 
 func update_ui():
-	$VBoxContainer/Control/CardNameLabel.text = card.name_item
+	$VBoxContainer/Control/CardNameLabel.text = card.name
 	$VBoxContainer/Control/CardTypeLabel.text = card.type
 	update_modifiers()
 	set_image_item(card.image)
@@ -105,7 +105,7 @@ func _on_mouse_exited(text: String) -> void:
 			_on_alt_released()
 
 func update_modifiers():
-	for modifier in card.modifiers:
+	for modifier in card.attributes:
 		var control = Control.new()
 		control.custom_minimum_size = Vector2(50, 20)  # Increase size to cover the desired area
 		
