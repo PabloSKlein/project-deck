@@ -1,6 +1,6 @@
 extends Node
 
-class_name CardLoader
+class_name NewCardLoader
 
 var items: Dictionary = {}
 var prefix_data: Dictionary = {}
@@ -15,22 +15,21 @@ const item_paths = [
 	"res://Scripts/card/NEW_CARD/card_base/new_ringmail.gd",
 	"res://Scripts/card/NEW_CARD/card_base/new_shield.gd",
 	"res://Scripts/card/NEW_CARD/card_base/new_ritual_stake.gd",
-	]
+]
 	
 const prefix_paths = [
 	"res://scripts/card/NEW_CARD/affix/prefix/new_cold_damage.gd",
 	"res://scripts/card/NEW_CARD/affix/prefix/new_fire_damage.gd",
 	"res://scripts/card/NEW_CARD/affix/prefix/new_lightning_damage.gd",
 	"res://scripts/card/NEW_CARD/affix/prefix/new_poison_damage.gd"
-	
-	]
+]
 
-var suffix_paths = [
+const suffix_paths = [
 	"res://Scripts/card/NEW_CARD/affix/suffix/new_chance_to_bleed.gd",
 	"res://Scripts/card/NEW_CARD/affix/suffix/new_crit_chance.gd",
 	"res://Scripts/card/NEW_CARD/affix/suffix/new_health_on_kill.gd",
 	"res://Scripts/card/NEW_CARD/affix/suffix/new_mana_regen.gd",
-	]
+]
 
 func _ready():
 	load_all_items()
@@ -61,3 +60,27 @@ func load_all_affixes():
 			print("Loaded suffix: ", path)
 		else:
 			print("Failed to load suffix at path: ", path)
+
+func get_random_item() -> Resource:
+	var keys = items.keys()
+	if keys.size() == 0:
+		print("No items loaded.")
+		return null
+	var random_key = keys[randi() % keys.size()]
+	return items[random_key]
+
+func get_random_prefix() -> Resource:
+	var keys = prefix_data.keys()
+	if keys.size() == 0:
+		print("No prefixes loaded.")
+		return null
+	var random_key = keys[randi() % keys.size()]
+	return prefix_data[random_key]
+
+func get_random_suffix() -> Resource:
+	var keys = suffix_data.keys()
+	if keys.size() == 0:
+		print("No suffixes loaded.")
+		return null
+	var random_key = keys[randi() % keys.size()]
+	return suffix_data[random_key]

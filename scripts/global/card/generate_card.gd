@@ -1,10 +1,71 @@
+class_name GenerateCard
 extends Node
 
-class_name GenerateCard
+var teste : NewCardGen = NewCardGen.new()
+@export var items_folder: String = "res://scripts/card/NEW_CARD/card_base"
 
 func _ready():
 	pass
+	
+func new_generate_card() -> NewCard:
+	var card = NewCard.new()
+	var randon_item = teste.get_random_item_from_folder(items_folder)
+	var base_item = new_generate_base_item(randon_item)
+	print(base_item)
+	#var rarity = generate_card_rarity(card_data, card)
+	#card.modifiers = generate_modifiers(card_data, rarity)
+	#card.name_item = card_data.get("name")
+	#card.type = card_data.get("type")
+	#card.image = card_data.get("item_image")
+	#card.category = card_data.get("category")
+	#var slots : Array = card_data.get("equipment_slot")
+	#for slot in slots:
+		#card.slot_types.push_back(CardType.get_type_by_description(slot))
+	#card.rarity = rarity
+	return card
 
+func new_generate_base_item(resource: Resource) -> Dictionary:
+	var result = {}
+	if resource == null:
+		result["error"] = "Resource is null."
+		return result
+
+	var desired_properties = [
+		"name", "category", "type", "slot", "rarity", "magic_multi", "rare_multi", "unique_multi", "is_dual_handed", "image", "attributes", 
+		"kind", "function", "description", "method", "icon", "min", "max"]
+	var property_list = resource.get_property_list()
+	for property_info in property_list:
+		var property_name = property_info.name
+		if desired_properties.has(property_name):
+			var property_value = resource.get(property_name)
+			if typeof(property_value) == TYPE_ARRAY:
+				var array_result = []
+				for item in property_value:
+					if item is Resource:
+						array_result.append(new_generate_base_item(item))
+					else:
+						array_result.append(item)
+				result[property_name] = array_result
+			elif typeof(property_value) == TYPE_DICTIONARY:
+				var dict_result = {}
+				for key in property_value.keys():
+					var dict_value = property_value[key]
+					if dict_value is Resource:
+						dict_result[key] = new_generate_base_item(dict_value)
+					else:
+						dict_result[key] = dict_value
+				result[property_name] = dict_result
+			elif property_value is Resource:
+				result[property_name] = new_generate_base_item(property_value)
+			else:
+				result[property_name] = property_value
+	return result
+
+
+
+
+
+######## OLD
 func generate_card() -> Card:
 	var card = Card.new()
 	var card_data = generate_card_base()
@@ -21,6 +82,13 @@ func generate_card() -> Card:
 	return card
 
 func generate_card_base() -> Dictionary:
+	var keys = CardData.card_data.keys()
+	randomize()
+	var random_index = randi() % keys.size()
+	var random_key = keys[random_index]
+	return CardData.card_data[random_key]
+	
+func new_generate_card_base() -> Dictionary:
 	var keys = CardData.card_data.keys()
 	randomize()
 	var random_index = randi() % keys.size()

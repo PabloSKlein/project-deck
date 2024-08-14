@@ -5,7 +5,7 @@ func _init():
 	category = "Weapon" 
 	type = "Two Handed Mace"
 	slot = ["MainHand"] 
-	rarity = "" #this will be filled when the item is unique
+	rarity = 0 #this will be filled when the item is unique
 	magic_multi = 1.2
 	rare_multi = 1.5
 	unique_multi = 1.8

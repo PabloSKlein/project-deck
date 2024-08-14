@@ -5,7 +5,7 @@ func _init():
 	category = "Shield"
 	type = "Shield"
 	slot = ["OffHand"]
-	rarity = ""
+	rarity = 0
 	magic_multi = 1
 	rare_multi = 1.4
 	unique_multi = 1.4
