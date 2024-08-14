@@ -15,21 +15,20 @@ func new_generate_card() -> NewCard:
 	var full_base_card = card.calculate_attribute_value(base_card_with_rarity)
 	var full_base_card_with_affix = teste.attach_affixes_to_card(full_base_card)
 	print(full_base_card_with_affix)
-	#card.modifiers = generate_modifiers(card_data, rarity)
-	#card.name_item = card_data.get("name")
-	#card.type = card_data.get("type")
-	#card.image = card_data.get("item_image")
-	#card.category = card_data.get("category")
-	#var slots : Array = card_data.get("equipment_slot")
-	#for slot in slots:
-		#card.slot_types.push_back(CardType.get_type_by_description(slot))
-	#card.rarity = rarity
+	card.name = full_base_card_with_affix.get("name")
+	card.category = full_base_card_with_affix.get("category")
+	card.type = full_base_card_with_affix.get("type")
+	card.slot = full_base_card_with_affix.get("slot")
+	card.rarity = full_base_card_with_affix.get("rarity")
+	card.magic_multi = full_base_card_with_affix.get("magic_multi")
+	card.rare_multi = full_base_card_with_affix.get("rare_multi")
+	card.unique_multi = full_base_card_with_affix.get("unique_multi")
+	card.is_dual_handed = full_base_card_with_affix.get("is_dual_handed")
+	card.image = full_base_card_with_affix.get("image")
+	#card.attributes = full_base_card_with_affix.get("attributes")
+	#card.prefixes = full_base_card_with_affix.get("prefixes")
+	#card.suffix = full_base_card_with_affix.get("suffix")
 	return card
-
-
-
-
-
 
 
 ######## OLD
@@ -49,13 +48,6 @@ func generate_card() -> Card:
 	return card
 
 func generate_card_base() -> Dictionary:
-	var keys = CardData.card_data.keys()
-	randomize()
-	var random_index = randi() % keys.size()
-	var random_key = keys[random_index]
-	return CardData.card_data[random_key]
-	
-func new_generate_card_base() -> Dictionary:
 	var keys = CardData.card_data.keys()
 	randomize()
 	var random_index = randi() % keys.size()
