@@ -4,7 +4,7 @@ func _init():
 	name = "Birch Bow"
 	category = "Weapon"
 	type = "Bow"
-	slot = [CardType.Enum.MAIN_HAND]
+	slot = [CardType.Enum.HELMET]
 	rarity = 0
 	magic_multi = 1
 	rare_multi = 1.4
