@@ -11,7 +11,7 @@ var drop_rates = {
 @export var name: String
 @export var category: String
 @export var type: String
-@export var slot: Array
+@export var slot: Array[CardType.Enum]
 @export var rarity: int
 @export var magic_multi: float
 @export var rare_multi: float

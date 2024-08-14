@@ -4,8 +4,8 @@ func _init():
 	name = "Ringmail Hauberk"
 	category = "Armor"
 	type = "Armor"
-	slot = ["Body"]
 	slot = [CardType.Enum.MAIN_HAND]
+	rarity = 0
 	magic_multi = 1
 	rare_multi = 1.4
 	unique_multi = 1.4
