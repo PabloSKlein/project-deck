@@ -14,6 +14,9 @@ class_name CardAttibute
 
 static func from_dictionary(dict: Dictionary):
 	var instance = CardAttibute.new()
+	return from_dictionary2(dict, instance)
+	
+static func from_dictionary2(dict: Dictionary, instance: CardAttibute):
 	instance.kind = dict.get("kind", "")
 	instance.name = dict.get("name", "")
 	instance.type = dict.get("type", "")

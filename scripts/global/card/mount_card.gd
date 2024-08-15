@@ -26,8 +26,8 @@ func generate_card() -> Card:
 	
 	print(full_base_card_with_affix_tiers.get("prefixes"))
 	add_attributes(card, full_base_card_with_affix_tiers.get("attributes"))
-	add_attributes(card, full_base_card_with_affix_tiers.get("suffixes"))
-	add_attributes(card, full_base_card_with_affix_tiers.get("prefixes"))
+	add_affixes(card, full_base_card_with_affix_tiers.get("suffixes"))
+	add_affixes(card, full_base_card_with_affix_tiers.get("prefixes"))
 		
 	card.prefixes.push_front(full_base_card_with_affix_tiers.get("prefixes"))
 	card.suffixes.push_front(full_base_card_with_affix_tiers.get("suffixes"))
@@ -36,6 +36,12 @@ func generate_card() -> Card:
 func add_attributes(card: Card, resource):
 	for i in resource:
 		var attribute = CardAttibute.from_dictionary(i)
+		if attribute.get_value() > 0:
+			card.attributes.push_front(attribute)
+			
+func add_affixes(card: Card, resource):
+	for i in resource:
+		var attribute = NewAffix.from_dictionary(i)
 		if attribute.get_value() > 0:
 			card.attributes.push_front(attribute)
 

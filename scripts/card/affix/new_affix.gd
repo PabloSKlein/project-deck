@@ -12,3 +12,10 @@ class Tier:
 
 func get_value():
 	return tiers.get("value", 0)
+
+static func from_dictionary(dict: Dictionary) -> NewAffix:
+	var attribute = NewAffix.new()
+	var instance : CardAttibute = super.from_dictionary2(dict, attribute)
+	instance.tiers = dict.get("tiers", [])
+	instance.value = instance.tiers.get("value", 0)
+	return instance
