@@ -211,7 +211,7 @@ func select_random_tier_value(tiers: Dictionary) -> Dictionary:
 		var min_value = selected_tier.get("min", 0)
 		var max_value = selected_tier.get("max", 0)
 		var tier_value = get_random_value(min_value, max_value)
-		return { "tier" + str(random_key): { "value": tier_value } }
+		return { "tier" : "tier"+str(random_key), "value": tier_value }
 	
 	return {}
 

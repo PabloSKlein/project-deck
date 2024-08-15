@@ -24,6 +24,7 @@ func generate_card() -> Card:
 	card.is_dual_handed = full_base_card_with_affix_tiers.get("is_dual_handed")
 	card.image = full_base_card_with_affix_tiers.get("image")
 	
+	print(full_base_card_with_affix_tiers.get("prefixes"))
 	add_attributes(card, full_base_card_with_affix_tiers.get("attributes"))
 	add_attributes(card, full_base_card_with_affix_tiers.get("suffixes"))
 	add_attributes(card, full_base_card_with_affix_tiers.get("prefixes"))
@@ -35,6 +36,6 @@ func generate_card() -> Card:
 func add_attributes(card: Card, resource):
 	for i in resource:
 		var attribute = CardAttibute.from_dictionary(i)
-		if attribute.value > 0:
+		if attribute.get_value() > 0:
 			card.attributes.push_front(attribute)
 

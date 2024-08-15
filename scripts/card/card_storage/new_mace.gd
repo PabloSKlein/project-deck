@@ -18,7 +18,7 @@ func _init():
 	physical_damage.function = "damage"
 	physical_damage.description = "what this thing do"
 	physical_damage.method = "Added"
-	physical_damage.icon = "icon_physical"
+	physical_damage.icon = "axe"
 	physical_damage.min = 15
 	physical_damage.max = 25
 

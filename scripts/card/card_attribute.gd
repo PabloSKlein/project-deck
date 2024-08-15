@@ -12,7 +12,7 @@ class_name CardAttibute
 @export var max: int = 0
 @export var value: float
 
-static func from_dictionary(dict: Dictionary) -> CardAttibute:
+static func from_dictionary(dict: Dictionary):
 	var instance = CardAttibute.new()
 	instance.kind = dict.get("kind", "")
 	instance.name = dict.get("name", "")
@@ -25,3 +25,6 @@ static func from_dictionary(dict: Dictionary) -> CardAttibute:
 	instance.max = dict.get("max", 0)
 	instance.value = dict.get("value", 0.0)
 	return instance
+
+func get_value():
+	return value

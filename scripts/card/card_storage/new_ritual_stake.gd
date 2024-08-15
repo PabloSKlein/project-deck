@@ -19,7 +19,7 @@ func _init():
 	physical_damage.function = "damage"
 	physical_damage.description = "Adds physical damage to attacks"
 	physical_damage.method = "Added"
-	physical_damage.icon = "icon1"
+	physical_damage.icon = "axe"
 	physical_damage.min = 5
 	physical_damage.max = 10
 

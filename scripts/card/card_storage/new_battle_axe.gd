@@ -19,7 +19,7 @@ func _init():
 	cold_damage.function = "damage"
 	cold_damage.description = "Adds cold damage to attacks"
 	cold_damage.method = "Added"
-	cold_damage.icon = "icon1"
+	cold_damage.icon = "axe"
 	cold_damage.min = 5
 	cold_damage.max = 10
 	
@@ -30,7 +30,7 @@ func _init():
 	cold_damage.function = "damage"
 	cold_damage.description = "Adds cold damage to attacks"
 	cold_damage.method = "Added"
-	cold_damage.icon = "icon1"
+	cold_damage.icon = "axe"
 	cold_damage.min = 5
 	cold_damage.max = 10
 

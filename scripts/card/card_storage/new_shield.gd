@@ -19,7 +19,7 @@ func _init():
 	physical_block.function = "defense"
 	physical_block.description = "Increases physical block chance"
 	physical_block.method = "Increased"
-	physical_block.icon = "icon1"
+	physical_block.icon = "axe"
 	physical_block.min = 5
 	physical_block.max = 10
 

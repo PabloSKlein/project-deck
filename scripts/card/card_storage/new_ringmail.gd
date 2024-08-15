@@ -19,7 +19,7 @@ func _init():
 	fire_resistance.function = "defense"
 	fire_resistance.description = "Increases fire resistance"
 	fire_resistance.method = "Increased"
-	fire_resistance.icon = "icon1"
+	fire_resistance.icon = "axe"
 	fire_resistance.min = 5
 	fire_resistance.max = 10
 

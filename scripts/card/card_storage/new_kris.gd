@@ -19,7 +19,7 @@ func _init():
 	fire_damage.function = "damage"
 	fire_damage.description = "Adds fire damage to attacks"
 	fire_damage.method = "Added"
-	fire_damage.icon = "icon1"
+	fire_damage.icon = "axe"
 	fire_damage.min = 5
 	fire_damage.max = 10
 

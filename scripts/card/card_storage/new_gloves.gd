@@ -19,7 +19,7 @@ func _init():
 	cold_resistance.function = "defense"
 	cold_resistance.description = "Increases cold resistance"
 	cold_resistance.method = "Increased"
-	cold_resistance.icon = "icon1"
+	cold_resistance.icon = "axe"
 	cold_resistance.min = 5
 	cold_resistance.max = 10
 
