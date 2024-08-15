@@ -17,7 +17,7 @@ func take_damage(attack: Attack):
 	health -= max(attack.amount - defense, 0)
 
 func get_defense(type: String):
-	return attributes.get(type + " Defense", 0)
+	return attributes.get(type + " Resistence", 0)
 	
 func get_attack() -> Attack:
 	var weapon_card
@@ -53,10 +53,10 @@ func show_status():
 		print(attribute + " : " + str(snapped(attributes[attribute], 0.01)))
 
 func add_attribute(modifier):
-	if modifier.type in attributes:
-		attributes[modifier.type] += modifier.amount
+	if modifier.name in attributes:
+		attributes[modifier.name] += modifier.value
 	else:
-		attributes[modifier.type] = modifier.amount
+		attributes[modifier.name] = modifier.value
 
 func equip(card: Card):
 	inventory.equip(card)

@@ -23,7 +23,8 @@ func generate_card() -> Card:
 	card.rarity = full_base_card_with_affix_tiers.get("rarity")
 	card.is_dual_handed = full_base_card_with_affix_tiers.get("is_dual_handed")
 	card.image = full_base_card_with_affix_tiers.get("image")
-	card.attributes.push_front(full_base_card_with_affix_tiers.get("attributes"))
+	for i in full_base_card_with_affix_tiers.get("attributes"):
+		card.attributes.push_front(CardAttibute.from_dictionary(i))
 	card.prefixes.push_front(full_base_card_with_affix_tiers.get("prefixes"))
 	card.suffixes.push_front(full_base_card_with_affix_tiers.get("suffix"))
 	return card

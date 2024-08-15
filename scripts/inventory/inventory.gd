@@ -4,14 +4,11 @@ var slots : Array[InventorySlot]
 	
 func equip(card: Card):
 	var slot = get_children_by_type(slots, card.slot)
-	if(slot != null):
-		slot.add_card(card)
-	pass
+	slot.add_card(card)
 
 func show_inventory():
 	for slot in slots:
 		print(slot.slot_type)
-	pass
 
 func get_children_by_name(name) -> Node:
 	for child in get_children():

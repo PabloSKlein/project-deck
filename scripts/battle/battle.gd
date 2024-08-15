@@ -146,4 +146,5 @@ func enemy_setup(enemy_type: Enemy.EnemyType = Enemy.EnemyType.NORMAL):
 	var item_equip = rng.randi_range(min_equip, max_equip)
 	
 	for i in range(item_equip):
-		enemy.equip(MountCard.new().generate_card())
+		var gen_card = MountCard.new().generate_card()
+		enemy.equip(gen_card)

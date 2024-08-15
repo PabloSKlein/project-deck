@@ -111,7 +111,7 @@ func update_modifiers():
 		
 		var label = Label.new()
 		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
-		label.text = "  " + str(modifier.amount)
+		label.text = "  " + str(modifier.value)
 		label.custom_minimum_size = Vector2(35, 0)
 		label.position = Vector2(10, 2)  # Adjust the position inside the larger control
 
