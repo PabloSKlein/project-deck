@@ -41,11 +41,9 @@ func _input(event: InputEvent) -> void:
 		if event.keycode == KEY_ALT:
 			if event.pressed and mouse_inside_card && !is_comparing:
 				is_comparing = true
-				print("pressed")
 				_on_alt_pressed()
 			elif event.is_released():
 				is_comparing = false
-				print("released")
 				_on_alt_released()
 	else:
 		card_state_machine.on_input(event)
@@ -62,7 +60,6 @@ func update_ui():
 	$VBoxContainer/Control/CardTypeLabel.text = card.type
 	update_modifiers()
 	set_image_item(card.image)
-	print(card.rarity)
 	set_rarity_item(card.rarity)
 	set_tooltip()
 
@@ -146,7 +143,6 @@ func update_modifiers():
 		
 func set_rarity_item(value):
 	var _rarity
-	print(_rarity)
 	if	value == 1:
 		_rarity = "Magic"
 		unique_card.hide()
