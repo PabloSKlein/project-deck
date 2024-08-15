@@ -62,6 +62,7 @@ func update_ui():
 	$VBoxContainer/Control/CardTypeLabel.text = card.type
 	update_modifiers()
 	set_image_item(card.image)
+	print(card.rarity)
 	set_rarity_item(card.rarity)
 	set_tooltip()
 
@@ -145,6 +146,7 @@ func update_modifiers():
 		
 func set_rarity_item(value):
 	var _rarity
+	print(_rarity)
 	if	value == 1:
 		_rarity = "Magic"
 		unique_card.hide()
@@ -153,16 +155,6 @@ func set_rarity_item(value):
 	elif value == 2:
 		_rarity = "Rare"
 		unique_card.hide()
-		magic_card.hide()
-		exalted_card.hide()
-	elif value == 3:
-		_rarity = "Exalted"
-		unique_card.hide()
-		magic_card.hide()
-		rare_card.hide()
-	else:
-		_rarity = "Unique"
-		rare_card.hide()
 		magic_card.hide()
 		exalted_card.hide()
 	

@@ -3,7 +3,7 @@ extends Card
 func _init():
 	name = "Gladius"
 	category = "Weapon"
-	type = "OneHandedSword"
+	type = "One Handed Sword"
 	slot = [CardType.Enum.MAIN_HAND]
 	rarity = 0
 	magic_multi = 1

@@ -114,8 +114,6 @@ func attach_affixes_to_card(card_dict: Dictionary) -> Dictionary:
 			num_affixes = randi() % 2 + 1  # Random between 1 and 2
 		2:  # Rare
 			num_affixes = randi() % 2 + 3  # Random between 3 and 4
-		3:  # Unique
-			num_affixes = randi() % 2 + 3  # Random between 3 and 4 (if you need more customization, adjust this)
 	
 	var random_prefixes = []
 	var random_suffix = []

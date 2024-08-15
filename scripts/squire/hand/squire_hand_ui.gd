@@ -29,7 +29,7 @@ func bind_squire(_squire: Squire):
 	squire = _squire
 
 func _on_compare_card(card: CardUI):
-	print(card.card.name_item)
+	print(card.card.name)
 	_on_stop_compare_card()
 	compare_ui = compare_scene.instantiate()
 	var equiped_card

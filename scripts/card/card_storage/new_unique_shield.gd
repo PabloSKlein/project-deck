@@ -4,7 +4,7 @@ func _init():
 	name = "Unique Shield"
 	category = "Shield"
 	type = "Shield"
-	slot = [CardType.Enum.MAIN_HAND]
+	slot = [CardType.Enum.OFF_HAND]
 	rarity = 9
 	magic_multi = 1
 	rare_multi = 1.4

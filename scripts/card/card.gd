@@ -3,9 +3,8 @@ class_name Card
 
 
 var drop_rates = {
-	1: 60, # Magic
-	2: 29, # Rare
-	3: 11  # Exalted
+	1: 80, # Magic
+	2: 20, # Rare
 }
 
 @export var name: String
