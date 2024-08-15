@@ -4,7 +4,7 @@ var blueprints: Array[Card] = []
 var cards_in_hand: Array[Card] = []
 var max_hand_size: int = 5
 
-@onready var generator: GenerateCard = GenerateCard.new()
+@onready var generator: MountCard = MountCard.new()
 var hero: Hero
 
 func add_to_inventory(_card: Card) -> void:

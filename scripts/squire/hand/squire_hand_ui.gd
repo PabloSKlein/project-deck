@@ -6,7 +6,7 @@ class_name SquireHandUI extends Node
 @onready var hand = $Hand
 
 var squire: Squire
-var generator: GenerateCard = GenerateCard.new()
+var generator: MountCard = MountCard.new()
 var compare_ui
 
 func _ready():
@@ -19,12 +19,11 @@ func discard_hand():
 		hand.remove_child(child)
 		
 func draw_card():
-	var card = generator.generate_card()
+	var test = generator.generate_card()
 	var card_ui := card_scene.instantiate()
-	card_ui.bind_card(card)
-	
+	card_ui.bind_card(test)
 	hand.add_card(card_ui)
-	squire.add_to_hand(card)
+	squire.add_to_hand(test)
 	
 func bind_squire(_squire: Squire):
 	squire = _squire

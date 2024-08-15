@@ -58,7 +58,7 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 
 func update_ui():
-	$VBoxContainer/Control/CardNameLabel.text = card.name_item
+	$VBoxContainer/Control/CardNameLabel.text = card.name
 	$VBoxContainer/Control/CardTypeLabel.text = card.type
 	update_modifiers()
 	set_image_item(card.image)
@@ -105,13 +105,13 @@ func _on_mouse_exited(text: String) -> void:
 			_on_alt_released()
 
 func update_modifiers():
-	for modifier in card.modifiers:
+	for modifier in card.attributes:
 		var control = Control.new()
 		control.custom_minimum_size = Vector2(50, 20)  # Increase size to cover the desired area
 		
 		var label = Label.new()
 		label.autowrap_mode = TextServer.AutowrapMode.AUTOWRAP_ARBITRARY
-		label.text = "  " + str(modifier.amount)
+		label.text = "  " + str(modifier.value)
 		label.custom_minimum_size = Vector2(35, 0)
 		label.position = Vector2(10, 2)  # Adjust the position inside the larger control
 

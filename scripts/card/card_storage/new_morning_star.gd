@@ -1,25 +1,25 @@
-extends NewCard
+extends Card
 
 func _init():
-	name = "Birch Bow"
+	name = "Morning Star"
 	category = "Weapon"
-	type = "Bow"
-	slot = ["MainHand"]
-	rarity = ""
+	type = "OneHandedMace"
+	slot = [CardType.Enum.MAIN_HAND]
+	rarity = 0
 	magic_multi = 1
 	rare_multi = 1.4
 	unique_multi = 1.4
 	is_dual_handed = false
-	image = "bow"
+	image = "mace"
 
-	var physical_damage = NewCardAttibute.new()
+	var physical_damage = CardAttibute.new()
 	physical_damage.kind = "Base"
 	physical_damage.name = "Physical Damage"
 	physical_damage.type = "physical"
 	physical_damage.function = "damage"
 	physical_damage.description = "Adds physical damage to attacks"
 	physical_damage.method = "Added"
-	physical_damage.icon = "icon1"
+	physical_damage.icon = "axe"
 	physical_damage.min = 5
 	physical_damage.max = 10
 

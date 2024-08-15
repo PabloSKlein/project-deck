@@ -3,15 +3,12 @@ class_name Inventory extends Control
 var slots : Array[InventorySlot]
 	
 func equip(card: Card):
-	var slot = get_children_by_type(slots, card.slot_types)
-	if(slot != null):
-		slot.add_card(card)
-	pass
+	var slot = get_children_by_type(slots, card.slot)
+	slot.add_card(card)
 
 func show_inventory():
 	for slot in slots:
 		print(slot.slot_type)
-	pass
 
 func get_children_by_name(name) -> Node:
 	for child in get_children():

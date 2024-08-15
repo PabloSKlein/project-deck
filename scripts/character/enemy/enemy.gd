@@ -19,7 +19,5 @@ func _ready():
 			max_health = 500
 	health = max_health
 	
-	var mod := Modifier.new("attack", 20, "")
-	self.add_attribute(mod)
 	print("Enemy type: ", enemy_type)
 	pass
